@@ -12,5 +12,5 @@ Our app bridges the gap between students and developers. It is essentially a blo
 
 The demo of the website
 
-https://user-images.githubusercontent.com/95478617/215282059-83e00ec3-eb3b-44c3-871f-c778311621d0.mp4
+https://user-images.githubusercontent.com/95478617/215283410-13730362-d7aa-4644-972b-f57ddfee07e1.mp4
 
