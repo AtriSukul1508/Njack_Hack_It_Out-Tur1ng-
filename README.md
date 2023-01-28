@@ -10,7 +10,15 @@ Our app bridges the gap between students and developers. It is essentially a blo
 ![WhatsApp Image 2023-01-28 at 10 28 21 PM (4)](https://user-images.githubusercontent.com/95478617/215279511-335131ba-495a-4f08-a27c-bf1a91903d43.jpeg)
 ![WhatsApp Image 2023-01-28 at 10 28 21 PM (3)](https://user-images.githubusercontent.com/95478617/215279523-8902fda0-6262-4215-bdfb-0579401aeabf.jpeg)
 
-The demo of the website
+Demo of the website
 
 https://user-images.githubusercontent.com/95478617/215283410-13730362-d7aa-4644-972b-f57ddfee07e1.mp4
+
+
+
+https://user-images.githubusercontent.com/95478617/215283873-b44d8f47-1288-4ec8-9b1e-ed121b2e585f.mp4
+
+
+
+https://user-images.githubusercontent.com/95478617/215284070-dbe5c004-c1ab-4010-be5e-7c50e274af2b.mp4
 
