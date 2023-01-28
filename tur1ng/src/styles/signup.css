@@ -1,0 +1,62 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.info__container{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #6d7993b2;
+}
+
+.signup__container{
+    width: 40vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border: none;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0px 0px 4px rgb(97, 97, 97);
+    background-color: #fff;
+}
+.user_acc_info{
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.acc__credentials{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.7rem;
+}
+
+#signup__btn{
+    border: none;
+    outline: none;
+    padding: 8px;
+    border-radius: 10px;
+    width: 130px;
+    background-color: #6d7993;
+    color: white;
+    font-weight: bold;
+    font-family: 'Raleway',sans-serif;
+    text-transform: uppercase;
+    cursor: pointer;
+    margin-top: 1.4rem;
+    transition: all .3s ease-in-out;
+
+}
+#signup__btn:hover{
+    background-color: #465370;
+    color: #fff;
+}

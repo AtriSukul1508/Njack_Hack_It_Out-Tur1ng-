@@ -1,0 +1,14 @@
+div.error {
+  padding: 3px 7px;
+  background: #fbe7e7;
+  border: 1px solid #f09191;
+  color: #f60c0cab;
+  border-radius: 4px;
+  margin: 20px 0;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  }
+  input.error {
+    border: 1px solid var(--error);
+  }

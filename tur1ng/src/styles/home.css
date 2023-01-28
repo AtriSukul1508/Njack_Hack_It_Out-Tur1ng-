@@ -1,0 +1,119 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.home__container{
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    top: 60px;
+    height: 100vh;
+    padding: 1rem;
+    padding-top: 0 !important;
+    z-index: -1;
+    /* overflow-y: hidden; */
+}
+.suggestive__content__container{
+    border-right: 1px solid #6d79939c;
+    text-align: center;
+    padding:10px;
+    min-height: 100vh;
+    height: min-content;
+    /* overflow-y: scroll; */
+}
+.suggest__contents{
+    display: flex;
+    flex-direction: column;
+    gap: .7rem;
+    padding:20px 10px;
+    /* overflow-y: scroll; */
+}
+.content__pick{
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px;
+    gap: .5rem;
+    box-shadow: 0px 0px 3px #ccc;
+}
+.suggestive__content__author__name{
+    color: rgb(124, 124, 124);
+    background-color: rgb(240,240,240,1);
+    border-radius: 10px;
+    padding:2px 8px;
+    font-family: 'Poppins';
+    
+}
+.content__description{
+    font-weight: bold;
+    font-family: 'Poppins',sans-serif;
+    width: 30vw;
+    color: rgba(68, 67, 67, 0.863);
+    word-wrap: break-word;
+    white-space: initial;
+    text-align: left;
+}
+.feed__content__container{
+    padding-top: 10px;
+    overflow-y: scroll;
+}
+.feed__blog__container{
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    gap: 2rem;
+    
+}
+.posted__blogs{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 60vw;
+    padding: 10px;
+    border-bottom: 1px solid #6d79939c;
+}
+.blog__post__title{
+    text-transform: capitalize;
+    color:#ff8200;
+    font-family: 'Poppins',sans-serif;
+}
+.blog__post__description{
+    font-weight: 500;
+    font-size: 1.2rem;
+    font-family: 'Roboto';
+}
+.post__informations{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.post__author__name p{
+    font-family: 'Poppins',sans-serif;
+    border-radius: 15px;
+    background-color:#2d2c39;
+    color:#fff;
+    padding: 3px 8px;
+}
+
+.post__reach{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: .6rem;
+}
+
+.upvote_btn{
+    border: none;
+    outline: none;
+    background-color: rgb(212, 212, 212);
+    cursor: pointer;
+    color: #2d2c39;
+    /* border: 1px solid #6d79939c; */
+    padding: 3px 10px;
+    border-radius: 10px;
+    /* box-shadow: 0px 0px 4px #ccc; */
+}
