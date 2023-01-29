@@ -13,6 +13,7 @@ import DialogTitle from '@mui/material/DialogTitle';
 import ErrorIcon from '@mui/icons-material/Error'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import apiConfig from '../api.config';
 
 const UserBlogCard = ({ blog }) => {
     const { dispatch } = useBlogsContext();
@@ -27,7 +28,7 @@ const UserBlogCard = ({ blog }) => {
             return
         }
         try {
-            const response = await fetch('/blogapi/deleteblog/' + blog._id, {
+            const response = await fetch(apiConfig.URL+'/blogapi/deleteblog/' + blog._id, {
                 method: 'DELETE',
                 headers: {
                     'Authorization': `Bearer ${user.token}`
@@ -53,7 +54,7 @@ const UserBlogCard = ({ blog }) => {
     }
     const handleUpdate = () => {
         const updateBlog = async () => {
-            const response = await fetch('/blogapi/editblog/' + blog._id, {
+            const response = await fetch(apiConfig.URL+'/blogapi/editblog/' + blog._id, {
                 method: 'POST',
                 headers: {
                     'Authorization': `Bearer ${user.token}`,

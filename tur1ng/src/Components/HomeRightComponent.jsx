@@ -4,13 +4,15 @@ import { useBlogsContext } from '../hooks/useBlogsContext';
 import { useAuthContext } from '../hooks/useAuthContext';
 import FeedBlog from './FeedBlog';
 import { CircularProgress } from '@mui/material';
+import apiConfig from '../api.config';
+
 const HomeRightComponent = () => {
     const { blogs, dispatch } = useBlogsContext();
     const { user } = useAuthContext();
     const [isLoading, setIsLoading] = useState(true);
     useEffect(() => {
         const fetchBlogs = async () => {
-            const response = await fetch('/blogapi/allblogs', {
+            const response = await fetch(apiConfig.URL+'/blogapi/allblogs', {
                 headers: {
                     'Authorization': `Bearer ${user.token}`
                 }

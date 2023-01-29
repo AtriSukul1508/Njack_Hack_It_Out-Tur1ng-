@@ -5,6 +5,7 @@ import { Typography } from '@material-ui/core'
 import { useAuthContext } from '../hooks/useAuthContext'
 import { ThumbUp, ThumbUpOffAlt } from '@mui/icons-material';
 import format from 'date-fns/format';
+import apiConfig from '../api.config'
 const ViewBlog = () => {
     const { id } = useParams();
     const { user } = useAuthContext();
@@ -15,7 +16,7 @@ const ViewBlog = () => {
     const [upvote, setUpvote] = useState(0);
     useEffect(() => {
         const fetchABlog = async () => {
-            const response = await fetch('/blogapi/blog/' + id, {
+            const response = await fetch(apiConfig.URL+'/blogapi/blog/' + id, {
                 headers: {
                     'Authorization': `Bearer ${user.token}`
                 }

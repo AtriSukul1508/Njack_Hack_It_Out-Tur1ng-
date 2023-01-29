@@ -4,13 +4,15 @@ import { useBlogsContext } from '../hooks/useBlogsContext';
 import suggestiveContentBg from '../Assets/suggestions.svg'
 import SuggestiveBlog from './SuggestiveBlog';
 import { CircularProgress } from '@mui/material';
+import apiConfig from '../api.config';
+
 const HomeLeftComponent = () => {
     const { blogs, dispatch } = useBlogsContext();
     const { user } = useAuthContext();
     const [isLoading, setIsLoading] = useState(true);
     useEffect(() => {
         const fetchSuggestiveBlogs = async () => {
-            const response = await fetch('/blogapi/getsuggestiveblog', {
+            const response = await fetch(apiConfig.URL+'/blogapi/getsuggestiveblog', {
                 headers: {
                     'Authorization': `Bearer ${user.token}`
                 }

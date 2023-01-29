@@ -10,6 +10,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import { ContentState, convertToRaw, EditorState } from 'draft-js';
 import { Editor } from 'react-draft-wysiwyg';
 import 'react-draft-wysiwyg/dist/react-draft-wysiwyg.css';
+import apiConfig from '../api.config';
 
 
 const WriteBlog = () => {
@@ -32,7 +33,7 @@ const WriteBlog = () => {
         event.preventDefault();
         // const { title, description, author } = blog;
         try {
-            const resp = await fetch('/blogapi/addblog', {
+            const resp = await fetch(apiConfig.URL+'/blogapi/addblog', {
                 method: 'POST',
                 headers: {
                     'Authorization': `Bearer ${user.token}`,

@@ -1,4 +1,5 @@
 import { useState } from "react";
+import apiConfig from "../api.config";
 import { useAuthContext } from "./useAuthContext";
 
 export const useSignup = () => {
@@ -8,7 +9,7 @@ export const useSignup = () => {
     const signup = async (name, email, phone, password, cpassword) => {
         setIsLoading(true);
         setError(null);
-        const resp = await fetch('/userapi/signup', {
+        const resp = await fetch(apiConfig.URL+'/userapi/signup', {
             method: 'POST',
             headers: { 'Content-type': 'application/json' },
             body: JSON.stringify({ name, email, phone, password, cpassword })

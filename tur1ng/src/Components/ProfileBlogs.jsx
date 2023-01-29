@@ -5,6 +5,7 @@ import { useAuthContext } from '../hooks/useAuthContext';
 import UserBlogCard from './UserBlogCard';
 import emptyBlog from '../Assets/emptyblog.svg';
 import { CircularProgress } from '@mui/material';
+import apiConfig from '../api.config';
 const ProfileBlogs = () => {
   const { blogs, dispatch } = useBlogsContext();
   const { user } = useAuthContext();
@@ -15,7 +16,7 @@ const ProfileBlogs = () => {
       if (!user) {
         return
       }
-      const response = await fetch('/blogapi/userallblog', {
+      const response = await fetch(apiConfig.URL+'/blogapi/userallblog', {
         headers: {
           'Authorization': `Bearer ${user.token}`
         }
