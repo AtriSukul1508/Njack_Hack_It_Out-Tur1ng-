@@ -15,7 +15,7 @@ const ViewBlog = () => {
     const [upvote, setUpvote] = useState(0);
     useEffect(() => {
         const fetchABlog = async () => {
-            const response = await fetch('/blog/' + id, {
+            const response = await fetch('/blogapi/blog/' + id, {
                 headers: {
                     'Authorization': `Bearer ${user.token}`
                 }

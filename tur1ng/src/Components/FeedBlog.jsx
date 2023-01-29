@@ -16,7 +16,7 @@ const FeedBlog = ({ blog }) => {
     console.log(click)
     useEffect(() => {
         const fetchUpvoteCount = async () => {
-            const response = await fetch('/upvote/' + blog._id, {
+            const response = await fetch('/blogapi/upvote/' + blog._id, {
                 headers: {
                     'Authorization': `Bearer ${user.token}`
                 }
@@ -34,7 +34,7 @@ const FeedBlog = ({ blog }) => {
         }
     }, [dispatch,initialLike])
     const updateUpvote = async (factor) => {
-        const resp = await fetch('/upvote/' + blog._id, {
+        const resp = await fetch('/blogapi/upvote/' + blog._id, {
             method: 'POST',
             headers: {
                 'Authorization': `Bearer ${user.token}`,

@@ -10,7 +10,7 @@ const HomeRightComponent = () => {
     const [isLoading, setIsLoading] = useState(true);
     useEffect(() => {
         const fetchBlogs = async () => {
-            const response = await fetch('/allblogs', {
+            const response = await fetch('/blogapi/allblogs', {
                 headers: {
                     'Authorization': `Bearer ${user.token}`
                 }

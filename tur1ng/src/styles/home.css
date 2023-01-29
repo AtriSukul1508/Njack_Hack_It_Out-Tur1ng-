@@ -21,6 +21,7 @@
     padding:10px;
     min-height: 100vh;
     height: min-content;
+    /* width: 30vw; */
     /* overflow-y: scroll; */
 }
 .suggest__contents{
@@ -60,6 +61,7 @@
 .feed__content__container{
     padding-top: 10px;
     overflow-y: scroll;
+    /* width: 60vw; */
 }
 .feed__blog__container{
     display: flex;

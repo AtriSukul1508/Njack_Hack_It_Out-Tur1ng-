@@ -32,7 +32,7 @@ const WriteBlog = () => {
         event.preventDefault();
         // const { title, description, author } = blog;
         try {
-            const resp = await fetch('/addblog', {
+            const resp = await fetch('/blogapi/addblog', {
                 method: 'POST',
                 headers: {
                     'Authorization': `Bearer ${user.token}`,

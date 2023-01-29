@@ -3,6 +3,7 @@ const { default: mongoose } = require('mongoose');
 
 
 const addBlog = async (req, res) => {
+    console.log('hello');
     const { title, description, author } = req.body;
     try {
         if (!title || !description || !author) {
@@ -15,7 +16,7 @@ const addBlog = async (req, res) => {
             return res.status(201).json(savedBlog);
         }
     } catch (err) {
-        console.log(`Error whiling creating blog - ${err}`);
+        console.log(`Error while creating blog - ${err}`);
     }
 }
 

@@ -15,7 +15,7 @@ const ProfileBlogs = () => {
       if (!user) {
         return
       }
-      const response = await fetch('/userallblog', {
+      const response = await fetch('/blogapi/userallblog', {
         headers: {
           'Authorization': `Bearer ${user.token}`
         }

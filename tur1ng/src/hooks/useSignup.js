@@ -8,7 +8,7 @@ export const useSignup = () => {
     const signup = async (name, email, phone, password, cpassword) => {
         setIsLoading(true);
         setError(null);
-        const resp = await fetch('/signup', {
+        const resp = await fetch('/userapi/signup', {
             method: 'POST',
             headers: { 'Content-type': 'application/json' },
             body: JSON.stringify({ name, email, phone, password, cpassword })

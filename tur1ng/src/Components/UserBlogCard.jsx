@@ -27,7 +27,7 @@ const UserBlogCard = ({ blog }) => {
             return
         }
         try {
-            const response = await fetch('/deleteblog/' + blog._id, {
+            const response = await fetch('/blogapi/deleteblog/' + blog._id, {
                 method: 'DELETE',
                 headers: {
                     'Authorization': `Bearer ${user.token}`
@@ -53,7 +53,7 @@ const UserBlogCard = ({ blog }) => {
     }
     const handleUpdate = () => {
         const updateBlog = async () => {
-            const response = await fetch('/editblog/' + blog._id, {
+            const response = await fetch('/blogapi/editblog/' + blog._id, {
                 method: 'POST',
                 headers: {
                     'Authorization': `Bearer ${user.token}`,

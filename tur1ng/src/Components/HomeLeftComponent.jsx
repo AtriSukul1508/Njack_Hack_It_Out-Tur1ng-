@@ -10,7 +10,7 @@ const HomeLeftComponent = () => {
     const [isLoading, setIsLoading] = useState(true);
     useEffect(() => {
         const fetchSuggestiveBlogs = async () => {
-            const response = await fetch('/getsuggestiveblog', {
+            const response = await fetch('/blogapi/getsuggestiveblog', {
                 headers: {
                     'Authorization': `Bearer ${user.token}`
                 }
@@ -32,8 +32,9 @@ const HomeLeftComponent = () => {
             <div className='suggestive__content__container'>
                 <img src={suggestiveContentBg} style={{ width: '7vw', height: '7vw' }} alt='Suggestions for you' />
                 <h2 style={{ fontFamily: 'Poppins', color: '#4596b6' }}>Suggestions for you</h2>
+
                 {isLoading ?
-                    <div style={{width:'34vw'}}><CircularProgress /></div> :
+                    <div style={{ width: '34vw' }}><CircularProgress /></div> :
                     <div className='suggest__contents'>
                         {blogs && blogs.map((blog) => (
                             <SuggestiveBlog blog={blog} key={blog._id} />
