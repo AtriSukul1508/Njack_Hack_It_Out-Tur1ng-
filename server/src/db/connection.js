@@ -1,8 +1,7 @@
 const mongoose = require('mongoose');
-const DB_PORT = process.env.DB_PORT;
-const DB_NAME = process.env.DB_NAME;
+const MONGO_URL = process.env.MONGO_URL;
 mongoose.set('strictQuery',true);
-mongoose.connect(`mongodb://localhost:${DB_PORT}/${DB_NAME}`,{
+mongoose.connect(MONGO_URL,{
     useNewUrlParser:true,
 }).then(()=>{
     console.log('Connection to the database is done');
