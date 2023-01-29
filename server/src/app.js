@@ -8,7 +8,7 @@ const cookieParser = require('cookie-parser');
 const userRouter = require('./routes/userRouter');
 const blogRouter = require('./routes/blogRouter');
 app.use(cors({
-    origin: ['http://localhost:3000', "https://tur1ng.onrender.com"],
+    origin: ['http://localhost:3000', "https://tur1ng.vercel.app"],
     methods: ['GET', 'POST', 'DELETE', 'PUT', 'PATCH']
 }))
 require('./db/connection');
