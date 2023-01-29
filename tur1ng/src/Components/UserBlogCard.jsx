@@ -113,7 +113,7 @@ const UserBlogCard = ({ blog }) => {
                     <div className='blog_controls'>
                         <NavLink name='read__more__btn' to={`/blog/${blog._id}`} className='read__more__btn' style={{ ...BtnStyle, backgroundColor: "#2d2c39", fontSize: '.8rem', width: '95px', textDecoration: 'none', display: 'flex', alignItems: 'center' }} >READ MORE</NavLink>
                         <NavLink name='edit_btn' id='edit__btn' className='edit__btn' style={{ ...BtnStyle, backgroundColor: '#24a0ed', textDecoration: 'none' }} onClick={handleEditPopOver} >EDIT</NavLink>
-                        <button name='dlt_btn' id='dlt__btn' className='dlt__btn' style={{ ...BtnStyle, backgroundColor: 'rgb(247 46 63)' }} onClick={handleDelete}>DELETE</button>
+                        <NavLink name='dlt_btn' id='dlt__btn' className='dlt__btn' style={{ ...BtnStyle, backgroundColor: 'rgb(247 46 63)' ,textDecoration:'none'}} onClick={handleDelete}>DELETE</NavLink>
                     </div>
                 </div>
                 <Dialog open={open} onClose={handleClose}>

@@ -1,16 +1,18 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import '../styles/userallblog.css'
 import { useBlogsContext } from '../hooks/useBlogsContext';
 import { useAuthContext } from '../hooks/useAuthContext';
 import UserBlogCard from './UserBlogCard';
 import emptyBlog from '../Assets/emptyblog.svg';
+import { CircularProgress } from '@mui/material';
 const ProfileBlogs = () => {
   const { blogs, dispatch } = useBlogsContext();
   const { user } = useAuthContext();
+  const [isLoading, setIsLoading] = useState(true);
   console.log(blogs)
   useEffect(() => {
     const fetchBlogs = async () => {
-      if(!user){
+      if (!user) {
         return
       }
       const response = await fetch('/userallblog', {
@@ -21,7 +23,8 @@ const ProfileBlogs = () => {
       const data = await response.json()
 
       if (response.ok) {
-        dispatch({ type: 'DISPLAY_BLOG', payload: data })
+        dispatch({ type: 'DISPLAY_BLOG', payload: data });
+        setIsLoading(false)
       }
     }
     if (user) {
@@ -31,19 +34,20 @@ const ProfileBlogs = () => {
   }, [dispatch])
 
 
-
   return (
     <>
       {blogs.length >0 ? <>
         <div className='allposts_container'>
           <div className='user__blogs__container'>
             <h1 style={{ fontFamily: 'Poppins' }}>Your Posts</h1>
-            <div className='blogs'>
-              {blogs && blogs.map(blog => (
-                <UserBlogCard blog={blog} key={blog._id} />
-              )
-              )}
-            </div>
+
+            {isLoading ? <div> <CircularProgress /></div> :
+              <div className='blogs'>
+                {blogs && blogs.map(blog => (
+                  <UserBlogCard blog={blog} key={blog._id} />
+                )
+                )}
+              </div>}
           </div>
         </div>
       </> :

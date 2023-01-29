@@ -1,14 +1,29 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Feed, AddBox, FilterNone, Search, Logout } from '@mui/icons-material'
 import { NavLink } from 'react-router-dom';
 import '../styles/navbar.css'
 import { useAuthContext } from '../hooks/useAuthContext';
 import { useLogout } from '../hooks/useLogout';
+
+import Button from '@mui/material/Button';
+import Dialog from '@mui/material/Dialog';
+import DialogActions from '@mui/material/DialogActions';
+import DialogContent from '@mui/material/DialogContent';
+import DialogContentText from '@mui/material/DialogContentText';
+import DialogTitle from '@mui/material/DialogTitle';
 const Navbar = () => {
     const { user } = useAuthContext();
     const { logout } = useLogout();
+    const [open, setOpen] = useState(false);
     const handleLogout = () => {
+        setOpen(true);
+    }
+    const handlePermission = () => {
+        setOpen(false);
         logout();
+    }
+    const handleClose = () => {
+        setOpen(false);
     }
     return (
         <>
@@ -29,6 +44,22 @@ const Navbar = () => {
                         <p>{user ? user.user.name : ''}</p>
                         <button onClick={handleLogout} className='logout__btn' ><Logout fontSize='small' /> LogOut</button>
                     </div>
+                    <Dialog
+                        open={open}
+                        onClose={handleClose}
+                        aria-labelledby="alert-dialog-title"
+                        aria-describedby="alert-dialog-description"
+                    >
+                        <DialogContent>
+                            <DialogContentText id="alert-dialog-description" style={{ color: '#2d2c39', fontFamily: 'Poppins' }}>
+                                Are you sure, you want to log out?
+                            </DialogContentText>
+                        </DialogContent>
+                        <DialogActions>
+                            <Button onClick={handleClose} autoFocus>Cancel</Button>
+                            <Button onClick={handlePermission} style={{ color: '#e04e4e' }}>Logout</Button>
+                        </DialogActions>
+                    </Dialog>
                 </div>
             </div>
         </>

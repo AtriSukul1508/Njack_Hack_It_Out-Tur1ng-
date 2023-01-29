@@ -33,23 +33,23 @@ const SignUp = () => {
                         <div className='acc__credentials'>
                             <div className='user_name_field info_field'>
                                 <Person className='info_icon' />
-                                <input type='text' placeholder='Enter your name' name='name' onChange={(e) => setName(e.target.value)} value={name} />
+                                <input type='text' autoComplete='off' placeholder='Enter your name' name='name' onChange={(e) => setName(e.target.value)} value={name} />
                             </div>
                             <div className='user_email_field info_field'>
                                 <Email className='info_icon' />
-                                <input type='email' placeholder='Enter your mail ID' name='email' onChange={(e) => setEmail(e.target.value)} value={email} />
+                                <input type='email' autoComplete='off' placeholder='Enter your mail ID' name='email' onChange={(e) => setEmail(e.target.value)} value={email} />
                             </div>
                             <div className='user_number_field info_field'>
                                 <Call className='info_icon' />
-                                <input type='number' placeholder='Enter your Phone number' name='phone' onChange={(e) => setPhone(e.target.value)} value={phone} />
+                                <input type='number' autoComplete='off' placeholder='Enter your Phone number' name='phone' onChange={(e) => setPhone(e.target.value)} value={phone} />
                             </div>
                             <div className='user_password_field info_field'>
                                 <Lock className='info_icon' />
-                                <input type='password' placeholder='Enter your password' name='password' onChange={(e) => setPassword(e.target.value)} value={password} />
+                                <input type='password' autoComplete='off' placeholder='Enter your password' name='password' onChange={(e) => setPassword(e.target.value)} value={password} />
                             </div>
                             <div className='user_cpassword_field info_field'>
                                 <Lock className='info_icon' />
-                                <input type='password' placeholder='Re-enter your password' name='cpassword' onChange={(e) => setCPassword(e.target.value)} value={cpassword} />
+                                <input type='password' autoComplete='off' placeholder='Re-enter your password' name='cpassword' onChange={(e) => setCPassword(e.target.value)} value={cpassword} />
                             </div>
                         </div>
                         {error && <div className="error"><ErrorIcon fontSize='small'/> {error}</div>}

@@ -25,11 +25,11 @@ const Login = () => {
                         <div className='login__credentials'>
                             <div className='user_email_field info_field'>
                                 <PersonIcon className='info_icon' />
-                                <input type='text' name='email' placeholder='Enter your mail ID' onChange={(e) => setEmail(e.target.value)} id='user_mail' />
+                                <input type='text' name='email' autoComplete='off' placeholder='Enter your mail ID' onChange={(e) => setEmail(e.target.value)} id='user_mail' />
                             </div>
                             <div className='user_password_field info_field'>
                                 <Lock className='info_icon' />
-                                <input type='password' name='password' placeholder='Enter your password' onChange={(e) => setPassword(e.target.value)} id='user_password'
+                                <input type='password' name='password' autoComplete='off' placeholder='Enter your password' onChange={(e) => setPassword(e.target.value)} id='user_password'
                                 />
                             </div>
 

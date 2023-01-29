@@ -29,7 +29,23 @@
     font-family: 'Poppins', sans-serif;
     font-weight: bold;
 }
-.blog__content textarea,.author__container input,.title_container input{
+
+.wrapper-class {
+    padding:10px 20px;
+    width: 77vw;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    margin-top: 5px;
+  }
+  .editor-class {
+    padding: 1rem;
+    /* border: 1px solid #ccc; */
+  }
+  .toolbar-class {
+    border: 1px solid #ccc;
+  }
+ 
+.author__container input,.title_container input{
     
     width: 80vw;
     padding:10px 20px;
