@@ -3,7 +3,6 @@ const { default: mongoose } = require('mongoose');
 
 
 const addBlog = async (req, res) => {
-    res.send('hello')
     const { title, description, author } = req.body;
     try {
         if (!title || !description || !author) {

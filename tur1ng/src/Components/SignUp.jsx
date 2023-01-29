@@ -17,7 +17,6 @@ const SignUp = () => {
 
     const verifyAndPostData = async (event) => {
         event.preventDefault();
-        console.log(name, email, phone, password, cpassword)
         await signup(name, email, phone, password, cpassword);
     }
 
