@@ -18,8 +18,9 @@ const Login = () => {
         <>
             <div className='credentials__container'>
                 <div className='container_login'>
-                    <div className='heading_line'>
+                    <div className='heading_line' style={{ textAlign: 'center' }}>
                         <h1 className='heading_title'>Tur<span>1</span>ng<span>_</span></h1>
+                        <h2 style={{ fontFamily: 'Poppins', margin: '.8rem 0'}} >Log In to your account</h2>
                     </div>
                     <form method='POST' className='login__info'>
                         <div className='login__credentials'>
@@ -35,8 +36,8 @@ const Login = () => {
 
                         </div>
 
-                        {error && <div className="error"><ErrorIcon fontSize='small'/> {error}</div>}
-                        <NavLink to='/login' style={{ marginTop: '.8rem', textDecoration: 'none', color: 'blue' }}>Forget Password?</NavLink>
+                        {error && <div className="error"><ErrorIcon fontSize='small' /> {error}</div>}
+                        <NavLink to='/forgetpassword' style={{ marginTop: '.8rem', textDecoration: 'none', color: 'blue' }}>Forget Password?</NavLink>
                         <div className='btns_submit'>
                             <input type='submit' name='login__btn' className='login__btn' id='login__btn' onClick={verifyAndPostData} value='Login' disabled={isLoading} />
                             <p className='mt-3' style={{ color: '#000' }}>Don't have an account? <NavLink style={{ textDecoration: 'none', color: '#465370', fontWeight: 'bold' }} to='/signup'>Sign Up</NavLink></p>

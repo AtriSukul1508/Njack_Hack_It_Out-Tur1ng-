@@ -12,7 +12,7 @@
     background-color: #6d7993b2;
 }
 
-.container_login{
+.container_reset__pass,.container_login{
     width: 40vw;
     display: flex;
     justify-content: center;
@@ -24,14 +24,14 @@
     box-shadow: 0px 0px 4px rgb(97, 97, 97);
     background-color: #fff;
 }
-.login__info{
+.reset__pass__info,.login__info{
     display: flex;
     flex-direction: column;
     align-items: center;
     /* gap: 1rem; */
     justify-content: center;
 }
-.login__credentials{
+.reset__pass_credentials,.login__credentials{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -49,6 +49,10 @@ input:not([type='submit']){
 input:not([type='submit']):focus{
     border-bottom: 2px solid #465370;
 }
+#reset__pass_user_mail:focus{
+    border-color: #3e6ac7 !important;
+    box-shadow: 0px 0px 2px #6d7993;
+}
 .info_field{
     position: relative;
     display: flex;
@@ -62,7 +66,7 @@ input:not([type='submit']):focus{
     /* top: 1.5rem; */
     color: #6d7993;
 }
-#login__btn{
+#confirm_email__btn,#login__btn{
     border: none;
     outline: none;
     padding: 8px;
@@ -78,7 +82,7 @@ input:not([type='submit']):focus{
     transition: all .3s ease-in-out;
 
 }
-#login__btn:hover{
+#confirm_email__btn:hover,#login__btn:hover{
     background-color: #465370;
     color: #fff;
 }
