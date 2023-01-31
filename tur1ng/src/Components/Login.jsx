@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import PersonIcon from '@mui/icons-material/Person';
-import { Lock } from '@mui/icons-material';
+import { Email, Lock } from '@mui/icons-material';
 import { NavLink } from 'react-router-dom';
 import '../styles/login.css'
 import { useLogin } from '../hooks/useLogin';
@@ -20,12 +20,12 @@ const Login = () => {
                 <div className='container_login'>
                     <div className='heading_line' style={{ textAlign: 'center' }}>
                         <h1 className='heading_title'>Tur<span>1</span>ng<span>_</span></h1>
-                        <h2 style={{ fontFamily: 'Poppins', margin: '.8rem 0'}} >Log In to your account</h2>
+                        <h2 style={{ fontFamily: 'Poppins', margin: '.8rem 0' }} >Log In to your account</h2>
                     </div>
                     <form method='POST' className='login__info'>
                         <div className='login__credentials'>
                             <div className='user_email_field info_field'>
-                                <PersonIcon className='info_icon' />
+                                <Email className='info_icon' />
                                 <input type='text' name='email' autoComplete='off' placeholder='Enter your mail ID' onChange={(e) => setEmail(e.target.value)} id='user_mail' />
                             </div>
                             <div className='user_password_field info_field'>

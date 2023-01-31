@@ -35,19 +35,23 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 1.7rem;
+    gap: 1rem;
     justify-content: center;
 }
 input:not([type='submit']){
     width: 25vw;
-    padding:10px 10px 5px 30px;
+    padding:10px 10px 10px 30px;
     outline: none;
     border: none;
-    border-bottom: 1px solid #6d7993cc;
+    border: 1px solid #6d7993;
+    border-radius: 8px;
     /* margin-top: 1.7rem; */
 }
 input:not([type='submit']):focus{
-    border-bottom: 2px solid #465370;
+    /* border-bottom: 2px solid #465370; */
+    
+    border-color: #3e6ac7 !important;
+    box-shadow: 0px 0px 2px #6d7993;
 }
 #reset__pass_user_mail:focus{
     border-color: #3e6ac7 !important;
@@ -65,6 +69,7 @@ input:not([type='submit']):focus{
     left: 2px;
     /* top: 1.5rem; */
     color: #6d7993;
+    /* padding-left: 5px; */
 }
 #confirm_email__btn,#login__btn{
     border: none;

@@ -7,6 +7,10 @@ const userSchema = new mongoose.Schema({
         type: String,
         required: true
     },
+    image:{
+        type:String,
+        required:true
+    },
     email: {
         type: String,
         required: true,
@@ -29,8 +33,8 @@ const userSchema = new mongoose.Schema({
 
 //static signup method
 
-userSchema.statics.signup = async function (name, email, phone, password, cpassword) {
-    if (!name || !email || !phone || !password || !cpassword) {
+userSchema.statics.signup = async function (name,image, email, phone, password, cpassword) {
+    if (!name || !image || !email || !phone || !password || !cpassword) {
         throw Error('All fields must be filled');
     }
     if (!validator.isEmail(email)) {
@@ -53,7 +57,7 @@ userSchema.statics.signup = async function (name, email, phone, password, cpassw
     const salt = await bcrypt.genSalt(10);
     const hash_password = await bcrypt.hash(password, salt);
     const hash_cpassword = await bcrypt.hash(cpassword, salt);
-    const user = new this({ name,email,phone, password: hash_password, cpassword: hash_cpassword });
+    const user = new this({ name,image, email, phone, password: hash_password, cpassword: hash_cpassword });
     const userdata = await user.save();
 
     return userdata;

@@ -21,10 +21,10 @@ const loginUser = async (req, res) => {
 }
 
 const signupUser = async (req, res) => {
-    const { name, email, phone, password, cpassword } = req.body;
+    const { name,image, email, phone, password, cpassword } = req.body;
     try {
 
-        const user = await UserModel.signup(name, email, phone, password, cpassword);
+        const user = await UserModel.signup(name,image, email, phone, password, cpassword);
 
         //create token
         const token = generateAuthToken(user._id, user.email);
@@ -32,8 +32,12 @@ const signupUser = async (req, res) => {
         res.status(201).json({ user, token })
 
     } catch (err) {
-        res.status(400).json({error:err.message})
+        res.status(400).json({ error: err.message })
     }
 }
 
-module.exports = { loginUser, signupUser };
+// reset password controller 
+
+
+
+module.exports = { loginUser, signupUser, };

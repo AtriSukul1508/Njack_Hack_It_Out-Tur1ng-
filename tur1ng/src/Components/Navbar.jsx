@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom';
 import '../styles/navbar.css'
 import { useAuthContext } from '../hooks/useAuthContext';
 import { useLogout } from '../hooks/useLogout';
-
+import { Avatar } from '@mui/material';
 import Button from '@mui/material/Button';
 import Dialog from '@mui/material/Dialog';
 import DialogActions from '@mui/material/DialogActions';
@@ -25,6 +25,7 @@ const Navbar = () => {
     const handleClose = () => {
         setOpen(false);
     }
+    // console.log(user.user.image)
     return (
         <>
             <div className='navbar'>
@@ -41,6 +42,7 @@ const Navbar = () => {
                     </div>
 
                     <div className='profile_name'>
+                        {user ? <NavLink to={`/profile/${user.user._id}`} ><Avatar src={user.user.image} alt={user.user.name} /></NavLink> : <></>}
                         <p>{user ? user.user.name : ''}</p>
                         <button onClick={handleLogout} className='logout__btn' ><Logout fontSize='small' /> LogOut</button>
                     </div>

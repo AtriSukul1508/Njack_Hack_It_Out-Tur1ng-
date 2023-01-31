@@ -6,13 +6,13 @@ export const useSignup = () => {
     const [error, setError] = useState(null);
     const [isLoading, setIsLoading] = useState(null);
     const { dispatch } = useAuthContext();
-    const signup = async (name, email, phone, password, cpassword) => {
+    const signup = async (name, image, email, phone, password, cpassword) => {
         setIsLoading(true);
         setError(null);
-        const resp = await fetch(apiConfig.URL+'/userapi/signup', {
+        const resp = await fetch(apiConfig.URL + '/userapi/signup', {
             method: 'POST',
             headers: { 'Content-type': 'application/json' },
-            body: JSON.stringify({ name, email, phone, password, cpassword })
+            body: JSON.stringify({ name, image, email, phone, password, cpassword })
         })
         const data = await resp.json();
         if (!resp.ok) {
