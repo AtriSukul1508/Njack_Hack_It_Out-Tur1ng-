@@ -3,14 +3,14 @@ const { default: mongoose } = require('mongoose');
 
 
 const addBlog = async (req, res) => {
-    const { title, description, author } = req.body;
+    const { title, description, eventImage, author } = req.body;
     try {
-        if (!title || !description || !author) {
+        if (!title || !description || !eventImage || !author) {
             return res.status(422).json({ error: "All fields must be filled" });
         }
         else {
             const user_id = req.user._id;
-            const newBlog = new BlogModel({ title, description, author, user_id });
+            const newBlog = new BlogModel({ title, description, eventImage, author, user_id });
             const savedBlog = await newBlog.save();
             return res.status(201).json(savedBlog);
         }

@@ -10,17 +10,18 @@ import { Navigate, Route, Routes, useLocation } from 'react-router-dom';
 import { useAuthContext } from './hooks/useAuthContext';
 import ViewBlog from './Components/ViewBlog';
 import ForgetPassword from './Components/ForgetPassword';
+import Profile from './Components/Profile';
 
 const App = () => {
   const location = useLocation();
   const { user } = useAuthContext();
   return (
     <>
-      {(location.pathname === '/login' || location.pathname === '/signup' || location.pathname=== '/forgetpassword') ?
+      {(location.pathname === '/login' || location.pathname === '/signup' || location.pathname === '/forgetpassword') ?
         <Routes>
           <Route path='/login' element={!user ? <Login /> : <Navigate to='/' />} />
           <Route path='/signup' element={!user ? <SignUp /> : <Navigate to='/' />} />
-            <Route path='/forgetpassword' element={<ForgetPassword/>} />
+          <Route path='/forgetpassword' element={<ForgetPassword />} />
           <Route path='*' element={<Error />} />
         </Routes> : <>
           <Navbar />
@@ -29,6 +30,7 @@ const App = () => {
             <Route path='/blog/:id' element={user ? <ViewBlog /> : <Navigate to='/login' />} />
             <Route path='/addblog' element={user ? <WriteBlog /> : <Navigate to='/login' />} />
             <Route path='/userallblog' element={user ? <ProfileBlogs /> : <Navigate to='/login' />} />
+            <Route path='/profile/:id' element={user ? <Profile /> : <Navigate to='/login' />}/>
             <Route path='*' element={user ? <Error /> : <Navigate to='/login' />} />
           </Routes>
         </>

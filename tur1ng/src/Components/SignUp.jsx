@@ -69,16 +69,8 @@ const SignUp = () => {
                                 <input type='text' autoComplete='off' placeholder='Enter your name' name='name' onChange={(e) => setName(e.target.value)} value={name} />
                             </div>
                             <div className='user_image_field info_field' style={{ display: 'flex', flexDirection: 'column' }}>
-                                {/* <label for='profile__pic' style={ }>
-                                    Upload your profile pic
-                                    <Image className='info_icon' />
-                                    <input type='file' autoComplete='off' name='img' id='profile__pic' style={{ display: 'none' }} />
-
-                                </label> */}
-
                                 <input type="file" id="img" className='profile__img__upload' accept="application/jpg" style={{ display: 'none' }} onChange={handleImg} />
                                 <label for='img' style={labelStyle}><CloudUpload className='info__icon' style={{ color: '#6d7993' }} />Upload your profile picture</label>
-                                {/* {img && <img src={img} alt="img" style={{ width: "100%", borderRadius: "20px", margin: "20px 0" }} />} */}
                                 {image && <p style={{textAlign:'left',border:'1px solid #ccc',borderRadius:'6px',padding:'5px',marginTop:'5px',width:'25vw',backgroundColor:'#6d799342'}}>{imgName}</p>}
                             </div>
                             <div className='user_email_field info_field'>

@@ -56,11 +56,7 @@
 .title_container input:focus,.author__container input:focus{
     border: 1px solid #6d7993cc;
 }
-.blog__content p{
-    font-family: 'Poppins',sans-serif;
-    font-weight: bold;
-}
-.author__container p{
+.blog__content p,.author__container p,.blog__image__container p{
     font-family: 'Poppins',sans-serif;
     font-weight: bold;
 }

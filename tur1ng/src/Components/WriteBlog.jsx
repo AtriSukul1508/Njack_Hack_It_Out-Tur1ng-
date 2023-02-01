@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { NavLink, useNavigate } from 'react-router-dom';
-import { Done } from '@mui/icons-material';
+import { CloudUpload, Done } from '@mui/icons-material';
 import '../styles/writeblog.css'
 import { useBlogsContext } from '../hooks/useBlogsContext';
 import { useAuthContext } from '../hooks/useAuthContext';
@@ -20,8 +20,8 @@ const WriteBlog = () => {
     const raw = convertToRaw(_contentState);  // RawDraftContentState JSON
     const [contentState, setContentState] = useState(raw); // ContentState JSON
     const [description, setDescription] = useState('');
-    const [author, setAuthor] = useState('')
-
+    const [eventImage, setEventImage] = useState();
+    const [author, setAuthor] = useState('');
     const { dispatch } = useBlogsContext();
     const [error, setError] = useState(null)
     const [emptyFields, setEmptyFields] = useState([])
@@ -29,17 +29,38 @@ const WriteBlog = () => {
     const handleBlog = (event) => {
         setDescription(contentState.blocks[0].text);
     }
+    function readFileDataAsBase64(e) {
+        const file = e.target.files[0];
+        return new Promise((resolve, reject) => {
+            const reader = new FileReader();
+
+            reader.onload = (event) => {
+                resolve(event.target.result);
+            };
+
+            reader.onerror = (err) => {
+                reject(err);
+            };
+
+            reader.readAsDataURL(file);
+        });
+    }
+    const handleImg = async (e) => {
+        const data = await readFileDataAsBase64(e);
+        setEventImage(data);
+        console.log(data);
+    }
     const PostBlogData = async (event) => {
         event.preventDefault();
         // const { title, description, author } = blog;
         try {
-            const resp = await fetch(apiConfig.URL+'/blogapi/addblog', {
+            const resp = await fetch(apiConfig.URL + '/blogapi/addblog', {
                 method: 'POST',
                 headers: {
                     'Authorization': `Bearer ${user.token}`,
                     "Content-type": "application/json",
                 },
-                body: JSON.stringify({ title, description, author })
+                body: JSON.stringify({ title, description,eventImage, author })
             })
             const data = await resp.json();
             if (!resp.ok) {
@@ -54,6 +75,7 @@ const WriteBlog = () => {
                 setError(null)
                 setTitle('');
                 setAuthor('');
+                setEventImage('');
                 console.log('data-', data);
                 dispatch({ type: 'CREATE_BLOG', payload: data })
                 toast.success('Blog created Successfully', {
@@ -64,6 +86,17 @@ const WriteBlog = () => {
         } catch (err) {
             console.log(`Error while saving blog data - ${err}`);
         }
+    }
+    const labelStyle = {
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'center',
+        alignItems: 'center',
+        border: '1px solid #ccc',
+        padding: '20px',
+        color: '#ccc',
+        borderRadius: '8px',
+        width: '80vw'
     }
 
     return (
@@ -86,6 +119,17 @@ const WriteBlog = () => {
                             placeholder='Write your blog'
                             onChange={handleBlog}
                         />
+                    </div>
+                    <div className='blog__image__container'>
+                        <p>Blog Image:</p>
+                        <div className='image__container' style={eventImage ? { display: 'flex', flexDirection: 'column', alignItems: 'center', margin: '1px auto', height: '525px' } : { display: 'flex', flexDirection: 'column', alignItems: 'center', margin: '1px auto' }}>
+                            <input type="file" id="img" className='blog__img__upload' accept="application/jpg" style={{ display: 'none' }} onChange={handleImg} />
+                            <label for='img' style={labelStyle}><CloudUpload className='info__icon' />Upload a descriptive image</label>
+                            {/* {eventImage && <p style={{ textAlign: 'left', border: '1px solid #ccc', borderRadius: '6px', padding: '5px', marginTop: '5px', width: '25vw', backgroundColor: '#6d799342' }}>{imgName}</p>} */}
+                            {eventImage && <img src={eventImage} alt="img" width='80%' height='70%' style={{ borderRadius: "20px", margin: "20px auto" }} />}
+
+                        </div>
+
                     </div>
                     <div className='author__container'>
                         <p>Author:</p>

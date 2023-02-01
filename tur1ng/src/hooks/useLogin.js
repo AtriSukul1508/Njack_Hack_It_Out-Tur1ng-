@@ -10,13 +10,13 @@ export const useLogin = () => {
     const login = async (email, password) => {
         setIsLoading(true);
         setError(null);
-        const resp = await fetch(apiConfig.URL+'/userapi/login', {
+        const resp = await fetch('/userapi/login', {
             method: 'POST',
             headers: {
                 'Content-type': 'application/json',
-                "Accept": "application/json"
+                'Accept': 'application/json'
             },
-            credentials:"include",
+            credentials: "include",
             body: JSON.stringify({ email, password })
         })
         const data = await resp.json();

@@ -8,6 +8,7 @@ const generateAuthToken = (_id, email) => {
 //login controller 
 const loginUser = async (req, res) => {
     const { email, password } = req.body;
+    console.log('sfda')
     try {
         const user = await UserModel.login(email, password);
 

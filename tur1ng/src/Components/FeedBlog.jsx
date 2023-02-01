@@ -33,7 +33,7 @@ const FeedBlog = ({ blog }) => {
         if (user) {
             fetchUpvoteCount()
         }
-    }, [dispatch,initialLike])
+    }, [dispatch, initialLike])
     const updateUpvote = async (factor) => {
         const resp = await fetch(apiConfig.URL + '/blogapi/upvote/' + blog._id, {
             method: 'POST',
@@ -56,7 +56,7 @@ const FeedBlog = ({ blog }) => {
             setClick(false);
             localStorage.setItem(`tur1ng_like-${blog._id}`, JSON.stringify(false))
             await updateUpvote(-1);
-            
+
         } else {
             localStorage.setItem(`tur1ng_like-${blog._id}`, JSON.stringify(true))
             setClick(true)
@@ -79,16 +79,19 @@ const FeedBlog = ({ blog }) => {
     return (
         <>
             <div className='posted__blogs'>
-                <div className='blog_title__container'>
-                    <h2 className='blog__post__title'>{blog.title.length > 100 ? blog.title.slice(0, 100) + '...' : blog.title}</h2>
-                </div>
-                <div className='blog__post__description'>{blog.description.length > 150 ? blog.description.slice(0, 150) + '...' : blog.description}</div>
-                <div className='post__informations'>
-                    <div className='post__author__name'> <p>{blog.author.length > 40 ? blog.author.slice(0, 40) + '...' : blog.author}</p></div>
-                    <div className='post__reach'>
-                        <button className='upvote_btn' style={{ display: 'flex', alignItems: 'center', gap: '.3rem' }} onClick={handleUpvote} >{click ? <ThumbUp /> : <ThumbUpOffAlt />} {upvote ? upvote : initialUpvote}</button>
-                        <NavLink name='read__more__btn' to={`/blog/${blog._id}`} className='read__more__btn' style={{ ...BtnStyle, backgroundColor: "#2d2c39", fontSize: '.8rem', width: '95px', textDecoration: 'none' }} >READ MORE</NavLink>
-                        <div className='blog_post_date' style={{ color: 'rgb(135 143 159 / 80%)',textTransform:'capitalize',fontWeight:'600' }}>{formatDistanceToNow(new Date(blog.createdAt) , {addSuffix :true})}</div>
+                <img src={blog.eventImage} width='20%' height='20%' alt={blog.title.length > 10 ? blog.title.slice(0, 10) + '...' : blog.title} style={{ borderRadius: '8px' }} />
+                <div style={{ display: 'flex', gap: '1rem', flexDirection: 'column', width: '43vw' }}>
+                    <div className='blog_title__container'>
+                        <h2 className='blog__post__title'>{blog.title.length > 100 ? blog.title.slice(0, 100) + '...' : blog.title}</h2>
+                    </div>
+                    <div className='blog__post__description'>{blog.description.length > 150 ? blog.description.slice(0, 150) + '...' : blog.description}</div>
+                    <div className='post__informations'>
+                        <div className='post__author__name'> <p>{blog.author.length > 40 ? blog.author.slice(0, 40) + '...' : blog.author}</p></div>
+                        <div className='post__reach'>
+                            <button className='upvote_btn' style={{ display: 'flex', alignItems: 'center', gap: '.3rem' }} onClick={handleUpvote} >{click ? <ThumbUp /> : <ThumbUpOffAlt />} {upvote ? upvote : initialUpvote}</button>
+                            <NavLink name='read__more__btn' to={`/blog/${blog._id}`} className='read__more__btn' style={{ ...BtnStyle, backgroundColor: "#2d2c39", fontSize: '.8rem', width: '95px', textDecoration: 'none' }} >READ MORE</NavLink>
+                            <div className='blog_post_date' style={{ color: 'rgb(135 143 159 / 80%)', textTransform: 'capitalize', fontWeight: '600' }}>{formatDistanceToNow(new Date(blog.createdAt), { addSuffix: true })}</div>
+                        </div>
                     </div>
                 </div>
 

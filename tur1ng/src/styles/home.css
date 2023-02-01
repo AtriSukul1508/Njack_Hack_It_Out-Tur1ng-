@@ -72,7 +72,8 @@
 }
 .posted__blogs{
     display: flex;
-    flex-direction: column;
+    /* flex-direction: column; */
+    align-items: center;
     gap: 1rem;
     width: 60vw;
     padding: 10px;
@@ -91,7 +92,7 @@
 .post__informations{
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-between !important;
 }
 .post__author__name p{
     font-family: 'Poppins',sans-serif;

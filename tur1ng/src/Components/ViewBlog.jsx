@@ -16,7 +16,7 @@ const ViewBlog = () => {
     const [upvote, setUpvote] = useState(0);
     useEffect(() => {
         const fetchABlog = async () => {
-            const response = await fetch(apiConfig.URL+'/blogapi/blog/' + id, {
+            const response = await fetch(apiConfig.URL + '/blogapi/blog/' + id, {
                 headers: {
                     'Authorization': `Bearer ${user.token}`
                 }
@@ -40,7 +40,7 @@ const ViewBlog = () => {
         <div
             style={{
                 width: '100vw',
-                padding:'6rem',
+                padding: '6rem',
                 display: 'flex',
                 justifyContent: 'center',
                 alignItems: 'center'
@@ -84,6 +84,10 @@ const ViewBlog = () => {
                         </Typography>
                         <hr />
                         <br />
+                        <img src={blog.eventImage} width='100%' alt={blog.title.length > 10 ? blog.title.slice(0, 10) + '...' : blog.title} />
+                        <br />
+                        <hr />
+                        <br />
                         <Typography variant="body1" align="left" gutterBottom
                         >
                             {blog.description}
@@ -103,7 +107,7 @@ const ViewBlog = () => {
                             >
                                 {blog.author}
                             </Typography>
-                            <div style={{ display: 'flex', alignItems: 'center',gap:'.6rem' }}>
+                            <div style={{ display: 'flex', alignItems: 'center', gap: '.6rem' }}>
                                 <button disabled className='upvote_btn' style={{ display: 'flex', alignItems: 'center', gap: '.3rem', cursor: 'text' }} >{click ? <ThumbUp /> : <ThumbUpOffAlt />} {upvote}</button>
                                 <div className='blog_post_date' style={{ color: '#6d7993cc' }}>{format(new Date(blog.createdAt), 'd MMM yyyy')}</div>
                             </div>

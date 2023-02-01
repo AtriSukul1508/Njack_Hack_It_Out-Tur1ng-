@@ -71,6 +71,7 @@ userSchema.statics.login = async function (email, password) {
         throw Error("All fields must be filled");
     }
     const userExists = await this.findOne({ email });
+    console.log(userExists);
     if (!userExists) {
         throw Error("Invalid login details");
     }
