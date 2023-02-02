@@ -32,18 +32,15 @@ const getUserSpecificBlogs = async (req, res) => {
 
 const getSuggestiveBlogs = async (req, res) => {
     const suggestiveBlogs = await BlogModel.find({}).sort({ upvoteCount: -1 });
-    console.log(suggestiveBlogs)
     return res.status(200).json(suggestiveBlogs)
 }
 
 const getBlogById = async (req, res) => {
     const { id } = req.params;
-    console.log(id);
     if (!mongoose.Types.ObjectId.isValid(id)) {
         return res.status(404).json({ error: 'No such blog' });
     }
     const blog = await BlogModel.findById({ _id: id });
-    console.log(blog)
     if (!blog) {
         return res.status(400).json({ error: "No such blog" });
     } else {
@@ -53,28 +50,39 @@ const getBlogById = async (req, res) => {
 
 const getUpvoteCount = async (req, res) => {
     const { id } = req.params;
+    const user_id = req.user._id;
     if (!mongoose.Types.ObjectId.isValid(id)) {
         return res.status(404).json({ error: 'No such blog' });
     }
+    const searchBlog = await BlogModel.find({ $and: [{ _id: id }, { usersLiked: { $elemMatch: { userInfo: user_id } } }] });
     const requiredBlog = await BlogModel.findById({ _id: id });
     if (!requiredBlog) {
         return res.status(400).json({ error: "No such blog" });
     } else {
-        res.status(200).json(requiredBlog);
+        res.status(200).json({ requiredBlog, searchBlog });
     }
 }
 
 const updateUpvoteCount = async (req, res) => {
     const { id } = req.params;
-    const { factor } = req.body;
+    const { _id } = req.body;
     if (!mongoose.Types.ObjectId.isValid(id)) {
         return res.status(404).json({ error: 'No such blog' });
     }
-    const updatedBlog = await BlogModel.findByIdAndUpdate({ _id: id }, { $inc: { upvoteCount: factor } });
+    const searchBlog = await BlogModel.find({ $and: [{ _id: id }, { usersLiked: { $elemMatch: { userInfo: _id } } }] });
+    let updatedBlog;
+    let currentState;
+    if (searchBlog.length) {
+        updatedBlog = await BlogModel.findByIdAndUpdate({ _id: id }, { $inc: { upvoteCount: -1 }, $pull: { usersLiked: { userInfo: _id } } }, { new: true });
+        currentState = 'disliked';
+    } else {
+        updatedBlog = await BlogModel.findByIdAndUpdate({ _id: id }, { $inc: { upvoteCount: 1 }, $push: { usersLiked: { userInfo: _id } } }, { new: true });
+        currentState = 'liked';
+    }
     if (!updatedBlog) {
         return res.status(400).json({ error: "No such blog" });
     } else {
-        res.status(200).json(updatedBlog);
+        res.status(200).json({ updatedBlog, currentState });
     }
 }
 
@@ -91,7 +99,6 @@ const updateBlogById = async (req, res) => {
         }
         const updatedBlog = await BlogModel.findByIdAndUpdate({ _id: id }, { $set: req.body }, { new: true });
         const blogs = await BlogModel.find({ user_id }).sort({ createdAt: -1 });
-        console.log(updatedBlog)
         if (!updatedBlog) {
             return res.status(400).json({ error: "No such blog" });
         } else {
@@ -99,6 +106,31 @@ const updateBlogById = async (req, res) => {
         }
     } catch (err) {
         res.status(400).json({ error: 'Error while updating blog' })
+    }
+
+}
+
+const getTotalViews = async (req, res) => {
+    const { id } = req.params;
+    const user_id = req.user._id;
+    if (!mongoose.Types.ObjectId.isValid(id)) {
+        return res.status(404).json({ error: 'No such blog' });
+    }
+    try {
+        const searchBlog = await BlogModel.find({ $and: [{ _id: id }, { viewers: { $elemMatch: { userInfo: user_id } } }] });
+        let requiredBlog;
+        if (!searchBlog.length) {
+            requiredBlog = await BlogModel.findByIdAndUpdate({ _id: id }, { $inc: { totalViews: 1 }, $push: { viewers: { userInfo: user_id } } }, { new: true })
+        } else {
+            requiredBlog = searchBlog[0];
+        }
+        if (!requiredBlog) {
+            return res.status(400).json({ error: "No such blog" });
+        } else {
+            res.status(200).json(requiredBlog);
+        }
+    } catch (err) {
+        res.status(400).json({ error: 'Error while accessing blog' })
     }
 
 }
@@ -117,4 +149,4 @@ const deleteBlog = async (req, res) => {
     }
 }
 
-module.exports = { addBlog, getAllBlogs, getUserSpecificBlogs, getBlogById, getSuggestiveBlogs, deleteBlog, getUpvoteCount, updateUpvoteCount, updateBlogById }
+module.exports = { addBlog, getAllBlogs, getUserSpecificBlogs, getBlogById, getSuggestiveBlogs, deleteBlog, getUpvoteCount, getTotalViews, updateUpvoteCount, updateBlogById }

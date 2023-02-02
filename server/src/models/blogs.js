@@ -22,6 +22,24 @@ const blogSchema = new mongoose.Schema({
         required: true,
         default: 0,
     },
+    totalViews: {
+        type: Number,
+        default: 0
+    },
+    viewers: [{
+        userInfo: {
+            type: String,
+            required: true,
+            default: ''
+        }
+    }],
+    usersLiked: [{
+        userInfo: {
+            type: String,
+            required: true,
+            default: ''
+        }
+    }],
     user_id: {
         type: String,
         required: true

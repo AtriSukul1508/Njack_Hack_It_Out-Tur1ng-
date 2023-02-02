@@ -6,6 +6,7 @@ import { useAuthContext } from '../hooks/useAuthContext'
 import { ThumbUp, ThumbUpOffAlt } from '@mui/icons-material';
 import format from 'date-fns/format';
 import apiConfig from '../api.config'
+import { useViews } from '../hooks/useViews'
 const ViewBlog = () => {
     const { id } = useParams();
     const { user } = useAuthContext();
@@ -14,6 +15,7 @@ const ViewBlog = () => {
     const [blog, setBlog] = useState('');
     const [isLoading, setIsLoading] = useState(true);
     const [upvote, setUpvote] = useState(0);
+    const { totalViews, totalViewValue } = useViews();
     useEffect(() => {
         const fetchABlog = async () => {
             const response = await fetch(apiConfig.URL + '/blogapi/blog/' + id, {
@@ -22,14 +24,13 @@ const ViewBlog = () => {
                 }
             })
             const data = await response.json()
-            console.log(data);
 
             if (response.ok) {
                 setBlog(data);
                 setUpvote(data.upvoteCount)
                 setIsLoading(false)
-                console.log(data);
             }
+            await totalViews(id);
         }
         if (user) {
             fetchABlog();
@@ -84,7 +85,7 @@ const ViewBlog = () => {
                         </Typography>
                         <hr />
                         <br />
-                        <img src={blog.eventImage} width='100%' alt={blog.title.length > 10 ? blog.title.slice(0, 10) + '...' : blog.title} />
+                        <img src={blog.eventImage} style={{ boxShadow: '0px 0px 6px #ccc', borderRadius: '8px' }} width='100%' alt={blog.title.length > 10 ? blog.title.slice(0, 10) + '...' : blog.title} />
                         <br />
                         <hr />
                         <br />
@@ -108,6 +109,12 @@ const ViewBlog = () => {
                                 {blog.author}
                             </Typography>
                             <div style={{ display: 'flex', alignItems: 'center', gap: '.6rem' }}>
+                                <p
+                                    style={{ fontWeight: '600', fontSize: '1rem', fontFamily: 'Poppins', backgroundColor: 'rgb(212, 212, 212)', color: '#2d2c39', padding: '5px 7px', borderRadius: '8px', marginBottom: '0px' }}
+                                    className='blog__view'
+                                >
+                                    Views :{totalViewValue}
+                                </p>
                                 <button disabled className='upvote_btn' style={{ display: 'flex', alignItems: 'center', gap: '.3rem', cursor: 'text' }} >{click ? <ThumbUp /> : <ThumbUpOffAlt />} {upvote}</button>
                                 <div className='blog_post_date' style={{ color: '#6d7993cc' }}>{format(new Date(blog.createdAt), 'd MMM yyyy')}</div>
                             </div>

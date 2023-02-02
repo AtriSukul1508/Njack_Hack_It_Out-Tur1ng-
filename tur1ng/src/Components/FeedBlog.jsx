@@ -8,13 +8,10 @@ import apiConfig from '../api.config';
 
 
 const FeedBlog = ({ blog }) => {
-    const initialLike = JSON.parse(localStorage.getItem(`tur1ng_like-${blog._id}`));
     const { upvote, dispatch } = useUpvoteContext();
-    console.log(initialLike)
-    const [click, setClick] = useState(initialLike ? true : false);
+    const [clicked, setClicked] = useState(false);
     const [initialUpvote, setInitialUpvote] = useState(0);
     const { user } = useAuthContext();
-    console.log(click)
     useEffect(() => {
         const fetchUpvoteCount = async () => {
             const response = await fetch(apiConfig.URL + '/blogapi/upvote/' + blog._id, {
@@ -23,18 +20,21 @@ const FeedBlog = ({ blog }) => {
                 }
             })
             const data = await response.json()
-
             if (response.ok) {
-                setInitialUpvote(data.upvoteCount);
-                dispatch({ type: 'DISPLAY_UPVOTE', payload: data.upvoteCount })
-                console.log(data);
+                setInitialUpvote(data.requiredBlog.upvoteCount);
+                dispatch({ type: 'DISPLAY_UPVOTE', payload: data.requiredBlog })
+                if (data.searchBlog.length) {
+                    setClicked(true);
+                } else {
+                    setClicked(false);
+                }
             }
         }
         if (user) {
             fetchUpvoteCount()
         }
-    }, [dispatch, initialLike])
-    const updateUpvote = async (factor) => {
+    }, [dispatch, initialUpvote])
+    const updateUpvote = async () => {
         const resp = await fetch(apiConfig.URL + '/blogapi/upvote/' + blog._id, {
             method: 'POST',
             headers: {
@@ -42,26 +42,18 @@ const FeedBlog = ({ blog }) => {
                 "Content-type": "application/json",
                 "Accept": "application/json"
             },
-            body: JSON.stringify({ factor })
+            body: JSON.stringify({ _id: user.user._id })
         })
         const data = await resp.json();
         if (resp.ok) {
-            dispatch({ type: factor === 1 ? 'INCREMENT' : 'DECREMENT', payload: data });
+            setInitialUpvote(data.updatedBlog.upvoteCount);
+            dispatch({ type: data.currentState === 'liked' ? 'INCREMENT' : 'DECREMENT', payload: data.updatedBlog });
 
         }
 
     }
     const handleUpvote = async () => {
-        if (click) {
-            setClick(false);
-            localStorage.setItem(`tur1ng_like-${blog._id}`, JSON.stringify(false))
-            await updateUpvote(-1);
-
-        } else {
-            localStorage.setItem(`tur1ng_like-${blog._id}`, JSON.stringify(true))
-            setClick(true)
-            await updateUpvote(1);
-        }
+        await updateUpvote();
     }
     const BtnStyle = {
         color: '#fff',
@@ -79,7 +71,7 @@ const FeedBlog = ({ blog }) => {
     return (
         <>
             <div className='posted__blogs'>
-                <img src={blog.eventImage} width='20%' height='20%' alt={blog.title.length > 10 ? blog.title.slice(0, 10) + '...' : blog.title} style={{ borderRadius: '8px' }} />
+                <img src={blog.eventImage} width='20%' height='20%' alt={blog.title.length > 10 ? blog.title.slice(0, 10) + '...' : blog.title} style={{ borderRadius: '8px', boxShadow: '0px 0px 4px #ccc' }} />
                 <div style={{ display: 'flex', gap: '1rem', flexDirection: 'column', width: '43vw' }}>
                     <div className='blog_title__container'>
                         <h2 className='blog__post__title'>{blog.title.length > 100 ? blog.title.slice(0, 100) + '...' : blog.title}</h2>
@@ -88,7 +80,7 @@ const FeedBlog = ({ blog }) => {
                     <div className='post__informations'>
                         <div className='post__author__name'> <p>{blog.author.length > 40 ? blog.author.slice(0, 40) + '...' : blog.author}</p></div>
                         <div className='post__reach'>
-                            <button className='upvote_btn' style={{ display: 'flex', alignItems: 'center', gap: '.3rem' }} onClick={handleUpvote} >{click ? <ThumbUp /> : <ThumbUpOffAlt />} {upvote ? upvote : initialUpvote}</button>
+                            <button className='upvote_btn' style={{ display: 'flex', alignItems: 'center', gap: '.3rem' }} onClick={handleUpvote} >{clicked ? <ThumbUp /> : <ThumbUpOffAlt />} {initialUpvote}</button>
                             <NavLink name='read__more__btn' to={`/blog/${blog._id}`} className='read__more__btn' style={{ ...BtnStyle, backgroundColor: "#2d2c39", fontSize: '.8rem', width: '95px', textDecoration: 'none' }} >READ MORE</NavLink>
                             <div className='blog_post_date' style={{ color: 'rgb(135 143 159 / 80%)', textTransform: 'capitalize', fontWeight: '600' }}>{formatDistanceToNow(new Date(blog.createdAt), { addSuffix: true })}</div>
                         </div>
