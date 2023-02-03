@@ -1,0 +1,30 @@
+.comment__container{
+    width: 80%;
+    max-width: 700px;
+    box-shadow: 2px 2px 20px rgb(0 0 0 / 20%);
+    border-radius: 20px;
+    padding: 50px;
+}
+.comment__btn{
+    background-color: #2d2c39;
+    color: #fff;padding: 10px;
+    border-radius: 8px;
+    outline: none;
+    border: none;
+    cursor: pointer 
+}
+.comment__btn:hover{
+    background-color: #484850c7 !important;
+}
+
+.comment__heading{
+    color:rgb(69, 150, 182);
+}
+
+.comment__input{
+    margin:10px 0;
+    padding: 10px;
+    border-radius: 10px;
+    outline: none;
+    border-color: #ccc;
+}
