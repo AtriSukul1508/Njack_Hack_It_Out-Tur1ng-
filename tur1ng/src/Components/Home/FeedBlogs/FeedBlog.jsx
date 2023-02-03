@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import { ThumbUpOffAlt, ThumbUp } from '@mui/icons-material'
-import { useAuthContext } from '../hooks/useAuthContext';
-import { useUpvoteContext } from '../hooks/useUpvoteContext';
+import { useAuthContext } from '../../../hooks/useAuthContext';
+import { useUpvoteContext } from '../../../hooks/useUpvoteContext';
 import { NavLink } from 'react-router-dom';
 import { formatDistanceToNow } from 'date-fns';
-import apiConfig from '../api.config';
+import apiConfig from '../../../api.config';
 
 
 const FeedBlog = ({ blog }) => {

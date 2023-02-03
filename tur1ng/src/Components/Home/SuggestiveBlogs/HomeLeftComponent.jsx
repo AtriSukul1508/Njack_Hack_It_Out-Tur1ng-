@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react'
-import { useAuthContext } from '../hooks/useAuthContext';
-import { useBlogsContext } from '../hooks/useBlogsContext';
-import suggestiveContentBg from '../Assets/suggestions.svg'
+import { useAuthContext } from '../../../hooks/useAuthContext';
+import { useBlogsContext } from '../../../hooks/useBlogsContext';
+import suggestiveContentBg from '../../../Assets/suggestions.svg'
 import SuggestiveBlog from './SuggestiveBlog';
 import { CircularProgress } from '@mui/material';
-import apiConfig from '../api.config';
+import apiConfig from '../../../api.config';
 
 const HomeLeftComponent = () => {
     const { blogs, dispatch } = useBlogsContext();

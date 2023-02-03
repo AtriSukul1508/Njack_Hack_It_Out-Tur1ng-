@@ -1,7 +1,7 @@
 import React from 'react';
-import HomeLeftComponent from './HomeLeftComponent';
-import HomeRightComponent from './HomeRightComponent';
-import '../styles/home.css';
+import HomeLeftComponent from './SuggestiveBlogs/HomeLeftComponent';
+import HomeRightComponent from './FeedBlogs/HomeRightComponent';
+import '../../styles/home.css';
 const Home = () => {
   return (
     <>

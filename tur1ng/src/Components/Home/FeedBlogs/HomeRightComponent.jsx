@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react'
-import '../styles/home.css'
-import { useBlogsContext } from '../hooks/useBlogsContext';
-import { useAuthContext } from '../hooks/useAuthContext';
+import '../../../styles/home.css';
+import { useBlogsContext } from '../../../hooks/useBlogsContext';
+import { useAuthContext } from '../../../hooks/useAuthContext';
 import FeedBlog from './FeedBlog';
 import { CircularProgress } from '@mui/material';
-import apiConfig from '../api.config';
+import apiConfig from '../../../api.config';
 
 const HomeRightComponent = () => {
     const { blogs, dispatch } = useBlogsContext();

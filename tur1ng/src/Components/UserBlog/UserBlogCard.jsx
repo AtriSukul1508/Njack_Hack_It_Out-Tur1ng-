@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
-import { useAuthContext } from '../hooks/useAuthContext';
-import { useBlogsContext } from '../hooks/useBlogsContext';
+import { useAuthContext } from '../../hooks/useAuthContext';
+import { useBlogsContext } from '../../hooks/useBlogsContext';
 import format from 'date-fns/format';
 import { NavLink } from 'react-router-dom';
 import Button from '@mui/material/Button';
@@ -13,7 +13,7 @@ import DialogTitle from '@mui/material/DialogTitle';
 import ErrorIcon from '@mui/icons-material/Error'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import apiConfig from '../api.config';
+import apiConfig from '../../api.config';
 
 const UserBlogCard = ({ blog }) => {
     const { dispatch } = useBlogsContext();

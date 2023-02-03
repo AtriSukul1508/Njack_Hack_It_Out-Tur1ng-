@@ -1,16 +1,16 @@
 import React, { useState } from 'react'
-import { NavLink, useNavigate } from 'react-router-dom';
+// import { NavLink, useNavigate } from 'react-router-dom';
 import { CloudUpload, Done } from '@mui/icons-material';
-import '../styles/writeblog.css'
-import { useBlogsContext } from '../hooks/useBlogsContext';
-import { useAuthContext } from '../hooks/useAuthContext';
+import '../../styles/writeblog.css'
+import { useBlogsContext } from '../../hooks/useBlogsContext';
+import { useAuthContext } from '../../hooks/useAuthContext';
 import ErrorIcon from '@mui/icons-material/Error';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { ContentState, convertToRaw, EditorState } from 'draft-js';
 import { Editor } from 'react-draft-wysiwyg';
 import 'react-draft-wysiwyg/dist/react-draft-wysiwyg.css';
-import apiConfig from '../api.config';
+import apiConfig from '../../api.config';
 
 
 const WriteBlog = () => {

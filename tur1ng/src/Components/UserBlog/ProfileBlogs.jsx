@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react'
-import '../styles/userallblog.css'
-import { useBlogsContext } from '../hooks/useBlogsContext';
-import { useAuthContext } from '../hooks/useAuthContext';
+import '../../styles/userallblog.css'
+import { useBlogsContext } from '../../hooks/useBlogsContext';
+import { useAuthContext } from '../../hooks/useAuthContext';
 import UserBlogCard from './UserBlogCard';
-import emptyBlog from '../Assets/emptyblog.svg';
+import emptyBlog from '../../Assets/emptyblog.svg';
 import { CircularProgress } from '@mui/material';
-import apiConfig from '../api.config';
+import apiConfig from '../../api.config';
 const ProfileBlogs = () => {
   const { blogs, dispatch } = useBlogsContext();
   const { user } = useAuthContext();

@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
 import { Feed, AddBox, FilterNone, Search, Logout } from '@mui/icons-material'
 import { NavLink } from 'react-router-dom';
-import '../styles/navbar.css'
-import { useAuthContext } from '../hooks/useAuthContext';
-import { useLogout } from '../hooks/useLogout';
+import '../../styles/navbar.css'
+import { useAuthContext } from '../../hooks/useAuthContext';
+import { useLogout } from '../../hooks/useLogout';
 import { Avatar } from '@mui/material';
 import Button from '@mui/material/Button';
 import Dialog from '@mui/material/Dialog';

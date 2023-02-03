@@ -2,11 +2,11 @@ import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { CircularProgress } from '@material-ui/core'
 import { Typography } from '@material-ui/core'
-import { useAuthContext } from '../hooks/useAuthContext'
+import { useAuthContext } from '../../hooks/useAuthContext'
 import { ThumbUp, ThumbUpOffAlt } from '@mui/icons-material';
 import format from 'date-fns/format';
-import apiConfig from '../api.config'
-import { useViews } from '../hooks/useViews'
+import apiConfig from '../../api.config'
+import { useViews } from '../../hooks/useViews'
 const ViewBlog = () => {
     const { id } = useParams();
     const { user } = useAuthContext();
