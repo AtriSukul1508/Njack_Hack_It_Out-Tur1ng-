@@ -1,6 +1,6 @@
 # Tur1ng_
 
-Our app bridges the gap between students and developers. It is essentially a blog website with technologically up to date tags to bring you relevant information directly to your homepage.
+Our app bridges the gap between students and developers. It is essentially a blog website with technologically up to date tags to bring you relevant information directly to your homepage. Here besides writing, editing, and deleting your own posts, you can also upvote posts that you find interesting
 
 ![WhatsApp Image 2023-01-28 at 10 28 21 PM (2)](https://user-images.githubusercontent.com/95478617/215279501-757ee502-0447-42a2-b6e5-d8b89f541c61.jpeg)
 ![tur1ng__ss2](https://user-images.githubusercontent.com/95478617/215736223-c24bf57e-49ab-4b69-ae99-65f287bd9558.png)
