@@ -1,15 +1,15 @@
 const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
 const validator = require('validator');
-
+const jwt = require('jsonwebtoken')
 const userSchema = new mongoose.Schema({
     name: {
         type: String,
         required: true
     },
-    image:{
-        type:String,
-        required:true
+    image: {
+        type: String,
+        required: true
     },
     email: {
         type: String,
@@ -28,12 +28,23 @@ const userSchema = new mongoose.Schema({
     cpassword: {
         type: String,
         required: true,
+    },
+    tokens: [{
+        token: {
+            type: String,
+            required: true,
+        },
+        token_created_at: {
+            type: Date,
+            default: Date.now
+        }
     }
+    ]
 })
 
 //static signup method
 
-userSchema.statics.signup = async function (name,image, email, phone, password, cpassword) {
+userSchema.statics.signup = async function (name, image, email, phone, password, cpassword) {
     if (!name || !image || !email || !phone || !password || !cpassword) {
         throw Error('All fields must be filled');
     }
@@ -57,7 +68,7 @@ userSchema.statics.signup = async function (name,image, email, phone, password, 
     const salt = await bcrypt.genSalt(10);
     const hash_password = await bcrypt.hash(password, salt);
     const hash_cpassword = await bcrypt.hash(cpassword, salt);
-    const user = new this({ name,image, email, phone, password: hash_password, cpassword: hash_cpassword });
+    const user = new this({ name, image, email, phone, password: hash_password, cpassword: hash_cpassword });
     const userdata = await user.save();
 
     return userdata;
@@ -80,6 +91,19 @@ userSchema.statics.login = async function (email, password) {
         throw Error("Invalid login credentials");
     }
     return userExists;
+}
+
+//token generation
+
+userSchema.methods.generateAuthToken = async function (_id, email) {
+    try {
+        const TOKEN = jwt.sign({ _id, email }, process.env.SECRET_KEY, { expiresIn: '3d' });
+        this.tokens = this.tokens.concat({ token: TOKEN });
+        await this.save();
+        return TOKEN;
+    } catch (err) {
+        console.log(err);
+    }
 }
 
 
