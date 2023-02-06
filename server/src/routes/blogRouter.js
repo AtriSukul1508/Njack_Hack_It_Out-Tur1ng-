@@ -2,6 +2,9 @@ const blogRouter = require('express').Router();
 const { addBlog, getAllBlogs, getUserSpecificBlogs, deleteBlog, getBlogById, getUpvoteCount, updateUpvoteCount, getSuggestiveBlogs, updateBlogById, getTotalViews } = require('../controllers/blogController');
 const verifyAuth = require('../middlewares/authorization');
 
+blogRouter.get('/hello',async (req,res)=>{
+    res.send("Hello")
+})
 blogRouter.use(verifyAuth);
 blogRouter.post('/addblog', addBlog);
 blogRouter.get('/allblogs', getAllBlogs);
