@@ -8,7 +8,7 @@ const cookieParser = require('cookie-parser');
 const userRouter = require('./routes/userRouter');
 const blogRouter = require('./routes/blogRouter');
 app.use(cors({
-    origin: ['https://tur1ng.vercel.app','http://localhost:3000'],
+    origin: ['https://sweet-selkie-2821d4.netlify.app','http://localhost:3000'],
     methods: ['GET', 'POST', 'DELETE', 'PUT', 'PATCH']
 }))
 require('./db/connection');
