@@ -2,7 +2,7 @@
   "name": "tur1ng",
   "version": "0.1.0",
   "private": true,
-  "proxy": "https://tur1ng-api.onrender.com",
+  "proxy": "http://localhost:8000",
   "dependencies": {
     "@emotion/react": "^11.10.5",
     "@emotion/styled": "^11.10.5",
