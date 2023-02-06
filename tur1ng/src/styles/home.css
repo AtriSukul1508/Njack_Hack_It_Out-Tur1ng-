@@ -77,11 +77,11 @@
     gap: 1rem;
     width: 60vw;
     padding: 10px;
-    border-bottom: 1px solid #6d79939c;
+    box-shadow: 2px 2px 5px #ccc;
 }
 .blog__post__title{
     text-transform: capitalize;
-    color:#ff8200;
+    color:#000;
     font-family: 'Poppins',sans-serif;
 }
 .blog__post__description{
