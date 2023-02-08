@@ -53,7 +53,7 @@ To learn React, check out the [React documentation](https://reactjs.org/).
 ### An overview of the website is shown in these screenshots - 
 #
 #### Home page --
-![tur1ngg](https://user-images.githubusercontent.com/95478617/216804968-ec5b1f9a-a5e2-4c67-b3ce-c2852aec781b.png)
+![tur1ng__home](https://user-images.githubusercontent.com/95478617/217651292-61b27656-2083-446e-9c33-6fce0c9d6e1b.png)
 #### Write Blog page --
 ![tur1ng__s2](https://user-images.githubusercontent.com/95478617/216022863-0bcecbfb-d8b6-4748-a3d3-48caffaf492f.png)
 #### All blogs of the user page -- 
