@@ -48,7 +48,7 @@ const Home = () => {
           aria-describedby="alert-dialog-description"
         >
           <DialogContent>
-            <DialogTitle style={{color:'#6d7993',fontWeight:'bold'}}>{"Whoops, Your session has expired"}</DialogTitle>
+            <DialogTitle style={{color:'#000',fontWeight:'bold'}}>{"Whoops, Your session has expired"}</DialogTitle>
             <DialogContentText id="alert-dialog-description" style={{textAlign:'center', color: '#2d2c39', fontFamily: 'Poppins' }}>
               No Worry,simply login again
             </DialogContentText>
