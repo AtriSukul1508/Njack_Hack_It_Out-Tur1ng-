@@ -68,16 +68,5 @@ To learn React, check out the [React documentation](https://reactjs.org/).
 #### Login page --
 ![tur1ng_ss1](https://user-images.githubusercontent.com/95478617/215501102-d46b61ec-c88d-4166-993c-81f60110d659.png)
 
-Demo of the website
-
-https://user-images.githubusercontent.com/95478617/215283410-13730362-d7aa-4644-972b-f57ddfee07e1.mp4
-
-
-
-https://user-images.githubusercontent.com/95478617/215283873-b44d8f47-1288-4ec8-9b1e-ed121b2e585f.mp4
-
-
-
-https://user-images.githubusercontent.com/95478617/215284070-dbe5c004-c1ab-4010-be5e-7c50e274af2b.mp4
 
 
