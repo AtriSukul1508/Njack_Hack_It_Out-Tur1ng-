@@ -8,15 +8,15 @@ import format from 'date-fns/format';
 import apiConfig from '../../api.config'
 import { useViews } from '../../hooks/useViews'
 import Comment from './Comment'
+import { useFetchUpvote } from '../../hooks/useFetchUpvote'
 const ViewBlog = () => {
     const { id } = useParams();
     const { user } = useAuthContext();
-    const initialLike = JSON.parse(localStorage.getItem('tur1ng_like'));
-    const [click, setClick] = useState(initialLike ? true : false);
     const [blog, setBlog] = useState('');
     const [isLoading, setIsLoading] = useState(true);
     const [upvote, setUpvote] = useState(0);
     const { totalViews, totalViewValue } = useViews();
+    const { getUpvoteCount, clicked } = useFetchUpvote();
     useEffect(() => {
         const fetchABlog = async () => {
             const response = await fetch(apiConfig.URL + '/blogapi/blog/' + id, {
@@ -32,6 +32,7 @@ const ViewBlog = () => {
                 setIsLoading(false)
             }
             await totalViews(id);
+            await getUpvoteCount(id);
         }
         if (user) {
             fetchABlog();
@@ -117,7 +118,7 @@ const ViewBlog = () => {
                                     >
                                         Views :{totalViewValue}
                                     </p>
-                                    <button disabled className='upvote_btn' style={{ display: 'flex', alignItems: 'center', gap: '.3rem', cursor: 'text' }} >{click ? <ThumbUp /> : <ThumbUpOffAlt />} {upvote}</button>
+                                    <button disabled className='upvote_btn' style={{ display: 'flex', alignItems: 'center', gap: '.3rem', cursor: 'text' }} >{clicked ? <ThumbUp /> : <ThumbUpOffAlt />} {upvote}</button>
                                     <div className='blog_post_date' style={{ color: '#6d7993cc' }}>{format(new Date(blog.createdAt), 'd MMM yyyy')}</div>
                                 </div>
                             </div>

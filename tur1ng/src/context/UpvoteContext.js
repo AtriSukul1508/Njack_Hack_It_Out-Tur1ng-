@@ -3,7 +3,7 @@ import { createContext, useReducer } from "react";
 export const UpvoteContext = createContext();
 
 export const upvoteReducer = (state, action) => {
-    console.log('as',action,state,action.payload.upvoteCount);
+    
     switch (action.type) {
         case 'DISPLAY_UPVOTE':
             return { upvote: action.payload.upvoteCount }

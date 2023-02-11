@@ -18,5 +18,3 @@ export const useViews = () => {
     return { totalViews, totalViewValue }
 
 }
-
-// export default totalViews;

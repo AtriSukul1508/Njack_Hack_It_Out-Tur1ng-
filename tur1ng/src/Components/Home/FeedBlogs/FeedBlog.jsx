@@ -5,30 +5,18 @@ import { useUpvoteContext } from '../../../hooks/useUpvoteContext';
 import { NavLink } from 'react-router-dom';
 import { formatDistanceToNow } from 'date-fns';
 import apiConfig from '../../../api.config';
+import { useFetchUpvote } from '../../../hooks/useFetchUpvote';
 
 
 const FeedBlog = ({ blog }) => {
-    const { upvote, dispatch } = useUpvoteContext();
-    const [clicked, setClicked] = useState(false);
+    const { dispatch } = useUpvoteContext();
     const [initialUpvote, setInitialUpvote] = useState(0);
     const { user } = useAuthContext();
+    const { getUpvoteCount,upvoteVal,clicked } = useFetchUpvote();
+
     useEffect(() => {
         const fetchUpvoteCount = async () => {
-            const response = await fetch(apiConfig.URL + '/blogapi/upvote/' + blog._id, {
-                headers: {
-                    'Authorization': `Bearer ${user.token}`
-                }
-            })
-            const data = await response.json()
-            if (response.ok) {
-                setInitialUpvote(data.requiredBlog.upvoteCount);
-                dispatch({ type: 'DISPLAY_UPVOTE', payload: data.requiredBlog })
-                if (data.searchBlog.length) {
-                    setClicked(true);
-                } else {
-                    setClicked(false);
-                }
-            }
+            await getUpvoteCount(blog._id)
         }
         if (user) {
             fetchUpvoteCount()
@@ -80,7 +68,7 @@ const FeedBlog = ({ blog }) => {
                     <div className='post__informations'>
                         <div className='post__author__name'> <p>{blog.author.length > 40 ? blog.author.slice(0, 40) + '...' : blog.author}</p></div>
                         <div className='post__reach'>
-                            <button className='upvote_btn' style={{ display: 'flex', alignItems: 'center', gap: '.3rem' }} onClick={handleUpvote} >{clicked ? <ThumbUp /> : <ThumbUpOffAlt />} {initialUpvote}</button>
+                            <button className='upvote_btn' style={{ display: 'flex', alignItems: 'center', gap: '.3rem' }} onClick={handleUpvote} >{clicked ? <ThumbUp /> : <ThumbUpOffAlt />} {upvoteVal}</button>
                             <NavLink name='read__more__btn' to={`/blog/${blog._id}`} className='read__more__btn' style={{ ...BtnStyle, backgroundColor: "#2d2c39", fontSize: '.8rem', width: '95px', textDecoration: 'none' }} >READ MORE</NavLink>
                             <div className='blog_post_date' style={{ color: 'rgb(135 143 159 / 80%)', textTransform: 'capitalize', fontWeight: '600' }}>{formatDistanceToNow(new Date(blog.createdAt), { addSuffix: true })}</div>
                         </div>
