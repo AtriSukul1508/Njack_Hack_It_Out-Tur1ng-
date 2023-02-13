@@ -1,4 +1,4 @@
-# Tur1ng_
+<h1># Tur1ng_</h1>
 
 Our app bridges the gap between students and developers. It is essentially a blog website with technologically up to date tags to bring you relevant information directly to your homepage. Here besides writing, editing, and deleting your own posts, you can also upvote posts that you find interesting.
 #### Techstacks used - M(Mongodb) E(ExpressJs) R(ReactJs) N(NodeJs)
