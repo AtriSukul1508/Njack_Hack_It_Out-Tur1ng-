@@ -36,7 +36,7 @@ const Home = () => {
 
     });
   }
-  return (
+  return ( 
     <>
       <div className='home__container'>
         <HomeLeftComponent />
