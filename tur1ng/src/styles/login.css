@@ -99,3 +99,56 @@ input:not([type='submit']):focus{
     align-items: center;
     gap: 5px;
 }
+
+
+
+/* media query */
+@media (max-width: 768px) {
+    .container_login {
+      padding: 1rem;
+    }
+  
+    .heading_title {
+      font-size: 2rem;
+    }
+  
+    .login__info {
+      font-size: 0.8rem;
+    }
+  
+    .login__btn {
+      font-size: 0.9rem;
+    }
+    input::placeholder{
+        font-size: 12px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .container_login {
+      max-width: 300px;
+    }
+  
+    .heading_title {
+      font-size: 1.8rem;
+    }
+    .heading_line h2{
+        font-size: 17px;
+    }
+  
+    .info_field {
+      margin-bottom: 0.5rem;
+    }
+  
+    .login__info {
+      font-size: 0.7rem;
+    }
+  
+    .login__btn {
+      font-size: 0.8rem;
+    }
+    input::placeholder{
+        font-size: 8px;
+    }
+  }
+  
