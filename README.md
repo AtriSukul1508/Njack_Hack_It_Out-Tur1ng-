@@ -2,7 +2,7 @@
 
 - We are here to reduce the gap between students and developers 😉
 - It is a blog website which contains updated tags to bring you relevant information directly to your homepage. 
-- Read our Contributing Guidelines 
+- Read our [Contributing Guidelines](https://github.com/AtriSukul1508/Njack_Hack_It_Out-Tur1ng-/blob/master/Contributing.md) 
 
 <div align="center"><h2> Show ❤ by ⭐ this Repo </h2></div>
 
