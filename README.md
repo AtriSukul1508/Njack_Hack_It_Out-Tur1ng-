@@ -1,72 +1,61 @@
-<h1># Tur1ng_</h1>
+<div align="center"><h2> Tur1ng_ 📃 </h2></div>
 
-Our app bridges the gap between students and developers. It is essentially a blog website with technologically up to date tags to bring you relevant information directly to your homepage. Here besides writing, editing, and deleting your own posts, you can also upvote posts that you find interesting.
-#### Techstacks used - M(Mongodb) E(ExpressJs) R(ReactJs) N(NodeJs)
+- We are here to reduce the gap between students and developers 😉
+- It is a blog website which contains updated tags to bring you relevant information directly to your homepage. 
+- Read our Contributing Guidelines 
 
-# Getting Started with Create React App
+<div align="center"><h2> Show ❤ by ⭐ this Repo </h2></div>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<br>
 
-## Available Scripts
+![Github Repo Size](https://img.shields.io/github/repo-size/AtriSukul1508/Njack_Hack_It_Out-Tur1ng-?style=for-the-badge&color=black)
 
-In the project directory, you can run:
+## Tech Used ⚙
+<img src="https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white"> &nbsp;
+<img src="https://img.shields.io/badge/Express.js-404D59?style=for-the-badge"> &nbsp;
+<img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB"> &nbsp;
+<img src="https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white"> &nbsp;
 
-### `npm start`
+<details><summary><h2> Snapshots 📸  </h2></summary>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+<details><summary><h2> Home page </h2></summary>
+<img src="https://user-images.githubusercontent.com/95478617/217651292-61b27656-2083-446e-9c33-6fce0c9d6e1b.png"/>
+</details>
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+<details><summary><h2> Write Blog page </h2></summary>
+<img src="https://user-images.githubusercontent.com/95478617/216022863-0bcecbfb-d8b6-4748-a3d3-48caffaf492f.png"/>
+</details>
 
-### `npm test`
+<details><summary><h2> All blogs of the user page </h2></summary> 
+<img src="https://user-images.githubusercontent.com/95478617/216805020-e79db92a-6710-46f1-af6b-6f0a9040bb55.png"/>
+</details>
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+<details><summary><h2> Single Blog View page </h2></summary>
+<img src="https://user-images.githubusercontent.com/95478617/216805007-b41f2efe-3cee-4ba5-91ef-ad59a97f3b32.png"/>
+<img src="https://user-images.githubusercontent.com/95478617/216805009-bc19c07e-6992-420a-906e-90c6d691a5f0.png"/>
+<img src="https://user-images.githubusercontent.com/95478617/216805012-2508f769-7b3d-48ee-9397-e09c771b3d92.png"/>
+</details>
 
-### `npm run build`
+<details><summary><h2> Sign up page </h2></summary>
+<img src="https://user-images.githubusercontent.com/95478617/215736223-c24bf57e-49ab-4b69-ae99-65f287bd9558.png"/>
+</details>
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+<details><summary><h2> Login page </h2></summary>
+<img src="https://user-images.githubusercontent.com/95478617/215501102-d46b61ec-c88d-4166-993c-81f60110d659.png"/>
+</details>
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+</details>
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## This Repo participated in 😍
 
-### `npm run eject`
+||||
+|--|--|--|
+|1.|<b>JWOC</b>|<img height="100" width="100" src="https://user-images.githubusercontent.com/94545831/219814617-703be394-c72b-4641-9bae-74345f78db12.png"/>|
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+<br>
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Thanks to our Contributors ⚡
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-##
-### An overview of the website is shown in these screenshots - 
-#
-#### Home page --
-![tur1ng__home](https://user-images.githubusercontent.com/95478617/217651292-61b27656-2083-446e-9c33-6fce0c9d6e1b.png)
-#### Write Blog page --
-![tur1ng__s2](https://user-images.githubusercontent.com/95478617/216022863-0bcecbfb-d8b6-4748-a3d3-48caffaf492f.png)
-#### All blogs of the user page -- 
-![userallblg](https://user-images.githubusercontent.com/95478617/216805020-e79db92a-6710-46f1-af6b-6f0a9040bb55.png)
-#### Single Blog View page --
-![tur1ng_11](https://user-images.githubusercontent.com/95478617/216805007-b41f2efe-3cee-4ba5-91ef-ad59a97f3b32.png)
-![turn1](https://user-images.githubusercontent.com/95478617/216805009-bc19c07e-6992-420a-906e-90c6d691a5f0.png)
-![turing1](https://user-images.githubusercontent.com/95478617/216805012-2508f769-7b3d-48ee-9397-e09c771b3d92.png)
-
-#### Sign up page --
-![tur1ng__ss2](https://user-images.githubusercontent.com/95478617/215736223-c24bf57e-49ab-4b69-ae99-65f287bd9558.png)
-#### Login page --
-![tur1ng_ss1](https://user-images.githubusercontent.com/95478617/215501102-d46b61ec-c88d-4166-993c-81f60110d659.png)
-
-
-
+<a href="https://github.com/AtriSukul1508/Njack_Hack_It_Out-Tur1ng-/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=AtriSukul1508/Njack_Hack_It_Out-Tur1ng-" />
+</a>
