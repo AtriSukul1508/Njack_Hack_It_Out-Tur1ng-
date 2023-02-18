@@ -62,3 +62,77 @@
     background-color: #465370;
     color: #fff;
 }
+
+
+/* media query */
+
+@media (max-width: 768px) {
+
+    
+    .info_field {
+      width: 100%;
+    }
+    .info_field input {
+        height: 25px;
+      }
+  
+    .btns_submit p{
+      font-size: 11px;
+    }
+
+    input[type="submit"] {
+        padding: 6px;
+        font-size: 10px 5px;
+      }
+  
+    .mt-3 {
+      margin-top: 10px;
+      margin-bottom: 0;
+    }
+  
+    .user_image_field {
+      align-items: center;
+    }
+    input::placeholder{
+        font-size: 8px;
+    }
+    
+  }
+  
+
+@media (max-width:480px) {
+    .acc__credentials{
+        gap: 5px;
+    }
+
+    .info_field input {
+        height: 25px;
+      }
+
+      .heading_line h2{
+        font-size: 18px;
+      }
+
+      input[type="submit"] {
+        padding:5px 2px;
+        font-size: 10px;
+      }
+      
+      #signup__btn{
+        width: 110px;
+      }
+
+    input::placeholder{
+        font-size: 6.5px;
+    }
+
+    #signup__btn{
+        margin-top: 10px;
+    }
+
+    .btns_submit p{
+      font-size: 9px;
+    }
+}
+
+
