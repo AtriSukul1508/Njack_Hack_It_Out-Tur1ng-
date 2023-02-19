@@ -42,8 +42,8 @@ const Navbar = () => {
                     </div>
 
                     <div className='profile_name'>
-                        {user ? <NavLink to={`/profile/${user.user._id}`} ><Avatar src={user.user.image} alt={user.user.name} /></NavLink> : <></>}
-                        <p>{user ? user.user.name : ''}</p>
+                        {user ? <NavLink to={`/profile/${user.user._id}`} ><Avatar src={user.user.image} alt={user.user.name} /></NavLink> : <><Avatar alt="No_image" /></>}
+                        {/* <p>{user ? user.user.name : ''}</p> */}
                         <button onClick={handleLogout} className='logout__btn' ><Logout fontSize='small' /> LogOut</button>
                     </div>
                     <Dialog

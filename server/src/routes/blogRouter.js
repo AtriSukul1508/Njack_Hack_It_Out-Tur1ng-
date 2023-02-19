@@ -5,11 +5,11 @@ const verifyAuth = require('../middlewares/authorization');
 blogRouter.get('/hello',async (req,res)=>{
     res.send("Hello")
 })
-blogRouter.use(verifyAuth);
-blogRouter.post('/addblog', addBlog);
 blogRouter.get('/allblogs', getAllBlogs);
+blogRouter.post('/addblog', addBlog);
 blogRouter.get('/userallblog', getUserSpecificBlogs);
 blogRouter.get('/getsuggestiveblog', getSuggestiveBlogs);
+// blogRouter.use(verifyAuth);
 blogRouter.get('/blog/:id', getBlogById);
 blogRouter.delete('/deleteblog/:id', deleteBlog);
 blogRouter.get('/upvote/:id', getUpvoteCount);

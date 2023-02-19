@@ -59,7 +59,7 @@ const FeedBlog = ({ blog }) => {
     return (
         <>
             <div className='posted__blogs'>
-                <img src={blog.eventImage} width='20%' height='20%' alt={blog.title.length > 10 ? blog.title.slice(0, 10) + '...' : blog.title} style={{ borderRadius: '8px', boxShadow: '0px 0px 4px #ccc' }} />
+                <img src="https://images.unsplash.com/flagged/photo-1584725739991-3887201dc930?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80" width='20%' height='20%' alt={blog.title.length > 10 ? blog.title.slice(0, 10) + '...' : blog.title} style={{ borderRadius: '8px', boxShadow: '0px 0px 4px #ccc' }} />
                 <div style={{ display: 'flex', gap: '1rem', flexDirection: 'column', width: '43vw' }}>
                     <div className='blog_title__container'>
                         <h2 className='blog__post__title'>{blog.title.length > 100 ? blog.title.slice(0, 100) + '...' : blog.title}</h2>
@@ -70,7 +70,8 @@ const FeedBlog = ({ blog }) => {
                         <div className='post__reach'>
                             <button className='upvote_btn' style={{ display: 'flex', alignItems: 'center', gap: '.3rem' }} onClick={handleUpvote} >{clicked ? <ThumbUp /> : <ThumbUpOffAlt />} {upvoteVal}</button>
                             <NavLink name='read__more__btn' to={`/blog/${blog._id}`} className='read__more__btn' style={{ ...BtnStyle, backgroundColor: "#2d2c39", fontSize: '.8rem', width: '95px', textDecoration: 'none' }} >READ MORE</NavLink>
-                            <div className='blog_post_date' style={{ color: 'rgb(135 143 159 / 80%)', textTransform: 'capitalize', fontWeight: '600' }}>{formatDistanceToNow(new Date(blog.createdAt), { addSuffix: true })}</div>
+                            {/* <div className='blog_post_date' style={{ color: 'rgb(135 143 159 / 80%)', textTransform: 'capitalize', fontWeight: '600' }}>{formatDistanceToNow(new Date(blog.createdAt), { addSuffix: true })}</div> */}
+                            <div className='blog_post_date' style={{ color: 'rgb(135 143 159 / 80%)', textTransform: 'capitalize', fontWeight: '600' }}>1 Day ago</div>
                         </div>
                     </div>
                 </div>

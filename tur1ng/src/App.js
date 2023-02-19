@@ -17,24 +17,32 @@ const App = () => {
   const { user } = useAuthContext();
   return (
     <>
-      {(location.pathname === '/login' || location.pathname === '/signup' || location.pathname === '/forgetpassword') ?
+      {/* {(location.pathname === '/login' || location.pathname === '/signup' || location.pathname === '/forgetpassword') ?
         <Routes>
           <Route path='/login' element={!user ? <Login /> : <Navigate to='/' />} />
           <Route path='/signup' element={!user ? <SignUp /> : <Navigate to='/' />} />
           <Route path='/forgetpassword' element={<ForgetPassword />} />
           <Route path='*' element={<Error />} />
-        </Routes> : <>
+        </Routes> :  */}
+        {/* <> */}
           <Navbar />
           <Routes>
-            <Route path='/' element={user ? <Home /> : <Navigate to='/login' />} />
+            {/* <Route path='/' element={user ? <Home /> : <Navigate to='/login' />} />
             <Route path='/blog/:id' element={user ? <ViewBlog /> : <Navigate to='/login' />} />
             <Route path='/addblog' element={user ? <WriteBlog /> : <Navigate to='/login' />} />
             <Route path='/userallblog' element={user ? <ProfileBlogs /> : <Navigate to='/login' />} />
             <Route path='/profile/:id' element={user ? <Profile /> : <Navigate to='/login' />} />
-            <Route path='*' element={user ? <Error /> : <Navigate to='/login' />} />
+            <Route path='*' element={user ? <Error /> : <Navigate to='/login' />} /> */}
+
+            <Route path='/' element={<Home />} />
+            <Route path='/blog/:id' element={<ViewBlog />} />
+            <Route path='/addblog' element={ <WriteBlog />} />
+            <Route path='/userallblog' element={<ProfileBlogs />} />
+            <Route path='/profile/:id' element={<Profile />} />
+            <Route path='*' element={<Error />} />
           </Routes>
-        </>
-      }
+        {/* </> */}
+      {/* } */}
 
     </>
   )

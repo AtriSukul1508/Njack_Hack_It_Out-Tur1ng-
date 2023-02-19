@@ -2,7 +2,7 @@ import React from 'react'
 import { NavLink } from 'react-router-dom';
 
 const SuggestiveBlog = ({ blog }) => {
-
+    console.log(blog)
     const BtnStyle = {
         color: '#fff',
         padding: '5px 10px',
