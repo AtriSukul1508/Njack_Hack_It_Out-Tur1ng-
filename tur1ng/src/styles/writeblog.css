@@ -1,6 +1,6 @@
 /* Styling for the write blog page */
 
-.content__container{
+.content__container {
     width: 100vw;
     height: 100vh;
     display: flex;
@@ -8,11 +8,12 @@
     align-items: center;
     justify-content: center;
     position: absolute;
-    top:70px ;
+    top: 70px;
     z-index: -1;
     overflow-x: hidden;
-}
-.field__container{
+  }
+  
+  .field__container {
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -20,53 +21,63 @@
     width: 100vw;
     align-items: center;
     padding-bottom: 1.5rem;
-}
-.title_container{
+  }
+  
+  .title_container {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     gap: 5px;
-}
-.title_container p{
+  }
+  
+  .title_container p {
     font-family: 'Poppins', sans-serif;
     font-weight: bold;
-}
-
-.wrapper-class {
-    padding:10px 20px;
+  }
+  
+  .wrapper-class {
+    padding: 10px 20px;
     width: 77vw;
     border: 1px solid #ccc;
     border-radius: 10px;
     margin-top: 5px;
   }
+  
   .editor-class {
     padding: 1rem;
     /* border: 1px solid #ccc; */
   }
+  
   .toolbar-class {
     border: 1px solid #ccc;
   }
- 
-.author__container input,.title_container input{
-    
+  
+  .author__container input,
+  .title_container input {
     width: 80vw;
-    padding:10px 20px;
+    padding: 10px 20px;
     border-radius: 10px;
     outline: none;
     border: 1px solid #6d7993cc;
-}
-.title_container input:focus,.author__container input:focus{
+  }
+  
+  .title_container input:focus,
+  .author__container input:focus {
     border: 1px solid #6d7993cc;
-}
-.blog__content p,.author__container p,.blog__image__container p{
-    font-family: 'Poppins',sans-serif;
+  }
+  
+  .blog__content p,
+  .author__container p,
+  .blog__image__container p {
+    font-family: 'Poppins', sans-serif;
     font-weight: bold;
-}
-.save__btn{
+  }
+  
+  .save__btn {
     display: block;
     width: 8vw;
     text-align: center;
-    font-family: 'Poppins',sans-serif;
+    font-family: 'Poppins', sans-serif;
     font-weight: bold;
     text-decoration: none;
     background-color: #2d2c39d8;
@@ -76,10 +87,35 @@
     cursor: pointer;
     border: none;
     outline: none;
-}
-.btns{
+    transition: all 0.3s ease;
+  }
+  
+  .btns {
     position: relative;
-}
-.save__btn:hover{
+  }
+  
+  .save__btn:hover {
     background-color: #2d2c39;
-}
+    transform: scale(1.05);
+  }
+  
+  @media only screen and (max-width: 768px) {
+    .content__container {
+      top: 0;
+    }
+  
+    .title_container input,
+    .author__container input {
+      width: 90vw;
+    }
+  
+    .save__btn {
+      width: 20vw;
+    }
+  }
+  
+  
+  
+  
+  
+  
