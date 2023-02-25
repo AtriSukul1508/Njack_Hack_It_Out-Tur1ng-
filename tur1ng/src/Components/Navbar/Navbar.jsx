@@ -11,7 +11,6 @@ import DialogActions from '@mui/material/DialogActions';
 import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
-import Search1 from "./search";
 const Navbar = () => {
     const { user } = useAuthContext();
     const { logout } = useLogout();
@@ -38,14 +37,13 @@ const Navbar = () => {
                 </div>
                 <div className='navbar_btns'>
                     <div className='search_bar_container'>
-                   {/* <Search className='search_icon' />
-                        <input type='search' placeholder='Search...' name='search_bar' /> */}
-                        <Search1 />
+                        <Search className='search_icon' />
+                        <input type='search' placeholder='Search...' name='search_bar' />
                     </div>
 
                     <div className='profile_name'>
-                        {/* {user ? <NavLink to={`/profile/${user.user._id}`} ><Avatar src={user.user.image} alt={user.user.name} /></NavLink> : <><Avatar alt="No_image" /></>} */}
-                        {/* <p>{user ? user.user.name : ''}</p> */}
+                        {user ? <NavLink to={`/profile/${user.user._id}`} ><Avatar src={user.user.image} alt={user.user.name} /></NavLink> : <><Avatar alt="No_image" /></>}
+                        <p>{user ? user.user.name : 'Hello'}</p>
                         <button onClick={handleLogout} className='logout__btn' ><Logout fontSize='small' /> LogOut</button>
                     </div>
                     <Dialog

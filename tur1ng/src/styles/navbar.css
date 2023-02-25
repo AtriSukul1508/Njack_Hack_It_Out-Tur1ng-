@@ -24,7 +24,7 @@
     content:'';
     position: absolute;
     z-index: -1;
-    box-shadow: 0 0 20px rgba(0,0,0,0.8);
+    /* box-shadow: 0 0 20px rgba(0,0,0,0.8); */
     top:5%;
     bottom:0;
      left:4px; 
@@ -69,22 +69,22 @@
 .search_bar_container{
     position: absolute;
     display: block;
-    margin-right: 425px;
+    margin-right: 375px;
     width: 22%;
     padding: 10px;
 }
 .search_bar_container .search_icon{
     position: absolute;
-    left: 5px;
-    top: 7px;
+    left: 12px;
+    top: 17px;
     color: #6d79939c;
 }
 .search_bar_container input{
     width: 15vw !important;
     height: 35px;
-    padding: 10px 10px 10px 30px !important;
-    /* padding-left: 1.8rem; */
-    border-radius: 17px;
+    padding: 10px 25px 10px 30px !important;
+    padding-left: 1.8rem;
+    border-radius: 8px;
     background-color: rgb(240, 240, 240);
     outline: none;
     border: none !important;
@@ -92,6 +92,7 @@
 .search_bar_container input:focus{
     border: none !important;
     outline: none;
+    box-shadow: 0px 0px 4px #00000078 !important;
 }
 
 
