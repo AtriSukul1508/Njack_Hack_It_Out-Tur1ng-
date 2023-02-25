@@ -1,14 +1,37 @@
-<div align="center"><h2> Tur1ng_ 📃 </h2></div>
+<div align="center"><h2> Tur1ng_  </h2></div>
 
+
+![Contributors](https://img.shields.io/github/contributors/harshita214/Chrome-Extension?style=for-the-badge)
+  
+![PRs-Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=for-the-badge)  
+
+
+  
+</div>
+<!-- TABLE OF CONTENTS --> 
+
+#### Table of Contents :
+* [Overview](#Overview)
+* [Open Source programs this repo has been part of](#Open-Source-programs-this-repo-has-been-part-of)
+* [Contribution Guidelines](#Contribution-Guidelines)
+* [Contributors](#Contributors)
+* [Feedback](#Feedback)
+
+<h2 align="center">Overview</h2>
+
+<p align="center"> 
 - We are here to reduce the gap between students and developers 😉
 - It is a blog website which contains updated tags to bring you relevant information directly to your homepage. 
 - Read our [Contributing Guidelines](https://github.com/AtriSukul1508/Njack_Hack_It_Out-Tur1ng-/blob/master/Contributing.md) 
 
-<div align="center"><h2> Show ❤ by ⭐ this Repo </h2></div>
+![Github Repo Size](https://img.shields.io/github/repo-size/AtriSukul1508/Njack_Hack_It_Out-Tur1ng-?style=for-the-badge&color=black)
+<div align="center">   <h3>     Contribution is fun! ✨    </h3>    </div>
+
+
 
 <br>
 
-![Github Repo Size](https://img.shields.io/github/repo-size/AtriSukul1508/Njack_Hack_It_Out-Tur1ng-?style=for-the-badge&color=black)
+
 
 ## Tech Used ⚙
 <img src="https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white"> &nbsp;
@@ -45,6 +68,24 @@
 </details>
 
 </details>
+<p align="center">                 Help to make it better by adding your ideas or by making current one better! Want the contribution  to be fun, enjoyable, and educational for everyone. All contributions are welcome, including issues as well as updates.                         </p>
+
+<br>
+
+<br>
+
+
+###  How to Start?  📌
+
+If you have a idea of any Njack_Hack_It_Out_Turn1ng you want to build just open an appropriate issue regarding this, we will discuss and assign you that issue. In case you are confused and have queries, just ping  in the discord, will help you get along and build!
+
+<br>
+
+<br>
+
+<h3 align="center"> 
+
+ ‼️ For [JWOC'23](https://jwoc.tech/) program Admin and Mentor rights of Njack_Hack_It_Out_Turn1ng are given to [Atri Sukul](https://github.com/AtriSukul1508) ‼️
 
 ## This Repo participated in 😍
 
@@ -53,6 +94,7 @@
 |1.|<b>JWOC</b>|<img height="100" width="100" src="https://user-images.githubusercontent.com/94545831/219814617-703be394-c72b-4641-9bae-74345f78db12.png"/>|
 
 <br>
+  <div align="center"><h2> Show ❤ by giving ⭐ this Repo </h2></div>
 
 ## Thanks to our Contributors ⚡
 
