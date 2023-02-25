@@ -40,10 +40,10 @@ Following are the steps to guide you:
 * Step 5: Track and stage your changes.
     ```
      # Track the changes
- git status
+     git status
 
      # Add changes to Index
-   git add .
+     git add .
      ```
 * Step 6: Commit all the changes (Write commit message as "Small Message")
     ```
