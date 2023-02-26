@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Feed, AddBox, FilterNone, Search, Logout } from '@mui/icons-material'
 import { NavLink } from 'react-router-dom';
-import '../../styles/navbar.css'
+import '../../styles/navbar.css';
 import { useAuthContext } from '../../hooks/useAuthContext';
 import { useLogout } from '../../hooks/useLogout';
 import { Avatar } from '@mui/material';
@@ -32,9 +32,9 @@ const Navbar = () => {
             <div className='navbar'>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '.8rem' }}>
                     <h1 className='heading_title'><NavLink style={{ textDecoration: 'none' }} to='/'>Tur<span>1</span>ng<span>_</span></NavLink></h1>
-                    <NavLink title='Blog Feed' classname={({ isActive }) => isActive ? 'active' : "non_active_class home_btn"} style={({ isActive }) => isActive ? { color: '#6d7993' } : { color: '#000' }} to='/' end><Feed style={{ fontSize: '28px' }} /></NavLink>
-                    <NavLink title='Post Your Blog' className={({ isActive }) => isActive ? 'active' : 'non_active_class write_btn'} to='/addblog'><AddBox style={{ fontSize: '28px' }} /></NavLink>
-                    <NavLink title='Your Blogs' className={({ isActive }) => isActive ? 'active' : 'non_active_class user_blogs'} to='/userallblog'><FilterNone style={{ fontSize: '28px' }} /></NavLink>
+                    <NavLink title='Blog Feed' classname={({ isActive }) => isActive ? 'active' : "non_active_class home_btn"} style={({ isActive }) => isActive ? { color: '#6d7993' } : { color: '#000' }} to='/' end><Feed className='wrk-btn' /></NavLink>
+                    <NavLink title='Post Your Blog' className={({ isActive }) => isActive ? 'active' : 'non_active_class write_btn'} to='/addblog'><AddBox className='wrk-btn' /></NavLink>
+                    <NavLink title='Your Blogs' className={({ isActive }) => isActive ? 'active' : 'non_active_class user_blogs'} to='/userallblog'><FilterNone className='wrk-btn' /></NavLink>
                 </div>
                 <div className='navbar_btns'>
                     <div className='search_bar_container'>

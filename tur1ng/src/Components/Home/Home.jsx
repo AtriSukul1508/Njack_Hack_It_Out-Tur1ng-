@@ -11,6 +11,7 @@ import DialogActions from '@mui/material/DialogActions';
 import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
+import Footer from '../Footer/Footer';
 
 const Home = () => {
   const { user } = useAuthContext();
@@ -37,7 +38,7 @@ const Home = () => {
   //   });
   // }
   return ( 
-    <>
+    <div className='mainBox'>
       <div className='home__container'>
         <HomeLeftComponent />
         <HomeRightComponent />
@@ -58,7 +59,8 @@ const Home = () => {
           </DialogActions>
         </Dialog> */}
       </div>
-    </>
+      {/* <Footer className="home-footer" /> */}
+    </div>
   )
 }
 

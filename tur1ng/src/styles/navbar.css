@@ -7,6 +7,16 @@
 }
 
 .navbar{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border-bottom: 1px solid #6d79939c;
+    padding: 12px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.3),0 0 40px rgba(0,0,0,0.1) inset;
+    /* margin: 1rem; */
+}
+
+/* .navbar{
     position: fixed;
     width: 100vw;
     height: 60px;
@@ -18,8 +28,8 @@
     border-bottom: 1px solid #6d79939c;
     background-color: #fff;
     box-shadow: 0 0 20px rgba(0,0,0,0.3),0 0 40px rgba(0,0,0,0.1) inset;
-}
-.navbar:before,
+} */
+/* .navbar:before,
 .navbar:after{
     content:'';
     position: absolute;
@@ -30,7 +40,7 @@
      left:4px; 
      right:20px;
     border-radius: 6px;
-}
+} */
 .heading_title{
     color: #6d7993;
     font-family: 'Poppins', sans-serif;
@@ -39,6 +49,11 @@
     color:#000 !important;
     /* font-size: 2.2rem; */
 }
+
+.wrk-btn{
+    font-size: 30px !important;
+}
+
 .navbar_btns{
     display: flex;
     flex-direction: row;
@@ -111,4 +126,18 @@
 .logout__btn:hover{
     color: #fff;
     background-color: #e04e4e;
+}
+
+@media only screen and (max-width: 415px) {
+    .heading_title{
+        font-size: 1.3rem !important;
+    }
+
+    .wrk-btn{
+        font-size: 20px !important;
+    }
+
+    .logout__btn{
+        padding: 5px;
+    }
 }

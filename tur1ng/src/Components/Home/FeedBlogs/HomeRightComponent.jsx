@@ -5,6 +5,7 @@ import { useAuthContext } from '../../../hooks/useAuthContext';
 import FeedBlog from './FeedBlog';
 import { CircularProgress } from '@mui/material';
 import apiConfig from '../../../api.config';
+import Footer from '../../Footer/Footer';
 
 const HomeRightComponent = () => {
     const { blogs, dispatch } = useBlogsContext();
@@ -59,6 +60,7 @@ const HomeRightComponent = () => {
                         ))}
                     </div>}
             </div>
+            {/* <Footer /> */}
         </>
     )
 }

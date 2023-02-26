@@ -1,0 +1,79 @@
+import React from "react";
+import '../../styles/footer.css';
+
+const Footer = () => {
+    return(
+        <footer className="footer">
+        <div className="foot-container1">
+            <div className="foot-about">
+            <h3>Tur<span>1</span>ng<span>_</span></h3>
+            <p className="foot-context">Copyright © 2023 by <a href="https://github.com/AtriSukul1508">Atri Sukul. </a>All Rights Reserved</p>
+            </div>
+
+            <div className="foot-contact">
+                <div className="contact-set">
+                    <i className="fa fa-map-marker"></i><p>Address</p>
+                    </div>
+                     <div className="contact-set">
+                        <i className="fa fa-phone"></i><p>Number</p>
+                        </div>
+                        <div className="contact-set">
+                            <i className="fa fa-envelope"></i><p><a href="mailto:123@gmail.com">Mail</a></p>
+                            </div>
+            </div>
+
+            <div className="foot-social">
+                <h5>Follow On</h5>
+                <div className="social-links">
+                <i className="fa-brands fa-square-facebook"></i>
+                <i className="fa-brands fa-square-github"></i>
+                <i className="fa-brands fa-square-instagram"></i>
+                <i className="fa-brands fa-square-twitter"></i>
+                <i className="fa-brands fa-linkedin"></i>
+                <i className="fa-sharp fa-solid fa-envelope"></i>
+                </div>
+            </div>
+        </div>
+        </footer>
+
+//     <footer className="footer-distributed">
+
+//     <div className="footer-left">
+//         <h3>Tur<span>1</span>ng<span>_</span></h3>
+
+//         <p className="footer-company-name">Copyright © 2023 by <a href="https://github.com/AtriSukul1508">Atri Sukul. </a>All Rights Reserved</p>
+//     </div>
+
+//     <div className="footer-center">
+//         <div>
+//             <i className="fa fa-map-marker"></i>
+//             <p>Address</p>
+//         </div>
+
+//         <div>
+//             <i className="fa fa-phone"></i>
+//             <p>Number</p>
+//         </div>
+//         <div>
+//             <i className="fa fa-envelope"></i>
+//             <p><a href="mailto:123@gmail.com">Mail</a></p>
+//         </div>
+//     </div>
+//     <div className="footer-right">
+//         <p className="footer-company-about">
+//             <span>ABOUT</span>
+//             Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.
+//         </p>
+//         <div className="footer-icons">
+//             <a href="#"><i className="fa fa-facebook"></i></a>
+//             <a href="#"><i className="fa fa-instagram"></i></a>
+//             <a href="#"><i className="fa fa-linkedin"></i></a>
+//             <a href="#"><i className="fa fa-twitter"></i></a>
+//             <a href="#"><i className="fa fa-github"></i></a>
+//         </div>
+//     </div>
+// </footer>
+     );
+};
+
+export default Footer;

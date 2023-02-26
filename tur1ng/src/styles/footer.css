@@ -1,0 +1,133 @@
+.footer{
+bottom: 0 !important;
+display: flex;
+background: #6d79939c;
+padding: 1.5rem;
+flex-direction: column;
+row-gap: 2rem;
+justify-content: center;
+position: relative;
+top: 46rem;
+}
+
+.foot-container1{
+    display: flex;
+    column-gap: 2rem;
+    justify-content: space-between;
+    align-content: center;
+}
+.foot-about{
+    width: 35vw;
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+}
+
+.foot-about h3{
+    color: #f4f5f6;
+    font-family: 'Poppins', sans-serif;
+}
+
+.foot-about h3 span {
+    color: black;
+}
+
+.foot-context{
+    text-transform: uppercase;
+}
+
+.foot-context a{
+    text-decoration: none;
+    color: black;
+}
+
+.foot-context a:hover{
+    color: aliceblue;
+    transition: all 0.3s linear;
+}
+
+.foot-contact{
+    width: 20vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+}
+
+.contact-set{
+    display: flex;
+    justify-content: flex-start;
+    align-content: center;
+    column-gap: 1rem;
+}
+
+.contact-set i{
+    font-size: 1.5rem;
+}
+
+.contact-set p a{
+    text-decoration: none;
+    color: black;
+}
+
+.foot-social{
+    width: 15vw;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center;
+    align-items: center; */
+    text-align: center;
+}
+
+.social-links i{
+    font-size: 2rem;
+    padding: 1rem;
+}
+
+.fa-brands:hover{
+    color: #6d79939c;
+}
+
+.fa-sharp:hover{
+    color: #6d79939c;
+}
+
+@media (max-width: 825px){
+    .social-links i{
+        font-size: 1.8rem;
+        padding: 5px;
+    }
+}
+
+@media (max-width: 500px){
+    .foot-container1{
+        display: flex;
+        flex-direction: column;
+        /* width: 100vw; */
+        text-align: center;
+        row-gap: 1.5rem;
+    }
+
+    .foot-about{
+        width: 100vw;
+        justify-content: center;
+    }
+
+    .foot-contact{
+        display: flex !important;
+        width: 100vw;
+        flex-direction: row;
+        column-gap: 1rem;
+        align-self: center;
+    }
+
+    .contact-set{
+        column-gap: 0.5rem;
+    }
+
+    .foot-social{
+        width: 100vw;
+        align-self: center;
+    }
+
+}
