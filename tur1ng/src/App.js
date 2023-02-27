@@ -11,6 +11,7 @@ import { useAuthContext } from './hooks/useAuthContext';
 import ViewBlog from './Components/ViewBlog/ViewBlog';
 import ForgetPassword from './Components/ForgetPassword';
 import Profile from './Components/UserProfile/Profile';
+import Footer from './Components/Footer/Footer';
 
 const App = () => {
   const location = useLocation();
@@ -41,6 +42,7 @@ const App = () => {
             <Route path='/profile/:id' element={<Profile />} />
             <Route path='*' element={<Error />} />
           </Routes>
+          <Footer />
         {/* </> */}
       {/* } */}
 
