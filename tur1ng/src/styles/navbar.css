@@ -34,7 +34,7 @@
     content:'';
     position: absolute;
     z-index: -1;
-    /* box-shadow: 0 0 20px rgba(0,0,0,0.8); */
+    /* box-shadow: 0 0 20px rgba(0,0,0,0.8); 
     top:5%;
     bottom:0;
      left:4px; 
