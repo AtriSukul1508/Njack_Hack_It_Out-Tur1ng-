@@ -19,7 +19,7 @@ const SuggestiveBlog = ({ blog }) => {
     return (
         <>
             <div className='content__pick'>
-                <div className='content__author'><span style={{ fontWeight: 'bold' }}></span><span className='suggestive__content__author__name'>{blog.author}</span></div>
+                <div className=''><span style={{ fontWeight: 'bold' }}></span><span style={{fontSize:'26px'}} className=''>{blog.author}</span></div>
                 <div className='content__description'>{blog.description.length > 100 ? blog.description.slice(0, 100) + '...' : blog.description}</div>
                 <NavLink name='read__more__btn' to={`/blog/${blog._id}`} className='read__more__btn' style={{ ...BtnStyle, backgroundColor: "#2d2c39", fontSize: '.8rem', width: '95px', textDecoration: 'none' }} >READ MORE</NavLink>
             </div>

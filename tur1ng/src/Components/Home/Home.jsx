@@ -12,6 +12,7 @@ import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
 import Footer from '../Footer/Footer';
+import { Container } from '@mui/system';
 
 const Home = () => {
   const { user } = useAuthContext();
@@ -37,13 +38,14 @@ const Home = () => {
 
   //   });
   // }
-  return ( 
-    <div className='mainBox'>
-      <div className='home__container'>
+  return (
+    <div>
+      <Container>
         <HomeLeftComponent />
         <HomeRightComponent />
-        <ToastContainer />
-        {/* <Dialog
+        {/* <ToastContainer /> */}
+      </Container>
+      {/* <Dialog
           open={open}
           aria-labelledby="alert-dialog-title"
           aria-describedby="alert-dialog-description"
@@ -58,7 +60,6 @@ const Home = () => {
             <Button onClick={handlePermission} style={{ color: '#fff',background:'#6d7993',borderRadius:'8px',padding:'4px 8px' }}>Login</Button>
           </DialogActions>
         </Dialog> */}
-      </div>
       {/* <Footer className="home-footer" /> */}
     </div>
   )

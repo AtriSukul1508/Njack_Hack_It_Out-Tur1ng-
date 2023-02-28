@@ -3,7 +3,7 @@ import { useAuthContext } from '../../../hooks/useAuthContext';
 import { useBlogsContext } from '../../../hooks/useBlogsContext';
 import suggestiveContentBg from '../../../Assets/suggestions.svg'
 import SuggestiveBlog from './SuggestiveBlog';
-import { CircularProgress } from '@mui/material';
+import { CircularProgress, Grid } from '@mui/material';
 import apiConfig from '../../../api.config';
 import Footer from '../../Footer/Footer';
 
@@ -51,17 +51,18 @@ const HomeLeftComponent = () => {
     return (
         <>
             <div className='suggestive__content__container'>
-                <img src={suggestiveContentBg} style={{ width: '7vw', height: '7vw' }} alt='Suggestions for you' />
-                <h2 style={{ fontFamily: 'Poppins', color: '#4596b6' }}>Suggestions for you</h2>
+                <h1 style={{ fontFamily: 'Poppins', paddingBottom:'24px' }}>Suggestions for you</h1>
+                <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
+                    {isLoading ?
+                        <div style={{ width: '34vw' }}><CircularProgress /></div> :
+                        <div className='suggest__contents'>
+                            {blogss && blogss.map((blog) => (
+                                <SuggestiveBlog blog={blog} />
+                            ))}
+                        </div>
+                    }
+                </Grid>
 
-                {isLoading ?
-                    <div style={{ width: '34vw' }}><CircularProgress /></div> :
-                    <div className='suggest__contents'>
-                        {blogss && blogss.map((blog) => (
-                            <SuggestiveBlog blog={blog} />
-                        ))}
-                    </div>
-                }
                 {/* <Footer /> */}
             </div>
         </>
