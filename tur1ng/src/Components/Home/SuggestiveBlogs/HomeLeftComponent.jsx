@@ -6,6 +6,8 @@ import SuggestiveBlog from './SuggestiveBlog';
 import { CircularProgress, Grid } from '@mui/material';
 import apiConfig from '../../../api.config';
 import Footer from '../../Footer/Footer';
+import Carousel from 'react-material-ui-carousel'
+import { Paper, Button } from '@mui/material'
 
 const HomeLeftComponent = () => {
     const { blogs, dispatch } = useBlogsContext();
@@ -50,15 +52,20 @@ const HomeLeftComponent = () => {
 
     return (
         <>
+
             <div className='suggestive__content__container'>
-                <h1 style={{ fontFamily: 'Poppins', paddingBottom:'24px' }}>Suggestions for you</h1>
-                <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
+                <h1 style={{ fontFamily: 'Poppins', paddingBottom: '24px' }}>Suggestions for you</h1>
+                <Grid >
                     {isLoading ?
                         <div style={{ width: '34vw' }}><CircularProgress /></div> :
-                        <div className='suggest__contents'>
-                            {blogss && blogss.map((blog) => (
-                                <SuggestiveBlog blog={blog} />
-                            ))}
+
+                        <div className='suggest__content' >
+                            <Carousel navButtonsAlwaysVisible={true} autoPlay={true} interval={4000}>
+                                {blogss && blogss.map((blog) => (
+                                    <div >
+                                        <SuggestiveBlog blog={blog} /></div>
+                                ))}</Carousel>
+
                         </div>
                     }
                 </Grid>

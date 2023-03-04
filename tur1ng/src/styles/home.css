@@ -12,20 +12,13 @@
     text-align: center;
     margin-top: 1.5rem;
     padding: 0px;
-   
+    
+    
     /* height: fit-content; */
     /* width: 30vw; */
 }
 
-.suggest__contents{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: .7rem;
-    padding:20px 10px;
-    margin-left: 24px;
-    /* overflow-y: scroll; */
-}
+
 
 .content__pick{
     border: 1px solid #ccc;
