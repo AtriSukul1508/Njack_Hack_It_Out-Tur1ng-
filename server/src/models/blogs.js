@@ -40,6 +40,24 @@ const blogSchema = new mongoose.Schema({
             default: ''
         }
     }],
+
+    totalComments:{
+        type: Number,
+        default: 0
+    },
+    
+    usersComments: [{
+        userInfo: {
+            type: String,
+            required: true,
+            default: ''
+        },
+        comments: {
+            type: String,
+            required: true,
+            default: ''
+        }
+    }],
     user_id: {
         type: String,
         required: true

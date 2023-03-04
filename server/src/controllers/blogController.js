@@ -149,4 +149,35 @@ const deleteBlog = async (req, res) => {
     }
 }
 
-module.exports = { addBlog, getAllBlogs, getUserSpecificBlogs, getBlogById, getSuggestiveBlogs, deleteBlog, getUpvoteCount, getTotalViews, updateUpvoteCount, updateBlogById }
+const addComment = async (req, res) => {
+    const { id } = req.params;
+    const { text } = req.body;
+    if (!mongoose.Types.ObjectId.isValid(id)) {
+        return res.status(404).json({ error: 'No such blog' });
+    }
+
+    try {
+        if (!text) {
+            return res.status(422).json({ error: "Empty Comment.." });
+        }
+
+        // else {
+        //     const user_id = req.user._id;
+        //     const newComment = new BlogModel({ text, user_id });
+        //     const savedComment = await newComment.save();
+        //     return res.status(201).json(savedComment);
+        // }
+
+        addComment = await BlogModel.findByIdAndUpdate({ _id: id }, { $inc: { totalComments: 1 }, $push: { usersComments: { userInfo: _id, comments: text} } }, { new: true });
+
+        if (!addComment) {
+            return res.status(400).json({ error: "No such blog" });
+        } else {
+            res.status(200).json(addComment);
+        }
+    } catch (err) {
+        console.log(`Error while creating Comment - ${err}`);
+    }
+}
+
+module.exports = { addBlog, getAllBlogs, getUserSpecificBlogs, getBlogById, getSuggestiveBlogs, deleteBlog, getUpvoteCount, getTotalViews, updateUpvoteCount, updateBlogById, addComment }
