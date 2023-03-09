@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { Feed, AddBox, FilterNone, Search, Logout } from '@mui/icons-material'
-import { NavLink } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 import '../../styles/navbar.css';
 import { useAuthContext } from '../../hooks/useAuthContext';
 import { useLogout } from '../../hooks/useLogout';
@@ -11,6 +11,7 @@ import DialogActions from '@mui/material/DialogActions';
 import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
+import Profile from '../UserProfile/Profile';
 const Navbar = () => {
     const { user } = useAuthContext();
     const { logout } = useLogout();
@@ -25,6 +26,16 @@ const Navbar = () => {
     const handleClose = () => {
         setOpen(false);
     }
+    const [showProfilePage, setShowProfilePage] = useState(false);
+    const navigate = useNavigate();
+
+    // console.log("user id: ",user.id);
+    const handleProfileClick = () => {
+        setShowProfilePage(!showProfilePage);
+        const url = '/profile';
+        console.log('Generated URL:', url);
+        navigate(url);
+    };
     // console.log(user.user.image)
     return (
         <>
@@ -41,10 +52,25 @@ const Navbar = () => {
                         <input type='search' placeholder='Search...' name='search_bar' />
                     </div>
 
-                    <div className='profile_name'>
+                    {/* <div className='profile_name'>
                         {user ? <NavLink to={`/profile/${user.user._id}`} ><Avatar src={user.user.image} alt={user.user.name} /></NavLink> : <><Avatar alt="No_image" /></>}
                         <p>{user ? user.user.name : 'Hello'}</p>
                         <button onClick={handleLogout} className='logout__btn' ><Logout fontSize='small' /> LogOut</button>
+                    </div> */}
+                    <div className="profile_section">
+                        <div className='profile_name' style={{cursor:'pointer'}} onClick={handleProfileClick}>
+                            {user ? (
+                                <div>
+                                    <Avatar src={user.image} alt={user.name} />
+                                </div>
+                            ) : (
+                                <Avatar alt="No_image" />
+                            )}
+                            {/* <p style={{marginTop:'15px'}}>{user ? user.name : ''}</p> */}
+                            <button onClick={handleLogout} className='logout__btn'>
+                                <Logout fontSize='small' /> LogOut
+                            </button>
+                        </div>
                     </div>
                     <Dialog
                         open={open}

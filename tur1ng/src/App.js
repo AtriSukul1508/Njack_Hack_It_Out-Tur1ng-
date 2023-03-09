@@ -39,7 +39,7 @@ const App = () => {
             <Route path='/blog/:id' element={<ViewBlog />} />
             <Route path='/addblog' element={ <WriteBlog />} />
             <Route path='/userallblog' element={<ProfileBlogs />} />
-            <Route path='/profile/:id' element={<Profile />} />
+            <Route path='/profile' element={<Profile />} />
             <Route path='*' element={<Error />} />
           </Routes>
           <Footer />
