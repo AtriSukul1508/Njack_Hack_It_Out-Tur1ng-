@@ -8,6 +8,12 @@
     box-sizing: border-box;
 }
 
+.home{
+    display: flex;
+    flex-direction: column;
+    row-gap: 3rem;
+}
+
 .suggestive__content__container{
     text-align: center;
     margin-top: 1.5rem;

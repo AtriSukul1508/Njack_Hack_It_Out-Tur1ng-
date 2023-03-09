@@ -13,6 +13,8 @@ import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
 import Footer from '../Footer/Footer';
 import { Container } from '@mui/system';
+import SuggestionSlide from './SuggestionSlide';
+import TopPick from './TopPick';
 
 const Home = () => {
   const { user } = useAuthContext();
@@ -39,12 +41,12 @@ const Home = () => {
   //   });
   // }
   return (
-    <div>
-      <Container>
-        <HomeLeftComponent />
-        <HomeRightComponent />
+    <div className='home'>
+        {/* <HomeLeftComponent /> */}
+        <SuggestionSlide />
+        <TopPick />
+        {/* <HomeRightComponent /> */}
         {/* <ToastContainer /> */}
-      </Container>
       {/* <Dialog
           open={open}
           aria-labelledby="alert-dialog-title"
