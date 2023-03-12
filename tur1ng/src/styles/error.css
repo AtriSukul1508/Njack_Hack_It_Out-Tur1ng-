@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css2?family=Signika+Negative:wght@300;400;500;600;700&display=swap');
+
+.erro{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 85vh;
+    background-color: azure;
+}
+
+.erro h1{
+    display: flex;
+    font-size: 5rem;
+    margin-bottom: 0;
+    font-family: 'Signika Negative', sans-serif;
+    color: black;
+}
+
+.erro h5{
+    font-size: 1rem;
+    margin-bottom: 0;
+    font-family: 'Signika Negative', sans-serif;
+    color: black;
+}
+
+.erro button{
+    margin-top: 2rem;
+    padding: 14px 1rem;
+    border-radius: 50px;
+    border: none;
+    background-color: rgb(174, 174, 174);
+    font-size: 1rem;
+    font-weight: 600;
+    font-family: 'Signika Negative', sans-serif;
+    cursor: pointer;
+}
+
+.erro button:hover{
+    scale: 1.1;
+    transition: 0.4s;
+    color: black;
+}
+
+.logo-set{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    margin-bottom: 4rem;
+}
+
+.erro-logo{
+    width: 300px !important;
+    height: 280px !important;
+}
+
+.home__shadow {
+    width: 130px;
+    height: 20px;
+    background-color: hsla(0, 1%, 33%, 0.622);
+    margin: 0 auto;
+    border-radius: 50%;
+    filter: blur(7px);
+    animation: shadow 1.8s infinite alternate !important;
+  }
+
+
+  @media(max-width: 900px){
+    
+    .erro{
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: center;
+        align-items: center;
+        row-gap: 1rem;
+    }
+
+    .erro-content{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .erro button{
+        font-size: 1.5rem;
+    }
+
+  }
+
+  @media(max-width: 500px){
+
+    .erro-logo{
+        width: 200px !important;
+        height: 180px !important;
+    }
+ h1{
+        font-size: 2.8rem;
+    }
+
+    .erro h5{
+        font-size: 12px;
+    }
+    
+    .erro{
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: center;
+        align-items: center;
+        row-gap: 1rem;
+    }
+
+    .erro-content{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .erro button{
+        font-size: 1rem;
+    }
+
+  }
