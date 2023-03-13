@@ -14,7 +14,7 @@
     height: 40vh;
     padding: 10px;
     border-radius: 10px;
-    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+    box-shadow: var(--text_color) 0px 1px 2px 0px, var(--text_color) 0px 1px 3px 1px;
 }
 
 .pick-card img {
@@ -27,6 +27,14 @@
     width: 100vw;
     padding-left: 1rem;
     padding-right: 1rem;
+}
+
+.written-context h2{
+    color: var(--text_color);
+}
+
+.written-context p{
+    color: var(--text_color);
 }
 
 .buttons{

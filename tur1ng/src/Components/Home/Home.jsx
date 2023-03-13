@@ -1,6 +1,4 @@
 import React, { useState } from 'react';
-import HomeLeftComponent from './SuggestiveBlogs/HomeLeftComponent';
-import HomeRightComponent from './FeedBlogs/HomeRightComponent';
 import '../../styles/home.css';
 import { useAuthContext } from '../../hooks/useAuthContext';
 import { useLogout } from '../../hooks/useLogout';

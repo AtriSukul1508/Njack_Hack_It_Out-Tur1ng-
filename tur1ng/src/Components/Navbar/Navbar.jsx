@@ -12,6 +12,7 @@ import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
 import Profile from '../UserProfile/Profile';
+import Toggle from '../Toggle/Toggle';
 const Navbar = () => {
     const { user } = useAuthContext();
     const { logout } = useLogout();
@@ -47,6 +48,9 @@ const Navbar = () => {
                     <NavLink title='Your Blogs' className={({ isActive }) => isActive ? 'active' : 'non_active_class user_blogs'} to='/userallblog'><FilterNone className='wrk-btn' /></NavLink>
                 </div>
                 <div className='navbar_btns'>
+
+                
+
                     <div className='search_bar_container'>
                         <Search className='search_icon' />
                         <input type='search' placeholder='Search...' name='search_bar' />
@@ -57,7 +61,10 @@ const Navbar = () => {
                         <p>{user ? user.user.name : 'Hello'}</p>
                         <button onClick={handleLogout} className='logout__btn' ><Logout fontSize='small' /> LogOut</button>
                     </div> */}
+                    <div className='toggle-btn'><Toggle /></div>
+                    
                     <div className="profile_section">
+                    
                         <div className='profile_name' style={{cursor:'pointer'}} onClick={handleProfileClick}>
                             {user ? (
                                 <div>

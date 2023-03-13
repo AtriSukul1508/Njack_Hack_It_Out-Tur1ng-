@@ -175,11 +175,12 @@ input[type="tel"] {
 
 /* Profile page styles */
 .profile-page {
-  margin: 50px auto;
+  margin: 0;
   padding: 20px;
   display: flex;
   align-items: center;
   justify-content: space-evenly;
+  background-color: var(--body_background);
 }
 
 /* Profile header styles */
@@ -238,19 +239,20 @@ input[type="tel"] {
   text-decoration: none;
   margin: 0;
   padding: 0;
+  color: var(--text-color) !important;
 }
 
 .profile-details li {
   font-size: 18px;
   margin-bottom: 8px;
   line-height: 1.5;
-  
+  color: var(--text-color) !important;
 }
 
 .profile-details a {
   color: #0077cc;
   text-decoration: none;
-  color: black;
+  color: var(--text-color) !important;
 }
 .edit-profile-btn{
   font-size: 18px;

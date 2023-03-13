@@ -1,3 +1,16 @@
+:root{
+  --body_background: transparent !important;
+  --text_color:  black;
+}
+
+[data-theme="dark"]{
+  --body_background: black !important;
+  --text_color:  white;
+}
+
+
+
+
 div.error {
   padding: 3px 7px;
   background: #fbe7e7;
