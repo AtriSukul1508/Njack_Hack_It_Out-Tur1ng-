@@ -12,7 +12,8 @@
     justify-content: space-between;
     border-bottom: 1px solid #6d79939c;
     padding: 12px;
-    box-shadow: 0 0 20px rgba(0,0,0,0.3),0 0 40px rgba(0,0,0,0.1) inset;
+    background-color: var(--body_background);
+    box-shadow: 0 0 20px var(--text_color),0 0 40px rgba(0,0,0,0.1) inset;
     /* margin: 1rem; */
 }
 
@@ -47,12 +48,13 @@
 }
 
 .heading_title span{
-    color:#000 !important;
+    color: var(--text_color) !important;
     /* font-size: 2.2rem; */
 }
 
 .wrk-btn{
     font-size: 30px !important;
+    color: var(--text_color);
 }
 
 .navbar_btns{
@@ -66,8 +68,14 @@
     color: #000;
 }
 .active{
-    color: #6d7ea5;
+    color: #6d7ea5 !important;
 }
+
+/* .profile_section{
+    display: flex;
+    justify-content: center;
+} */
+
 .profile_name{
     display: flex;
     align-items: center;
@@ -109,6 +117,14 @@
     border: none !important;
     outline: none;
     box-shadow: 0px 0px 4px #00000078 !important;
+}
+
+.toggle-btn{
+    padding-left: 24rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
 }
 
 

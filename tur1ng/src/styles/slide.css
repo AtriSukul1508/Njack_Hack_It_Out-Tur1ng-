@@ -1,3 +1,4 @@
+
 .swiper {
     width: 80vw;
     height: 30vh;
@@ -30,11 +31,12 @@
     text-align: center;
     margin-bottom: 10px;
     font-family: 'Poppins',sans-serif;
+    color: var(--text_color);
   }
 
   .main-card{
-    background-color: transparent;
-    border: 2px solid black;
+    background-color: var(--body_background);
+    border: 2px solid var(--text_color);
     border-radius: 30px;
     display: flex;
     flex-direction: column !important;
@@ -50,6 +52,7 @@
 
   .set h5{
     font-weight: 900;
+    color: var(--text_color);
   }
 
   .set button{
@@ -58,6 +61,10 @@
     background-color: #2d2c39;
     color: aliceblue;
     border: none;
+  }
+
+  .set p{
+    color: var(--text_color);
   }
 
   @media(max-width: 500px){
