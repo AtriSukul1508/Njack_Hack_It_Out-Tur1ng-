@@ -1,4 +1,4 @@
-import React from 'react'
+import React ,{useEffect,useState} from 'react'
 import Navbar from './Components/Navbar/Navbar';
 import Login from './Components/Login';
 import SignUp from './Components/SignUp';
@@ -12,10 +12,21 @@ import ViewBlog from './Components/ViewBlog/ViewBlog';
 import ForgetPassword from './Components/ForgetPassword';
 import Profile from './Components/UserProfile/Profile';
 import Footer from './Components/Footer/Footer';
+import Spinner from './Components/Loading'
 
 const App = () => {
   const location = useLocation();
   const { user } = useAuthContext();
+  const [loading,setLoading]=useState(true);
+
+  useEffect(()=>{
+    if(loading){
+      setTimeout(()=>{
+        setLoading(false);
+      },2800)
+    }
+  });
+  if(loading) return <Spinner/>
   return (
     <>
       {/* {(location.pathname === '/login' || location.pathname === '/signup' || location.pathname === '/forgetpassword') ?
@@ -26,7 +37,8 @@ const App = () => {
           <Route path='*' element={<Error />} />
         </Routes> :  */}
         {/* <> */}
-          <Navbar />
+          
+          <Navbar/>
           <Routes>
             {/* <Route path='/' element={user ? <Home /> : <Navigate to='/login' />} />
             <Route path='/blog/:id' element={user ? <ViewBlog /> : <Navigate to='/login' />} />
