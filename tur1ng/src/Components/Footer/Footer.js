@@ -1,7 +1,23 @@
-import React from "react";
+import React, { useRef } from 'react';
+import emailjs from '@emailjs/browser';
 import "../../styles/footer.css";
 
 const Footer = () => {
+
+  const form = useRef();
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs.sendForm('service_3rg30p3', 'template_zmdldn1', form.current, '5V1-1q9JwtLgoNeM_')
+      .then((result) => {
+          console.log("message-sent");
+          e.target.reset();
+      }, (error) => {
+          console.log(error.text);
+      });
+  };
+
   return (
     <footer className="footer">
       <div className="foot-container1">
@@ -32,6 +48,11 @@ const Footer = () => {
             </p>
           </div>
         </div>
+        
+        <form ref={form} onSubmit={sendEmail} className="form-set">
+          <input type="email" name="user_email" placeholder='Email For Newsletter' className='input-area' />
+          <input type="submit" value="Join"  className='submit-area' />
+          </form>
 
         <div className="foot-social">
           <h5>Follow On</h5>

@@ -22,6 +22,28 @@
   align-self: center;
 }
 
+.form-set{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 15vw;
+}
+
+.input-area{
+  padding: 0 !important;
+  padding: 10px !important;
+  border-radius: 0 !important;
+  background: transparent;
+  border: 2px solid black !important;
+}
+
+.submit-area{
+  padding: 12px;
+  background-color: #2d2c39;
+  border: none;
+  color: #fff;
+}
+
 .foot-about h3 {
   color: #f4f5f6;
   font-family: "Poppins", sans-serif;
@@ -169,6 +191,27 @@
   .social-links i {
     font-size: 1.8rem;
   }
+
+  /* .form-set{
+    flex-direction: column;
+    width: 10vw;
+  }
+  
+  .input-area{
+    width: 8rem !important;
+    padding: 0 !important;
+    padding: 5px !important;
+    border-radius: 0 !important;
+    background: transparent;
+    border: 2px solid black !important;
+  }
+  
+  .submit-area{
+    padding: 5px;
+    background-color: #2d2c39;
+    border: none;
+    color: #fff;
+  } */
 }
 
 @media (max-width: 500px) {
@@ -178,6 +221,11 @@
     /* width: 100vw; */
     text-align: center;
     row-gap: 1.5rem;
+  }
+
+  .form-set{
+    flex-direction: column;
+    width: 80vw;
   }
 
   .foot-about {
