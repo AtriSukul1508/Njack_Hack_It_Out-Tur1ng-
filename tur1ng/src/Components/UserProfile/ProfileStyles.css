@@ -176,7 +176,8 @@ input[type="tel"] {
 /* Profile page styles */
 .profile-page {
   margin: 0;
-  padding: 20px;
+  /* padding: 20px; */
+  height: 90vh;
   display: flex;
   align-items: center;
   justify-content: space-evenly;
@@ -185,15 +186,23 @@ input[type="tel"] {
 
 /* Profile header styles */
 .profile-header {
-  display: flex;
+  /* display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 40px;
-}
-.profile-contents{
+  margin-bottom: 40px; */
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
 }
+
+.profile-details{
+  display: flex;
+  flex-direction: column;
+  background-color: #698da6b3;
+  padding: 3rem;
+  border-radius: 30px;
+  animation: floaty 0.8s infinite alternate !important;
+}
+
 .profile-photo {
   position: relative;
   margin-right: 40px;
@@ -219,12 +228,12 @@ input[type="tel"] {
 
 .profile-details h1 {
   font-size: 36px;
-  margin-bottom: 8px;
+  /* margin-bottom: 8px; */
 }
 
 .profile-details h2 {
   font-size: 24px;
-  margin-bottom: 16px;
+  /* margin-bottom: 16px; */
   color: #555;
 }
 
@@ -329,4 +338,37 @@ form {
 .form-row button[type="submit"]:hover,
 .form-row button[type="button"]:hover {
   background-color: #005ea8;
+}
+
+@media(max-width: 850px){
+  .profile-page {
+    flex-direction: column;
+    height: 80vh !important;
+  }
+}
+
+@media(max-width: 500px){
+
+  .profile-page {
+    padding: 1rem;
+  }
+
+  .profile-details{
+    padding: 1.5rem;
+  }
+
+  .profile-details h1 {
+    font-size: 26px;
+  }
+  
+  .profile-details h2 {
+    font-size: 15px;
+    /* margin-bottom: 16px; */
+    color: #555;
+  }
+  
+  .profile-details p {
+    font-size: 16px;
+  }
+
 }

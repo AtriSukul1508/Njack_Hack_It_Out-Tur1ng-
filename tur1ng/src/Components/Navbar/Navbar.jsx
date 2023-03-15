@@ -51,10 +51,10 @@ const Navbar = () => {
 
                 
 
-                    <div className='search_bar_container'>
+                    {/* <div className='search_bar_container'>
                         <Search className='search_icon' />
                         <input type='search' placeholder='Search...' name='search_bar' />
-                    </div>
+                    </div> */}
 
                     {/* <div className='profile_name'>
                         {user ? <NavLink to={`/profile/${user.user._id}`} ><Avatar src={user.user.image} alt={user.user.name} /></NavLink> : <><Avatar alt="No_image" /></>}

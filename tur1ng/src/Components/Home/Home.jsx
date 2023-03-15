@@ -13,6 +13,7 @@ import Footer from '../Footer/Footer';
 import { Container } from '@mui/system';
 import SuggestionSlide from './SuggestionSlide';
 import TopPick from './TopPick';
+import SearchBar from './SearchBar';
 
 const Home = () => {
   const { user } = useAuthContext();
@@ -41,6 +42,7 @@ const Home = () => {
   return (
     <div className='home'>
         {/* <HomeLeftComponent /> */}
+        <SearchBar />
         <SuggestionSlide />
         <TopPick />
         {/* <HomeRightComponent /> */}
