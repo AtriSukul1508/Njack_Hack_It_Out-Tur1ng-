@@ -1,13 +1,13 @@
 .dark_mode {
-    margin-top: -20px;
-    margin-left: 10px;
+    /* margin-top: -20px;
+    margin-left: 10px; */
 }
 
 .dark_mode_label {
     width: 65px;
     height: 30px;
     position: relative;
-    display: block;
+    /* display: block; */
     background: #ebebeb;
     border-radius: 200px;
     box-shadow: inset 0px 5px 15px rgba(0, 0, 0, 0.4),

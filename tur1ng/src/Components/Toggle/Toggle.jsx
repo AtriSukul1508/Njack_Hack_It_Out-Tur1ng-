@@ -34,8 +34,8 @@ const Toggle = () => {
                 defaultChecked={mode === "dark"}
             />
             <label className='dark_mode_label' for='darkmode-toggle'>
-                <Sun />
-                <Moon />
+                {/* <Sun />
+                <Moon /> */}
             </label>
         </div>
     );
