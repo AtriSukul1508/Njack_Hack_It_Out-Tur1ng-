@@ -10,7 +10,7 @@ export const useLogin = () => {
     const login = async (email, password) => {
         setIsLoading(true);
         setError(null);
-        const resp = await fetch('/userapi/login', {
+        const resp = await fetch(apiConfig.URL + '/userapi/login', {
             method: 'POST',
             headers: {
                 'Content-type': 'application/json',
