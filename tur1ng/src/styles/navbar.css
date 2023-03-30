@@ -7,17 +7,6 @@
 }
 
 .navbar{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    border-bottom: 1px solid #6d79939c;
-    padding: 12px;
-    background-color: var(--body_background);
-    box-shadow: 0 0 20px var(--text_color),0 0 40px rgba(0,0,0,0.1) inset;
-    /* margin: 1rem; */
-}
-
-/* .navbar{
     position: fixed;
     width: 100vw;
     height: 60px;
@@ -28,35 +17,15 @@
     justify-content: space-between;
     border-bottom: 1px solid #6d79939c;
     background-color: #fff;
-    box-shadow: 0 0 20px rgba(0,0,0,0.3),0 0 40px rgba(0,0,0,0.1) inset;
-} */
-/* .navbar:before,
-.navbar:after{
-    content:'';
-    position: absolute;
-    z-index: -1;
-    /* box-shadow: 0 0 20px rgba(0,0,0,0.8); 
-    top:5%;
-    bottom:0;
-     left:4px; 
-     right:20px;
-    border-radius: 6px;
-} */
+}
 .heading_title{
     color: #6d7993;
     font-family: 'Poppins', sans-serif;
 }
-
 .heading_title span{
-    color: var(--text_color) !important;
+    color:#000 !important;
     /* font-size: 2.2rem; */
 }
-
-.wrk-btn{
-    font-size: 30px !important;
-    color: var(--text_color);
-}
-
 .navbar_btns{
     display: flex;
     flex-direction: row;
@@ -68,14 +37,8 @@
     color: #000;
 }
 .active{
-    color: #6d7ea5 !important;
+    color: #6d7ea5;
 }
-
-/* .profile_section{
-    display: flex;
-    justify-content: center;
-} */
-
 .profile_name{
     display: flex;
     align-items: center;
@@ -90,13 +53,29 @@
     color: white;
 
 }
-
-.toggle-btn{
-    /* padding-left: 24rem; */
+.search_bar_container{
+    position: relative;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    align-content: center;
+}
+.search_bar_container .search_icon{
+    position: absolute;
+    left: 5px;
+    top: 7px;
+    color: #6d79939c;
+}
+.search_bar_container input{
+    width: 15vw !important;
+    height: 35px;
+    padding: 10px 10px 10px 30px !important;
+    /* padding-left: 1.8rem; */
+    border-radius: 17px;
+    background-color: rgb(240, 240, 240);
+    outline: none;
+    border: none !important;
+}
+.search_bar_container input:focus{
+    border: none !important;
+    outline: none;
 }
 
 
@@ -116,24 +95,4 @@
 .logout__btn:hover{
     color: #fff;
     background-color: #e04e4e;
-}
-
-@media only screen and (max-width: 650px) {
-    .toggle-btn{
-        display: none;
-    }
-}
-
-@media only screen and (max-width: 415px) {
-    .heading_title{
-        font-size: 1.3rem !important;
-    }
-
-    .wrk-btn{
-        font-size: 20px !important;
-    }
-
-    .logout__btn{
-        padding: 5px;
-    }
 }
