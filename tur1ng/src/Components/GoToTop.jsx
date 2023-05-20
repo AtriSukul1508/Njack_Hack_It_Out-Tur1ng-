@@ -36,7 +36,6 @@ const GoToTop = () => {
     </Wrapper>
   );
 };
-
 const Wrapper = styled.section`
   display: flex;
   justify-content: center;
@@ -81,5 +80,6 @@ const Wrapper = styled.section`
     }
   }
 `;
+
 
 export default GoToTop;

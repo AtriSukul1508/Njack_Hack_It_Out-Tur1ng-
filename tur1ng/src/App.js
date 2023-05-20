@@ -19,13 +19,17 @@ const App = () => {
   return (
     <>
       {(location.pathname === '/login' || location.pathname === '/signup' || location.pathname === '/forgetpassword') ?
+      <>
       <GoToTop/>
         <Routes>
           <Route path='/login' element={!user ? <Login /> : <Navigate to='/' />} />
           <Route path='/signup' element={!user ? <SignUp /> : <Navigate to='/' />} />
           <Route path='/forgetpassword' element={<ForgetPassword />} />
           <Route path='*' element={<Error />} />
-        </Routes> : <>
+        </Routes>
+        </>
+       : 
+        <>
         <GoToTop/>
           <Navbar />
           <Routes>
