@@ -11,6 +11,7 @@ import { useAuthContext } from './hooks/useAuthContext';
 import ViewBlog from './Components/ViewBlog/ViewBlog';
 import ForgetPassword from './Components/ForgetPassword';
 import Profile from './Components/UserProfile/Profile';
+import GoToTop from './Components/GoToTop';
 
 const App = () => {
   const location = useLocation();
@@ -18,12 +19,14 @@ const App = () => {
   return (
     <>
       {(location.pathname === '/login' || location.pathname === '/signup' || location.pathname === '/forgetpassword') ?
+      <GoTop/>
         <Routes>
           <Route path='/login' element={!user ? <Login /> : <Navigate to='/' />} />
           <Route path='/signup' element={!user ? <SignUp /> : <Navigate to='/' />} />
           <Route path='/forgetpassword' element={<ForgetPassword />} />
           <Route path='*' element={<Error />} />
         </Routes> : <>
+        <GoTop/>
           <Navbar />
           <Routes>
             <Route path='/' element={user ? <Home /> : <Navigate to='/login' />} />
