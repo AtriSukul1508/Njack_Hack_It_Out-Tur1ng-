@@ -1,101 +1,179 @@
 /* Styling for the login page */
 
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-.credentials__container{
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #6d7993b2;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.container_reset__pass,.container_login{
-    width: 40vw;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    border: none;
-    border-radius: 10px;
-    padding: 20px;
-    box-shadow: 0px 0px 4px rgb(97, 97, 97);
-    background-color: #fff;
-}
-.reset__pass__info,.login__info{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    /* gap: 1rem; */
-    justify-content: center;
-}
-.reset__pass_credentials,.login__credentials{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
-    justify-content: center;
-}
-input:not([type='submit']){
-    width: 25vw;
-    padding:10px 10px 10px 30px;
-    outline: none;
-    border: none;
-    border: 1px solid #6d7993;
-    border-radius: 8px;
-    /* margin-top: 1.7rem; */
-}
-input:not([type='submit']):focus{
-    /* border-bottom: 2px solid #465370; */
-    
-    border-color: #3e6ac7 !important;
-    box-shadow: 0px 0px 2px #6d7993;
-}
-#reset__pass_user_mail:focus{
-    border-color: #3e6ac7 !important;
-    box-shadow: 0px 0px 2px #6d7993;
-}
-.info_field{
-    position: relative;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
+.credentials__container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(to top, #061e4cb2, #6d7993b2);
 }
 
-.info_icon{
-    position: absolute;
-    left: 2px;
-    /* top: 1.5rem; */
-    color: #6d7993;
-    /* padding-left: 5px; */
+.container_login {
+  display: flex;
+  padding: 20px;
+  flex-direction: column;
+  gap: 20px;
+  box-shadow: 0 0 10px;
+  background: linear-gradient(173deg, cyan, transparent);
+  border: 2px solid #061e4cb2;
+  border-radius: 10px;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
-#confirm_email__btn,#login__btn{
-    border: none;
-    outline: none;
-    padding: 8px;
-    border-radius: 10px;
-    width: 130px;
-    background-color: #6d7993;
-    color: white;
+
+.container_reset__pass {
+  width: 40vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border: none;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0px 0px 4px rgb(97, 97, 97);
+  background-color: #fff;
+}
+
+.reset__pass__info,
+.login__info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* gap: 1rem; */
+  justify-content: center;
+}
+.reset__pass_credentials,
+.login__credentials {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  justify-content: center;
+}
+input:not([type="submit"]) {
+  width: 25vw;
+  padding: 10px 10px 10px 30px;
+  outline: none;
+  border: none;
+  border: 1px solid #061e4cb2;
+  border-radius: 8px;
+  /* margin-top: 1.7rem; */
+}
+input:not([type="submit"]):focus {
+  /* border-bottom: 2px solid #465370; */
+
+  border-color: #3e6ac7 !important;
+  box-shadow: 0px 0px 2px #6d7993;
+}
+
+.user_email_field input {
+  background: transparent;
+  border: 1px solid teal;
+}
+
+.user_email_field input:focus {
+  background: transparent;
+  border: 2px solid teal;
+  box-shadow: 0 0 10px teal;
+}
+
+#reset__pass_user_mail:focus {
+  border-color: #3e6ac7 !important;
+  box-shadow: 0px 0px 2px #6d7993;
+}
+
+.user_password_field input {
+  background: transparent;
+  border: 1px solid teal;
+}
+
+.user_password_field input:focus {
+  background: transparent;
+  border: 2px solid teal;
+  box-shadow: 0 0 10px teal;
+}
+
+.info_field {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.info_icon {
+  position: absolute;
+  left: 2px;
+  /* top: 1.5rem; */
+  color: #061e4cb2;
+  /* padding-left: 5px; */
+}
+
+.forget_password {
+    color: #061e4cb2;
+    text-decoration: none;
+    font-family: "Raleway", sans-serif;
     font-weight: bold;
-    font-family: 'Raleway',sans-serif;
-    text-transform: uppercase;
-    cursor: pointer;
-    margin-top: 1rem;
-    transition: all .3s ease-in-out;
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+    transition: all 0.3s ease-in-out;
+}
 
+.forget_password:hover {
+    color: black;
 }
-#confirm_email__btn:hover,#login__btn:hover{
-    background-color: #465370;
-    color: #fff;
+
+#confirm_email__btn,
+#login__btn {
+  border: none;
+  outline: none;
+  padding: 8px;
+  border-radius: 10px;
+  width: 130px;
+  background-color: #6d7993;
+  color: white;
+  font-weight: bold;
+  font-family: "Raleway", sans-serif;
+  text-transform: uppercase;
+  cursor: pointer;
+  margin-top: 1rem;
+  transition: all 0.3s ease-in-out;
 }
-.btns_submit{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 5px;
+
+#login__btn:hover {
+  border: none;
+  outline: none;
+  padding: 8px;
+  border-radius: 10px;
+  width: 130px;
+  background-color: black;
+  color: cyan;
+  font-weight: bold;
+  font-family: "Raleway", sans-serif;
+  text-transform: uppercase;
+  cursor: pointer;
+  margin-top: 1rem;
+  transition: all 0.3s ease-in-out;
+}
+
+#confirm_email__btn:hover {
+  background-color: #465370;
+  color: #fff;
+}
+.btns_submit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+}
+
+.hover_effect_signup_txt:hover {
+    color: black;
 }
