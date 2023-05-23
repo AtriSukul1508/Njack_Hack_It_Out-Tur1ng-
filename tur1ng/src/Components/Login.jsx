@@ -1,6 +1,14 @@
 import React, { useState } from "react";
 import PersonIcon from "@mui/icons-material/Person";
-import { Email, Lock, Google, Facebook, GitHub } from "@mui/icons-material";
+import {
+  Email,
+  Lock,
+  Google,
+  Facebook,
+  GitHub,
+  PanoramaFishEye,
+} from "@mui/icons-material";
+import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
 import { NavLink } from "react-router-dom";
 import "../styles/login.css";
 import { useLogin } from "../hooks/useLogin";
@@ -14,6 +22,17 @@ const Login = () => {
     event.preventDefault();
     await login(email, password);
   };
+
+  const [isActive, setIsActive] = useState(false);
+
+  function showPW() {
+    var x = document.getElementById("user_password");
+    if (x.type === "password") {
+      x.type = "text";
+    } else {
+      x.type = "password";
+    }
+  }
 
   return (
     <>
@@ -45,7 +64,7 @@ const Login = () => {
                     textDecoration: "none",
                     color: "#6d7993",
                     fontWeight: "bold",
-                    ":hover": {color: "#000"},
+                    ":hover": { color: "#000" },
                   }}
                   className="hover_effect_signup_txt"
                   to="/signup"
@@ -85,6 +104,25 @@ const Login = () => {
                   onChange={(e) => setPassword(e.target.value)}
                   id="user_password"
                 />
+                {isActive ? (
+                  <AiFillEyeInvisible
+                    size={20}
+                    className="eye_icon"
+                    onClick={() => {
+                      setIsActive(!isActive);
+                      showPW();
+                    }}
+                  />
+                ) : (
+                  <AiFillEye
+                    size={20}
+                    className="eye_icon"
+                    onClick={() => {
+                      setIsActive(!isActive);
+                      showPW();
+                    }}
+                  />
+                )}
               </div>
             </div>
 
