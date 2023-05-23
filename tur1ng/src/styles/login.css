@@ -78,7 +78,7 @@ input:not([type='submit']):focus{
     outline: none;
     padding: 8px;
     border-radius: 10px;
-    width: 130px;
+    width: 150px;
     background-color: #6d7993;
     color: white;
     font-weight: bold;
