@@ -5,17 +5,24 @@
   padding: 0;
   box-sizing: border-box;
 }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
 .credentials__container {
   width: 100vw;
   height: 100vh;
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: space-evenly;
   background: linear-gradient(to top, #061e4cb2, #6d7993b2);
 }
 
 .container_login {
+  width: 40vw;
+  height: 70vh;
   display: flex;
   padding: 20px;
   flex-direction: column;
@@ -25,8 +32,21 @@
   border: 2px solid #061e4cb2;
   border-radius: 10px;
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
   text-align: center;
+}
+
+.container_reset__pass {
+  width: 40vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border: none;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0px 0px 4px rgb(97, 97, 97);
+  background-color: #fff;
 }
 
 .container_reset__pass {
@@ -50,6 +70,23 @@
   /* gap: 1rem; */
   justify-content: center;
 }
+
+.reset__pass__info,
+.login__info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* gap: 1rem; */
+  justify-content: center;
+}
+.reset__pass_credentials,
+.login__credentials {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  justify-content: center;
+}
 .reset__pass_credentials,
 .login__credentials {
   display: flex;
@@ -67,9 +104,41 @@ input:not([type="submit"]) {
   border-radius: 8px;
   /* margin-top: 1.7rem; */
 }
+
+input:not([type="submit"]) {
+  width: 25vw;
+  padding: 10px 10px 10px 30px;
+  outline: none;
+  border: none;
+  border: 1px solid #061e4cb2;
+  border-radius: 8px;
+  /* margin-top: 1.7rem; */
+}
 input:not([type="submit"]):focus {
   /* border-bottom: 2px solid #465370; */
 
+  border-color: #3e6ac7 !important;
+  box-shadow: 0px 0px 2px #6d7993;
+}
+input:not([type="submit"]):focus {
+  /* border-bottom: 2px solid #465370; */
+
+  border-color: #3e6ac7 !important;
+  box-shadow: 0px 0px 2px #6d7993;
+}
+
+.user_email_field input {
+  background: transparent;
+  border: 1px solid teal;
+}
+
+.user_email_field input:focus {
+  background: transparent;
+  border: 2px solid teal;
+  box-shadow: 0 0 10px teal;
+}
+
+#reset__pass_user_mail:focus {
   border-color: #3e6ac7 !important;
   box-shadow: 0px 0px 2px #6d7993;
 }
@@ -108,6 +177,31 @@ input:not([type="submit"]):focus {
   align-items: center;
 }
 
+.user_password_field input {
+  background: transparent;
+  border: 1px solid teal;
+}
+
+.user_password_field input:focus {
+  background: transparent;
+  border: 2px solid teal;
+  box-shadow: 0 0 10px teal;
+}
+
+.info_field {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.info_icon {
+  position: absolute;
+  left: 2px;
+  /* top: 1.5rem; */
+  color: #061e4cb2;
+  /* padding-left: 5px; */
+}
 .info_icon {
   position: absolute;
   left: 2px;
@@ -117,17 +211,17 @@ input:not([type="submit"]):focus {
 }
 
 .forget_password {
-    color: #061e4cb2;
-    text-decoration: none;
-    font-family: "Raleway", sans-serif;
-    font-weight: bold;
-    font-size: 0.9rem;
-    margin-top: 0.5rem;
-    transition: all 0.3s ease-in-out;
+  color: #061e4cb2;
+  text-decoration: none;
+  font-family: "Raleway", sans-serif;
+  font-weight: bold;
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+  transition: all 0.3s ease-in-out;
 }
 
 .forget_password:hover {
-    color: black;
+  color: black;
 }
 
 #confirm_email__btn,
@@ -162,6 +256,26 @@ input:not([type="submit"]):focus {
   margin-top: 1rem;
   transition: all 0.3s ease-in-out;
 }
+#login__btn:hover {
+  border: none;
+  outline: none;
+  padding: 8px;
+  border-radius: 10px;
+  width: 130px;
+  background-color: black;
+  color: cyan;
+  font-weight: bold;
+  font-family: "Raleway", sans-serif;
+  text-transform: uppercase;
+  cursor: pointer;
+  margin-top: 1rem;
+  transition: all 0.3s ease-in-out;
+}
+
+#confirm_email__btn:hover {
+  background-color: #465370;
+  color: #fff;
+}
 
 #confirm_email__btn:hover {
   background-color: #465370;
@@ -173,7 +287,113 @@ input:not([type="submit"]):focus {
   align-items: center;
   gap: 5px;
 }
+.btns_submit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+}
 
-.hover_effect_signup_txt:hover {
-    color: black;
+.credentials__container_left {
+  width: 40vw;
+  height: 70vh;
+  background: linear-gradient(to top, #061e4cb2, #6d7993b2);
+  display: flex;
+  padding: 20px;
+  flex-direction: column;
+  gap: 20px;
+  box-shadow: 0 0 10px;
+  border: 2px solid #061e4cb2;
+  border-radius: 10px;
+  justify-content: flex-start;
+}
+
+.heading_title {
+  font-size: 3.5rem;
+  color: #a5adc1;
+  text-shadow: #061e4cb2 0 0 10px;
+}
+
+.welcome_msg {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  margin-top: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.5rem;
+  color: #a5adc1;
+  text-shadow: #061e4cb2 0 0 10px;
+}
+
+.login_opt {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.login_opt p {
+  font-family: "Raleway", sans-serif;
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: #a5adc1;
+  text-shadow: #061e4cb2 0 0 10px;
+}
+
+.login_opt_icons {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.opt_icons--g {
+  font-size: 2rem;
+  /* color: teal; */
+  text-shadow: #061e4cb2 0 0 10px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.opt_icons--g:hover {
+  font-size: 2rem;
+  color: white;
+  text-shadow: #061e4cb2 0 0 10px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.opt_icons--f {
+  font-size: 2rem;
+  /* color: teal; */
+  text-shadow: #061e4cb2 0 0 10px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.opt_icons--f:hover {
+  font-size: 2rem;
+  color: #3b5998;
+  text-shadow: #061e4cb2 0 0 10px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.opt_icons--gh {
+  font-size: 2rem;
+  /* color: teal; */
+  text-shadow: #061e4cb2 0 0 10px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.opt_icons--gh:hover {
+  font-size: 2rem;
+  color: black;
+  text-shadow: #061e4cb2 0 0 10px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
 }

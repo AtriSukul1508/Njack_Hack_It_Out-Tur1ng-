@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import PersonIcon from "@mui/icons-material/Person";
-import { Email, Lock } from "@mui/icons-material";
+import { Email, Lock, Google, Facebook, GitHub } from "@mui/icons-material";
 import { NavLink } from "react-router-dom";
 import "../styles/login.css";
 import { useLogin } from "../hooks/useLogin";
@@ -18,11 +18,46 @@ const Login = () => {
   return (
     <>
       <div className="credentials__container">
-        <div className="container_login">
+        <div className="credentials__container_left">
           <div className="heading_line" style={{ textAlign: "center" }}>
             <h1 className="heading_title">
               Tur<span>1</span>ng<span>_</span>
             </h1>
+          </div>
+          <div className="welcome_msg">
+            <p>Welcome Back</p>
+          </div>
+          <div className="login_opt">
+            <p>Login using</p>
+            <div className="login_opt_icons">
+              <Google fontSize="large" className="opt_icons--g" />
+              {/* For OAuth via Google */}
+              <Facebook fontSize="large" className="opt_icons--f" />
+              {/* For OAuth via Facebook */}
+              <GitHub fontSize="large" className="opt_icons--gh" />
+              {/* For OAuth via Github */}
+            </div>
+            <div className="btns_submit">
+              <p className="mt-3" style={{ color: "#000" }}>
+                Don't have an account?{" "}
+                <NavLink
+                  style={{
+                    textDecoration: "none",
+                    color: "#6d7993",
+                    fontWeight: "bold",
+                    ":hover": {color: "#000"},
+                  }}
+                  className="hover_effect_signup_txt"
+                  to="/signup"
+                >
+                  Sign Up
+                </NavLink>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div className="container_login">
+          <div className="heading_line" style={{ textAlign: "center" }}>
             <h2 style={{ fontFamily: "Poppins", margin: ".8rem 0" }}>
               Log In to your account
             </h2>
@@ -78,20 +113,6 @@ const Login = () => {
                 value="Login"
                 disabled={isLoading}
               />
-              <p className="mt-3" style={{ color: "#000" }}>
-                Don't have an account?{" "}
-                <NavLink
-                  style={{
-                    textDecoration: "none",
-                    color: "#465370",
-                    fontWeight: "bold",
-                  }}
-                  className="hover_effect"
-                  to="/signup"
-                >
-                  Sign Up
-                </NavLink>
-              </p>
             </div>
           </form>
         </div>
