@@ -14,13 +14,6 @@ const Login = () => {
     event.preventDefault();
     await login(email, password);
   };
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const { login, error, isLoading } = useLogin();
-  const verifyAndPostData = async (event) => {
-    event.preventDefault();
-    await login(email, password);
-  };
 
   return (
     <>

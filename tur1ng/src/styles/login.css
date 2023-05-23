@@ -4,6 +4,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
 * {
   margin: 0;
   padding: 0;
@@ -46,6 +47,8 @@
   padding: 20px;
   box-shadow: 0px 0px 4px rgb(97, 97, 97);
   background-color: #fff;
+}
+
 .container_reset__pass {
   width: 40vw;
   display: flex;
@@ -66,6 +69,7 @@
   align-items: center;
   /* gap: 1rem; */
   justify-content: center;
+}
 
 .reset__pass__info,
 .login__info {
@@ -82,6 +86,7 @@
   align-items: center;
   gap: 1rem;
   justify-content: center;
+}
 .reset__pass_credentials,
 .login__credentials {
   display: flex;
@@ -98,6 +103,8 @@ input:not([type="submit"]) {
   border: 1px solid #061e4cb2;
   border-radius: 8px;
   /* margin-top: 1.7rem; */
+}
+
 input:not([type="submit"]) {
   width: 25vw;
   padding: 10px 10px 10px 30px;
@@ -112,6 +119,7 @@ input:not([type="submit"]):focus {
 
   border-color: #3e6ac7 !important;
   box-shadow: 0px 0px 2px #6d7993;
+}
 input:not([type="submit"]):focus {
   /* border-bottom: 2px solid #465370; */
 
@@ -133,6 +141,7 @@ input:not([type="submit"]):focus {
 #reset__pass_user_mail:focus {
   border-color: #3e6ac7 !important;
   box-shadow: 0px 0px 2px #6d7993;
+}
 
 .user_email_field input {
   background: transparent;
@@ -166,6 +175,7 @@ input:not([type="submit"]):focus {
   display: flex;
   flex-direction: row;
   align-items: center;
+}
 
 .user_password_field input {
   background: transparent;
@@ -191,6 +201,7 @@ input:not([type="submit"]):focus {
   /* top: 1.5rem; */
   color: #061e4cb2;
   /* padding-left: 5px; */
+}
 .info_icon {
   position: absolute;
   left: 2px;
@@ -212,7 +223,6 @@ input:not([type="submit"]):focus {
 .forget_password:hover {
   color: black;
 }
-
 
 #confirm_email__btn,
 #login__btn {
@@ -245,6 +255,7 @@ input:not([type="submit"]):focus {
   cursor: pointer;
   margin-top: 1rem;
   transition: all 0.3s ease-in-out;
+}
 #login__btn:hover {
   border: none;
   outline: none;
@@ -264,6 +275,7 @@ input:not([type="submit"]):focus {
 #confirm_email__btn:hover {
   background-color: #465370;
   color: #fff;
+}
 
 #confirm_email__btn:hover {
   background-color: #465370;
@@ -274,6 +286,7 @@ input:not([type="submit"]):focus {
   flex-direction: column;
   align-items: center;
   gap: 5px;
+}
 .btns_submit {
   display: flex;
   flex-direction: column;
@@ -294,7 +307,6 @@ input:not([type="submit"]):focus {
   border-radius: 10px;
   justify-content: flex-start;
 }
-
 
 .heading_title {
   font-size: 3.5rem;
