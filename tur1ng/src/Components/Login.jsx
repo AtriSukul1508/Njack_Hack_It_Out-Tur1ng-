@@ -37,7 +37,7 @@ const Login = () => {
                         </div>
 
                         {error && <div className="error"><ErrorIcon fontSize='small' /> {error}</div>}
-                        <NavLink to='/forgetpassword' style={{ marginTop: '.8rem', textDecoration: 'none', color: 'blue' }}>Forget Password?</NavLink>
+                        <NavLink to='/forgetpassword' style={{ marginTop: '.8rem', textDecoration: 'none', color: 'blue' }}>Forgot Password?</NavLink>
                         <div className='btns_submit'>
                             <input type='submit' name='login__btn' className='login__btn' id='login__btn' onClick={verifyAndPostData} value='Login' disabled={isLoading} />
                             <p className='mt-3' style={{ color: '#000' }}>Don't have an account? <NavLink style={{ textDecoration: 'none', color: '#465370', fontWeight: 'bold' }} to='/signup'>Sign Up</NavLink></p>
