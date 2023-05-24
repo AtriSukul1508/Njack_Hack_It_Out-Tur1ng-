@@ -92,6 +92,15 @@ input:not([type="submit"]):focus {
   color: #6d7993;
   /* padding-left: 5px; */
 }
+
+#pw_icon {
+  position: absolute;
+  right: 5px;
+  /* top: 1.5rem; */
+  color: #6d7993;
+  /* padding-left: 5px; */
+}
+
 #confirm_email__btn,
 #login__btn {
   border: none;

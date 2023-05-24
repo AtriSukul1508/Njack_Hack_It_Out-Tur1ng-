@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import { FcGoogle } from "react-icons/fc";
 import { FaFacebookF, FaGithub, FaGoogle } from "react-icons/fa";
+import { AiFillEyeInvisible, AiFillEye } from "react-icons/ai";
 import { Email, Lock } from "@mui/icons-material";
 import { NavLink } from "react-router-dom";
 import "../styles/login.css";
@@ -14,6 +14,20 @@ const Login = () => {
     event.preventDefault();
     await login(email, password);
   };
+
+  function showHidePW() {
+    const pw = document.getElementById("user_password");
+    const pwIcon = document.getElementById("pw_icon");
+    if (pw.type === "password") {
+      pw.type = "text";
+      pwIcon.style.color = "#000";
+    } else {
+      pw.type = "password";
+      pwIcon.style.color = "#ccc";
+    }
+  }
+
+  const [showPassword, setShowPassword] = useState(false);
 
   return (
     <>
@@ -51,6 +65,25 @@ const Login = () => {
                   onChange={(e) => setPassword(e.target.value)}
                   id="user_password"
                 />
+                {showPassword ? (
+                  <AiFillEyeInvisible
+                    size={20}
+                    onClick={() => {
+                      setShowPassword(!showPassword);
+                      showHidePW();
+                    }}
+                    id="pw_icon"
+                  />
+                ) : (
+                  <AiFillEye
+                    size={20}
+                    onClick={() => {
+                      setShowPassword(!showPassword);
+                      showHidePW();
+                    }}
+                    id="pw_icon"
+                  />
+                )}
               </div>
             </div>
 
