@@ -1,101 +1,231 @@
 /* Styling for the login page */
 
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-.credentials__container{
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #6d7993b2;
-}
-
-.container_reset__pass,.container_login{
-    width: 40vw;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    border: none;
-    border-radius: 10px;
-    padding: 20px;
-    box-shadow: 0px 0px 4px rgb(97, 97, 97);
-    background-color: #fff;
-}
-.reset__pass__info,.login__info{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    /* gap: 1rem; */
-    justify-content: center;
-}
-.reset__pass_credentials,.login__credentials{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
-    justify-content: center;
-}
-input:not([type='submit']){
-    width: 25vw;
-    padding:10px 10px 10px 30px;
-    outline: none;
-    border: none;
-    border: 1px solid #6d7993;
-    border-radius: 8px;
-    /* margin-top: 1.7rem; */
-}
-input:not([type='submit']):focus{
-    /* border-bottom: 2px solid #465370; */
-    
-    border-color: #3e6ac7 !important;
-    box-shadow: 0px 0px 2px #6d7993;
-}
-#reset__pass_user_mail:focus{
-    border-color: #3e6ac7 !important;
-    box-shadow: 0px 0px 2px #6d7993;
-}
-.info_field{
-    position: relative;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
+.credentials__container {
+  gap: 5px;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #6d7993b2;
 }
 
-.info_icon{
-    position: absolute;
-    left: 2px;
-    /* top: 1.5rem; */
-    color: #6d7993;
-    /* padding-left: 5px; */
+.container_reset__pass {
+  width: 40vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border: none;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0px 0px 4px rgb(97, 97, 97);
+  background-color: #fff;
 }
-#confirm_email__btn,#login__btn{
-    border: none;
-    outline: none;
-    padding: 8px;
-    border-radius: 10px;
-    width: 130px;
-    background-color: #6d7993;
-    color: white;
-    font-weight: bold;
-    font-family: 'Raleway',sans-serif;
-    text-transform: uppercase;
-    cursor: pointer;
-    margin-top: 1rem;
-    transition: all .3s ease-in-out;
 
+.container_login {
+  width: 40vw;
+  display: flex;
+  gap: 5px;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border: none;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0px 0px 4px rgb(97, 97, 97);
+  background-color: #fff;
+  box-shadow: 0px 0px 20px rgb(97, 97, 97);
 }
-#confirm_email__btn:hover,#login__btn:hover{
-    background-color: #465370;
-    color: #fff;
+
+.reset__pass__info,
+.login__info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* gap: 1rem; */
+  justify-content: center;
 }
-.btns_submit{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 5px;
+.reset__pass_credentials,
+.login__credentials {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  justify-content: center;
+}
+input:not([type="submit"]) {
+  width: 25vw;
+  padding: 10px 10px 10px 30px;
+  outline: none;
+  border: none;
+  border: 1px solid #6d7993;
+  border-radius: 8px;
+  /* margin-top: 1.7rem; */
+}
+input:not([type="submit"]):focus {
+  /* border-bottom: 2px solid #465370; */
+
+  border-color: #3e6ac7 !important;
+  box-shadow: 0px 0px 2px #6d7993;
+}
+#reset__pass_user_mail:focus {
+  border-color: #3e6ac7 !important;
+  box-shadow: 0px 0px 2px #6d7993;
+}
+.info_field {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.info_icon {
+  position: absolute;
+  left: 2px;
+  /* top: 1.5rem; */
+  color: #6d7993;
+  /* padding-left: 5px; */
+}
+#confirm_email__btn,
+#login__btn {
+  border: none;
+  outline: none;
+  padding: 8px;
+  border-radius: 10px;
+  width: 130px;
+  background-color: #6d7993;
+  color: white;
+  font-weight: bold;
+  font-family: "Raleway", sans-serif;
+  text-transform: uppercase;
+  cursor: pointer;
+  margin-top: 1rem;
+  transition: all 0.3s ease-in-out;
+}
+#confirm_email__btn:hover,
+#login__btn:hover {
+  background-color: #465370;
+  color: #fff;
+}
+.btns_submit {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.welcome_msg {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: bold;
+  font-size: 3.2rem;
+  color: #6d7993;
+  margin-bottom: 1rem;
+}
+
+.forgot_password {
+  margin-top: 5px;
+  text-decoration: none;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: #6d7993;
+  margin-bottom: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.forgot_password:hover {
+  margin-top: 5px;
+  text-decoration: none;
+  color: #465370;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: bold;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.login_msg {
+  font-family: poppins;
+  margin: 0.8rem 0;
+  font-size: 2.2rem;
+  color: black;
+}
+
+.signin_opt {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.signin_opt--icons {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 2rem;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.google_icon {
+  transition: all 0.3s ease-in-out;
+  color: #6d7993;
+  cursor: pointer;
+}
+
+.google_icon:hover {
+  transition: all 0.3s ease-in-out;
+  color: rgb(15, 157, 88);
+  cursor: pointer;
+}
+
+.facebook_icon {
+  color: #6d7993;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.facebook_icon:hover {
+  color: #3b5998;
+  cursor: pointer;
+}
+
+.github_icon {
+  transition: all 0.3s ease-in-out;
+  color: #6d7993;
+  cursor: pointer;
+}
+
+.github_icon:hover {
+  color: black;
+  cursor: pointer;
+}
+
+.signup__link {
+  transition: all 0.3s ease-in-out;
+  text-decoration: none;
+  color: #6d7993;
+  font-weight: bold;
+}
+.signup__link:hover {
+  text-decoration: none;
+  color: #465370;
+  font-weight: bold;
+}
+
+.text-secondary {
+  color: #6d7993;
+  font-weight: bold;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 1.2rem;
 }
