@@ -20,17 +20,21 @@
 <h2 align="center">Overview</h2>
 
 <p align="center"> 
+  
 - We are here to reduce the gap between students and developers 😉
 - It is a blog website which contains updated tags to bring you relevant information directly to your homepage. 
-- Read our [Contributing Guidelines](https://github.com/AtriSukul1508/Njack_Hack_It_Out-Tur1ng-/blob/master/Contributing.md) 
+  
+Read our [Contributing Guidelines](https://github.com/AtriSukul1508/Njack_Hack_It_Out-Tur1ng-/blob/master/Contributing.md) 
 
+  
+Welcome to Njack_Hack_It_Out-Tur1ng-! We aim to bridge the gap between students and developers, providing a blog website that delivers relevant information directly to your homepage. Stay up-to-date with the latest tags and discover exciting content.
 ![Github Repo Size](https://img.shields.io/github/repo-size/AtriSukul1508/Njack_Hack_It_Out-Tur1ng-?style=for-the-badge&color=black)
 <div align="center">   <h3>     Contribution is fun! ✨    </h3>    </div>
 
 
 
 <br>
-
+We believe that contribution should be fun, enjoyable, and educational for everyone. We welcome all contributions, including bug reports, feature suggestions, and code updates. Please refer to our Contributing Guidelines for more information.
 
 
 ## Tech Used ⚙
@@ -93,11 +97,24 @@ If you have a idea of any Njack_Hack_It_Out_Turn1ng you want to build just open 
 |--|--|--|
 |1.|<b>JWOC</b>|<img height="100" width="100" src="https://user-images.githubusercontent.com/94545831/219814617-703be394-c72b-4641-9bae-74345f78db12.png"/>|
 
+||||
+|--|--|--|
+|2.|<b>GSSOC</b>|<img height="100" width="100" src="https://github.com/codervivek5/VigyBag/assets/63696299/0e79c05a-63f1-4c18-a85b-662b5a3332fc"/>|
+  
+  
+
 <br>
   <div align="center"><h2> Show ❤ by giving ⭐ this Repo </h2></div>
-
+If you like our project, please show your support by giving it a star ⭐️ on GitHub. We appreciate it!
+  
 ## Thanks to our Contributors ⚡
+We appreciate the valuable contributions made by the following individuals:
+
 
 <a href="https://github.com/AtriSukul1508/Njack_Hack_It_Out-Tur1ng-/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=AtriSukul1508/Njack_Hack_It_Out-Tur1ng-" />
 </a>
+  
+## Feedback
+
+We value your feedback and suggestions. If you have any ideas for improving our project, please let us know.
