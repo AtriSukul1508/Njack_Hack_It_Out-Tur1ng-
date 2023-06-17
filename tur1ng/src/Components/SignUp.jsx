@@ -5,6 +5,7 @@ import '../styles/signup.css'
 import '../styles/login.css'
 import { useSignup } from '../hooks/useSignup';
 import ErrorIcon from '@mui/icons-material/Error';
+import { AiFillEyeInvisible, AiFillEye } from "react-icons/ai";
 
 const SignUp = () => {
     const navigate = useNavigate();
@@ -54,6 +55,34 @@ const SignUp = () => {
         borderRadius: '8px',
         width: '25vw'
     }
+
+    function showHidePW() {
+        const pw = document.getElementById("user_password");
+        const pwIcon = document.getElementById("pw_icon");
+        if (pw.type === "password") {
+          pw.type = "text";
+          pwIcon.style.color = "#000";
+        } else {
+          pw.type = "password";
+          pwIcon.style.color = "#ccc";
+        }
+    }
+
+    function showHideCPW() {
+        const cpw = document.getElementById("user_cpassword");
+        const cpwIcon = document.getElementById("cpw_icon");
+        if (cpw.type === "password") {
+          cpw.type = "text";
+          cpwIcon.style.color = "#000";
+        } else {
+          cpw.type = "password";
+          cpwIcon.style.color = "#ccc";
+        }
+    }
+
+    const [showPassword, setShowPassword] = useState(false);
+    const [showCPassword, setShowCPassword] = useState(false);
+
     return (
         <>
             <div className='info__container'>
@@ -83,12 +112,73 @@ const SignUp = () => {
                             </div>
                             <div className='user_password_field info_field'>
                                 <Lock className='info_icon' />
-                                <input type='password' autoComplete='off' placeholder='Enter your password' name='password' onChange={(e) => setPassword(e.target.value)} value={password} />
+                                <input type='password' autoComplete='off' placeholder='Enter your password' name='password' id='user_password' onChange={(e) => setPassword(e.target.value)} value={password} />
+                                {showPassword ? (
+                                    <AiFillEye
+                                        size={20}
+                                        onClick={() => {
+                                        setShowPassword(!showPassword);
+                                        showHidePW();
+                                        }}
+                                        id="pw_icon"
+                                    />
+                                ) :  (
+                                    <AiFillEyeInvisible
+                                        size={20}
+                                        onClick={() => {
+                                        setShowPassword(!showPassword);
+                                        showHidePW();
+                                        }}
+                                        id="pw_icon"
+                                    />
+                                ) }
                             </div>
                             <div className='user_cpassword_field info_field'>
                                 <Lock className='info_icon' />
-                                <input type='password' autoComplete='off' placeholder='Re-enter your password' name='cpassword' onChange={(e) => setCPassword(e.target.value)} value={cpassword} />
+                                <input type='password' autoComplete='off' placeholder='Re-enter your password' name='cpassword' id='user_cpassword' onChange={(e) => setCPassword(e.target.value)} value={cpassword} />
+                                {showCPassword ? (
+                                    <AiFillEye
+                                        size={20}
+                                        onClick={() => {
+                                        setShowCPassword(!showCPassword);
+                                        showHideCPW();
+                                        }}
+                                        id="cpw_icon"
+                                    />
+                                ):(
+                                    <AiFillEyeInvisible
+                                        size={20}
+                                        onClick={() => {
+                                        setShowCPassword(!showCPassword);
+                                        showHideCPW();
+                                        }}
+                                        id="cpw_icon"
+                                    />
+                                )}
                             </div>
+                            {/* <div className='user_cpassword_field info_field'>
+                                <Lock className='info_icon' />
+                                <input type='password' autoComplete='off' placeholder='Re-enter your password' name='cpassword'id='user_cpassword' onChange={(e) => setCPassword(e.target.value)} value={cpassword} />
+                                {showCPassword ? (
+                                    <AiFillEyeInvisible
+                                        size={20}
+                                        onClick={() => {
+                                        setShowCPassword(!showCPassword);
+                                        showHideCPW();
+                                        }}
+                                        id="cpw_icon"
+                                    />
+                                    ) : (
+                                    <AiFillEye
+                                        size={20}
+                                        onClick={() => {
+                                        setShowCPassword(!showCPassword);
+                                        showHideCPW();
+                                        }}
+                                        id="cpw_icon"
+                                    />
+                                )}
+                            </div> */}
                         </div>
                         {error && <div className="error"><ErrorIcon fontSize='small' /> {error}</div>}
                         <div className='btns_submit'>
