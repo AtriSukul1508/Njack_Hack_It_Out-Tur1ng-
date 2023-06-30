@@ -1,19 +1,18 @@
-import React from 'react'
+import React, { lazy, Suspense } from 'react'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-
-
-/** import all components */
-import Username from './components/Username';
-import Password from './components/Password';
-import Register from './components/Register';
-import Profile from './components/Profile';
-import Recovery from './components/Recovery';
-import Reset from './components/Reset';
-import PageNotFound from './components/PageNotFound';
-
 
 /** auth middleware */
 import { AuthorizeUser, ProtectRoute } from './middleware/auth'
+
+/** import all components */
+const Username = lazy(() => import('./components/Username'));
+const Password = lazy(() => import('./components/Password'));
+const Register = lazy(() => import('./components/Register'));
+const Profile = lazy(() => import('./components/Profile'));
+const Recovery = lazy(() => import('./components/Recovery'));
+const Reset = lazy(() => import('./components/Reset'));
+const PageNotFound = lazy(() => import('./components/PageNotFound'));
+
 
 /** root routes */
 const router = createBrowserRouter([
@@ -50,7 +49,9 @@ const router = createBrowserRouter([
 export default function App() {
   return (
     <main>
-        <RouterProvider router={router}></RouterProvider>
+        <Suspense fallback={<div>Loading...</div>}>
+            <RouterProvider router={router}></RouterProvider>
+        </Suspense>
     </main>
   )
 }
