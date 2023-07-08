@@ -6,6 +6,7 @@ import { NavLink } from 'react-router-dom';
 import { formatDistanceToNow } from 'date-fns';
 import apiConfig from '../../../api.config';
 import { useFetchUpvote } from '../../../hooks/useFetchUpvote';
+import { Share } from '@mui/icons-material';
 
 
 const FeedBlog = ({ blog }) => {
@@ -43,6 +44,10 @@ const FeedBlog = ({ blog }) => {
     const handleUpvote = async () => {
         await updateUpvote();
     }
+    const copyToClipboard = (text) => {
+        navigator.clipboard.writeText(text);
+        alert(`Copied: ${text}`);
+      };
     const BtnStyle = {
         color: '#fff',
         padding: '5px 10px',
@@ -64,6 +69,7 @@ const FeedBlog = ({ blog }) => {
                     <div className='blog_title__container'>
                         <h2 className='blog__post__title'>{blog.title.length > 100 ? blog.title.slice(0, 100) + '...' : blog.title}</h2>
                     </div>
+                    <Share onClick={() => copyToClipboard(`/blog/${blog._id}`)} />
                     <div className='blog__post__description'>{blog.description.length > 150 ? blog.description.slice(0, 150) + '...' : blog.description}</div>
                     <div className='post__informations'>
                         <div className='post__author__name'> <p>{blog.author.length > 40 ? blog.author.slice(0, 40) + '...' : blog.author}</p></div>
