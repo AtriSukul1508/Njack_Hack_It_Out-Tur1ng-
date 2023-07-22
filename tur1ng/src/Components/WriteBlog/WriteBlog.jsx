@@ -103,10 +103,10 @@ const WriteBlog = () => {
         <>
             <div className='content__container'>
                 <h1 style={{ color: '#6d7993', fontFamily: 'Poppins' }}>Create Your Blog</h1>
-                <form method='POST' className='field__container'>
+                <form method='POST' className='field__container' aria-label='Create Blog form'>
                     <div className='title_container'>
                         <p>Title:</p>
-                        <input type='text' placeholder='Give a Title' name='title' onChange={(e) => setTitle(e.target.value)} value={title} />
+                        <input type='text' placeholder='Give a Title' name='title' onChange={(e) => setTitle(e.target.value)} value={title} required aria-required="true" aria-label="Give a title"/>
                     </div>
                     <div className='blog__content' >
                         <p>Description:</p>
@@ -118,6 +118,7 @@ const WriteBlog = () => {
                             toolbarClassName="toolbar-class"
                             placeholder='Write your blog'
                             onChange={handleBlog}
+                            ariaLabel='Write blog description'
                         />
                     </div>
                     <div className='blog__image__container'>
@@ -133,9 +134,9 @@ const WriteBlog = () => {
                     </div>
                     <div className='author__container'>
                         <p>Author:</p>
-                        <input type='text' placeholder='Author name ' name='author' onChange={(e) => setAuthor(e.target.value)} value={author} />
+                        <input type='text' placeholder='Author name ' name='author' onChange={(e) => setAuthor(e.target.value)} value={author}  required aria-required="true" aria-label="Enter Author's name"/>
                     </div>
-                    {error && <div className="error"><ErrorIcon fontSize='small' /> {error}</div>}
+                    {error && <div className="error" role="alert"><ErrorIcon fontSize='small' /> {error}</div>}
                     <div className='btns'>
                         <input type='submit' name='save__btn' className='save__btn' value='Save' onClick={PostBlogData} />
                         <ToastContainer />
