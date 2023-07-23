@@ -42,7 +42,7 @@ const Login = () => {
 
             <h3 className="login_msg">Log In to your account</h3>
           </div>
-          <form method="POST" className="login__info">
+          <form method="POST" className="login__info" aria-label="Login form">
             <div className="login__credentials">
               <div className="user_email_field info_field">
                 <Email className="info_icon" />
@@ -53,6 +53,9 @@ const Login = () => {
                   placeholder="Enter your mail ID"
                   onChange={(e) => setEmail(e.target.value)}
                   id="user_mail"
+                  required
+                  aria-required="true"
+                  aria-label="Enter your email"
                 />
               </div>
               <div className="user_password_field info_field">
@@ -64,6 +67,9 @@ const Login = () => {
                   placeholder="Enter your password"
                   onChange={(e) => setPassword(e.target.value)}
                   id="user_password"
+                  required
+                  aria-required="true"
+                  aria-label="Enter your password"
                 />
                 {showPassword ? (
                   <AiFillEyeInvisible
@@ -73,6 +79,7 @@ const Login = () => {
                       showHidePW();
                     }}
                     id="pw_icon"
+                    aria-label={showPassword ? "Hide Password" : "Show Password"}
                   />
                 ) : (
                   <AiFillEye
@@ -82,13 +89,14 @@ const Login = () => {
                       showHidePW();
                     }}
                     id="pw_icon"
+                    aria-label={!showPassword ? "Hide Password" : "Show Password"}
                   />
                 )}
               </div>
             </div>
 
             {error && (
-              <div className="error">
+              <div className="error" role="alert">
                 <ErrorIcon fontSize="small" /> {error}
               </div>
             )}
@@ -104,6 +112,7 @@ const Login = () => {
                 onClick={verifyAndPostData}
                 value="Login"
                 disabled={isLoading}
+                role="button"
               />
               <p className="signin_opt">
                 Login Using :
