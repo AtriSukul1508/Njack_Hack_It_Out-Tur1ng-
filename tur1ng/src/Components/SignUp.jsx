@@ -91,11 +91,11 @@ const SignUp = () => {
                         <h1 className='heading_title'>Tur<span>1</span>ng<span>_</span></h1>
                         <h2 style={{ fontFamily: 'Poppins', margin: '.8rem 0' }} >Create Your Account</h2>
                     </div>
-                    <form method='POST' className='user_acc_info'>
+                    <form method='POST' className='user_acc_info' aria-label="Sign up form">
                         <div className='acc__credentials'>
                             <div className='user_name_field info_field'>
                                 <Person className='info_icon' />
-                                <input type='text' autoComplete='off' placeholder='Enter your name' name='name' onChange={(e) => setName(e.target.value)} value={name} />
+                                <input type='text' autoComplete='off' placeholder='Enter your name' name='name' onChange={(e) => setName(e.target.value)} value={name} required aria-required="true" aria-label="Enter your name"/>
                             </div>
                             <div className='user_image_field info_field' style={{ display: 'flex', flexDirection: 'column' }}>
                                 <input type="file" id="img" className='profile__img__upload' accept="application/jpg" style={{ display: 'none' }} onChange={handleImg} />
@@ -104,15 +104,15 @@ const SignUp = () => {
                             </div>
                             <div className='user_email_field info_field'>
                                 <Email className='info_icon' />
-                                <input type='email' autoComplete='off' placeholder='Enter your mail ID' name='email' onChange={(e) => setEmail(e.target.value)} value={email} />
+                                <input type='email' autoComplete='off' placeholder='Enter your mail ID' name='email' onChange={(e) => setEmail(e.target.value)} value={email} required aria-required="true" aria-label="Enter your email"/>
                             </div>
                             <div className='user_number_field info_field'>
                                 <Call className='info_icon' />
-                                <input type='number' autoComplete='off' placeholder='Enter your Phone number' name='phone' onChange={(e) => setPhone(e.target.value)} value={phone} />
+                                <input type='number' autoComplete='off' placeholder='Enter your Phone number' name='phone' onChange={(e) => setPhone(e.target.value)} value={phone} required aria-required="true" aria-label="Enter your phone number"/>
                             </div>
                             <div className='user_password_field info_field'>
                                 <Lock className='info_icon' />
-                                <input type='password' autoComplete='off' placeholder='Enter your password' name='password' id='user_password' onChange={(e) => setPassword(e.target.value)} value={password} />
+                                <input type='password' autoComplete='off' placeholder='Enter your password' name='password' id='user_password' onChange={(e) => setPassword(e.target.value)} value={password} required aria-required="true" aria-label="Enter your password"/>
                                 {showPassword ? (
                                     <AiFillEye
                                         size={20}
@@ -121,6 +121,7 @@ const SignUp = () => {
                                         showHidePW();
                                         }}
                                         id="pw_icon"
+                                        aria-label={showPassword ? "Hide Password" : "Show Password"}
                                     />
                                 ) :  (
                                     <AiFillEyeInvisible
@@ -130,12 +131,13 @@ const SignUp = () => {
                                         showHidePW();
                                         }}
                                         id="pw_icon"
+                                        aria-label={!showPassword ? "Hide Password" : "Show Password"}
                                     />
                                 ) }
                             </div>
                             <div className='user_cpassword_field info_field'>
                                 <Lock className='info_icon' />
-                                <input type='password' autoComplete='off' placeholder='Re-enter your password' name='cpassword' id='user_cpassword' onChange={(e) => setCPassword(e.target.value)} value={cpassword} />
+                                <input type='password' autoComplete='off' placeholder='Re-enter your password' name='cpassword' id='user_cpassword' onChange={(e) => setCPassword(e.target.value)} value={cpassword}  required aria-required="true" aria-label="Re-enter your password"/>
                                 {showCPassword ? (
                                     <AiFillEye
                                         size={20}
@@ -144,6 +146,7 @@ const SignUp = () => {
                                         showHideCPW();
                                         }}
                                         id="cpw_icon"
+                                        aria-label={showPassword ? "Hide Password" : "Show Password"}
                                     />
                                 ):(
                                     <AiFillEyeInvisible
@@ -153,6 +156,7 @@ const SignUp = () => {
                                         showHideCPW();
                                         }}
                                         id="cpw_icon"
+                                        aria-label={!showPassword ? "Hide Password" : "Show Password"}
                                     />
                                 )}
                             </div>
@@ -180,9 +184,9 @@ const SignUp = () => {
                                 )}
                             </div> */}
                         </div>
-                        {error && <div className="error"><ErrorIcon fontSize='small' /> {error}</div>}
+                        {error && <div className="error" role="alert"><ErrorIcon fontSize='small' /> {error}</div>}
                         <div className='btns_submit'>
-                            <input type='submit' name='signup__btn' className='signup__btn' id='signup__btn' onClick={verifyAndPostData} value='Sign Up' />
+                            <input type='submit' name='signup__btn' className='signup__btn' id='signup__btn' onClick={verifyAndPostData} value='Sign Up' role='button'/>
                             <p className='mt-3' style={{ color: '#000' }}>Already have an account? <NavLink style={{ textDecoration: 'none', color: '#465370', fontWeight: 'bold' }} to='/login'>Log In</NavLink></p>
                         </div>
                     </form>
