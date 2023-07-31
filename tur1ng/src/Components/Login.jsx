@@ -35,10 +35,10 @@ const Login = () => {
         <div className="container_login">
           <div className="heading_line" style={{ textAlign: "center" }}>
             <h1 className="heading_title">
-              Tur<span>1</span>ng<span>_</span>
+              Tur<span style={{fontWeight:"bold"}}>1</span>ng<span>_</span>
             </h1>
 
-            <h1 className="welcome_msg">Welcome Back</h1>
+            <h2 className="welcome_msg">Welcome Back</h2>
 
             <h3 className="login_msg">Log In to your account</h3>
           </div>
@@ -46,7 +46,7 @@ const Login = () => {
             <div className="login__credentials">
               <div className="user_email_field info_field">
                 <Email className="info_icon" />
-                <input
+                <input className="formtext"
                   type="text"
                   name="email"
                   autoComplete="off"
@@ -60,7 +60,7 @@ const Login = () => {
               </div>
               <div className="user_password_field info_field">
                 <Lock className="info_icon" />
-                <input
+                <input className="formtext"
                   type="password"
                   name="password"
                   autoComplete="off"

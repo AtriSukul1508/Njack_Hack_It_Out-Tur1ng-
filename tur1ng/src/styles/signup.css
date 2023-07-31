@@ -10,7 +10,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #6d7993b2;
+    background-image: linear-gradient(to right, #5ed5f8, #00c0ff, #00a9ff, #008dff, #006dff, #4160fb, #6150f5, #7a3ced, #9846f1, #b251f5, #ca5efa, #e06bfe);
 }
 
 .signup__container{
@@ -46,7 +46,7 @@
     position: absolute;
     right: 5px;
     /* top: 1.5rem; */
-    color: #6d7993;
+    color: black;
     /* padding-left: 5px; */
   }
 
@@ -56,7 +56,7 @@
     padding: 8px;
     border-radius: 10px;
     width: 130px;
-    background-color: #6d7993;
+    background-color: black;
     color: white;
     font-weight: bold;
     font-family: 'Raleway',sans-serif;
