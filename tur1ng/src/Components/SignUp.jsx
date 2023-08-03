@@ -89,7 +89,7 @@ const SignUp = () => {
                 <div className='signup__container'>
                     <div className='heading_line' style={{ textAlign: 'center' }}>
                         <h1 className='heading_title'>Tur<span>1</span>ng<span>_</span></h1>
-                        <h2 style={{ fontFamily: 'Poppins', margin: '.8rem 0' }} >Create Your Account</h2>
+                        <h2 style={{ fontFamily: "'Trebuchet MS", margin: '.8rem 0' }} >Create Your Account</h2>
                     </div>
                     <form method='POST' className='user_acc_info' aria-label="Sign up form">
                         <div className='acc__credentials'>
