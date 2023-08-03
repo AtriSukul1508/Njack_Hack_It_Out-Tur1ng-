@@ -1,4 +1,7 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
+// import { GoogleOAuthProvider } from '@react-oauth/google';
+import {auth,provider} from "./config"
+import {signInWithPopup,signOut} from "firebase/auth"
 import { FaFacebookF, FaGithub, FaGoogle } from "react-icons/fa";
 import { AiFillEyeInvisible, AiFillEye } from "react-icons/ai";
 import { Email, Lock } from "@mui/icons-material";
@@ -26,8 +29,26 @@ const Login = () => {
       pwIcon.style.color = "#ccc";
     }
   }
-
   const [showPassword, setShowPassword] = useState(false);
+  const handleClick=async(e)=>{
+    e.preventDefault()
+    try{
+      const result =await signInWithPopup(auth,provider)
+      console.log("result",result)
+      
+    }
+    catch(error){
+      console.error("Error during Google authentication:", error.message);
+    }
+  }
+  const logOut=async()=>{
+    try{
+      await signOut(auth)
+    }
+    catch(error){
+      console.log(error)
+    }
+  }
 
   return (
     <>
@@ -117,9 +138,9 @@ const Login = () => {
               <p className="signin_opt">
                 Login Using :
                 <div className="signin_opt--icons">
-                  <NavLink to="#">
-                    <FaGoogle size={30} className="google_icon" />
-                  </NavLink>
+                  <span>
+                    <FaGoogle size={30} className="google_icon" onClick={handleClick} />
+                  </span>
                   {/* Can be used for OAuth via google */}
 
                   <NavLink to="#">
