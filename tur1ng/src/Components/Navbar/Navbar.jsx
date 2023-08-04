@@ -54,12 +54,12 @@ const Navbar = () => {
                     >
                         <DialogContent>
                             <DialogContentText id="alert-dialog-description" style={{ color: '#2d2c39', fontFamily: 'Poppins' }}>
-                                Are you sure, you want to log out?
+                                Are you sure, You want to log out?
                             </DialogContentText>
                         </DialogContent>
                         <DialogActions>
-                            <Button onClick={handleClose} autoFocus>Cancel</Button>
-                            <Button onClick={handlePermission} style={{ color: '#e04e4e' }}>Logout</Button>
+                            <Button onClick={handleClose} autoFocus>CANCEL</Button>
+                            <Button onClick={handlePermission} style={{ color: '#e04e4e' }}>LOGOUT</Button>
                         </DialogActions>
                     </Dialog>
                 </div>
