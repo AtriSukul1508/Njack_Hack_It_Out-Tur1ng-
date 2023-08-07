@@ -1,15 +1,22 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { auth, provider,facebookProvider } from "./config"
+import { GoogleAuthProvider, signInWithPopup, signOut } from "firebase/auth"
 import { FaFacebookF, FaGithub, FaGoogle } from "react-icons/fa";
 import { AiFillEyeInvisible, AiFillEye } from "react-icons/ai";
 import { Email, Lock } from "@mui/icons-material";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import "../styles/login.css";
 import { useLogin } from "../hooks/useLogin";
 import ErrorIcon from "@mui/icons-material/Error";
+import { useAuthContext } from "../hooks/useAuthContext";
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
+
   const { login, error, isLoading } = useLogin();
+  const { dispatch } = useAuthContext();
+
   const verifyAndPostData = async (event) => {
     event.preventDefault();
     await login(email, password);
@@ -27,8 +34,43 @@ const Login = () => {
     }
   }
 
-  const [showPassword, setShowPassword] = useState(false);
+  const handleGoogleClick = async (e) => {
+    e.preventDefault()
+    try {
+      const result = await signInWithPopup(auth, provider)
+      console.log("result", result)
 
+      const user = auth.currentUser;
+      alert(`Login sucessful! Welcome ${user.displayName} [${user.email}]`)
+      // console.log('currentUser ', JSON.stringify(user.toJSON()));
+      // localStorage.setItem('tur1ng_user', JSON.stringify(user.toJSON()))
+      // dispatch({ type: 'LOGIN', payload: user.toJSON() });
+    }
+    catch (error) {
+      console.error("Error during Google authentication:", error.message);
+    }
+  }
+
+  const logOut = async () => {
+    try {
+      await signOut(auth)
+    }
+    catch (error) {
+      console.log(error)
+    }
+  }
+
+  const signInWithFacebook = async (e) => {
+    e.preventDefault()
+    try {
+      const result = await signInWithPopup(auth, facebookProvider)
+      console.log("result", result)
+
+    }
+    catch (error) {
+      console.error("Error during Facebook authentication:", error.message);
+    }
+  }
   return (
     <>
       <div className="credentials__container">
@@ -114,16 +156,16 @@ const Login = () => {
                 disabled={isLoading}
                 role="button"
               />
-              <p className="signin_opt">
+              <div className="signin_opt">
                 Login Using :
                 <div className="signin_opt--icons">
-                  <NavLink to="#">
-                    <FaGoogle size={30} className="google_icon" />
-                  </NavLink>
+                  <span>
+                    <FaGoogle size={30} className="google_icon" onClick={handleGoogleClick} />
+                  </span>
                   {/* Can be used for OAuth via google */}
 
                   <NavLink to="#">
-                    <FaFacebookF size={30} className="facebook_icon" />
+                    <FaFacebookF size={30} className="facebook_icon" onClick={signInWithFacebook}/>
                   </NavLink>
                   {/* Can be used for OAuth via facebook */}
 
@@ -132,7 +174,7 @@ const Login = () => {
                   </NavLink>
                   {/* Can be used for OAuth via github */}
                 </div>
-              </p>
+              </div>
               <p className="" style={{ color: "#000" }}>
                 Don't have an account?{" "}
                 <NavLink className="signup__link" to="/signup">
