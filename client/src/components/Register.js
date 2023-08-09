@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import avatar from "../assets/profile.png";
+import avatar from "../assets/profile.webp";
 import toast, { Toaster } from "react-hot-toast";
 import convertToBase64 from "../helper/convert";
 import { auth } from "../lib/firebase/auth";

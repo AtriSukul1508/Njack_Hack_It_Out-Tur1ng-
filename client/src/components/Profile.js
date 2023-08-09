@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import avatar from "../assets/profile.png";
+import avatar from "../assets/profile.webp";
 import toast, { Toaster } from "react-hot-toast";
 import convertToBase64 from "../helper/convert";
 import { useNavigate } from "react-router-dom";
