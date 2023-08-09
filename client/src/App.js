@@ -1,12 +1,8 @@
 import React, { lazy, Suspense } from 'react'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
-/** auth middleware */
-import { AuthorizeUser, ProtectRoute } from './middleware/auth'
-
 /** import all components */
-const Username = lazy(() => import('./components/Username'));
-const Password = lazy(() => import('./components/Password'));
+const Login = lazy(() => import('./components/Login'));
 const Register = lazy(() => import('./components/Register'));
 const Profile = lazy(() => import('./components/Profile'));
 const Recovery = lazy(() => import('./components/Recovery'));
@@ -18,19 +14,15 @@ const PageNotFound = lazy(() => import('./components/PageNotFound'));
 const router = createBrowserRouter([
     {
         path : '/',
-        element : <Username></Username>
+        element : <Login></Login>
     },
     {
         path : '/register',
         element : <Register></Register>
     },
     {
-        path : '/password',
-        element : <ProtectRoute><Password /></ProtectRoute>
-    },
-    {
         path : '/profile',
-        element : <AuthorizeUser><Profile /></AuthorizeUser>
+        element : <Profile />
     },
     {
         path : '/recovery',
